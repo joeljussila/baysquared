@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#121633"><title>Apply · SOMMER</title><meta name="description" content="Apply for a place on SOMMER, a robotics trip to Shenzhen, December 2026."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#121633;--panel:#181d40;--line:rgba(238,232,220,.28);--line-strong:rgba(238,232,220,.7);--text:#eee8dc;--sub:#d6d2e2;--muted:#9f9bb4;--accent:#ff8a3d;--error:#ff8a8a;--pad:clamp(20px,4.4vw,72px)}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;font-family:'IBM Plex Mono',monospace}
+a{color:inherit;text-decoration:none}a:hover{opacity:.7}
+.hand{position:fixed;right:-6vw;top:-6vh;height:112vh;width:auto;filter:url(#whiten) invert(1) hue-rotate(180deg);mix-blend-mode:screen;opacity:.35;pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 40%);mask-image:linear-gradient(90deg,transparent 0%,#000 40%)}
+.grain{position:fixed;inset:0;width:100%;height:100%;opacity:.14;mix-blend-mode:screen;pointer-events:none;z-index:4}
+header{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:max(36px,env(safe-area-inset-top)) var(--pad) 0}
+.mark{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:22px;letter-spacing:-.01em}
+.back{font-size:clamp(10px,.86vw,13px);letter-spacing:.22em;text-transform:uppercase;color:#cfcadb}
+main{position:relative;z-index:3;padding:clamp(40px,8vh,96px) var(--pad) clamp(48px,10vh,120px);max-width:calc(680px + 2*var(--pad))}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+h1{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:clamp(40px,6vw,84px);line-height:.9;letter-spacing:-.02em;margin:18px 0 18px}
+.lede{font-size:14px;line-height:1.7;color:var(--sub);margin:0 0 40px;max-width:52ch}
+form{display:grid;grid-template-columns:1fr 1fr;gap:28px 24px}
+.field{display:flex;flex-direction:column;gap:10px}
+.field.full{grid-column:1/-1}
+label{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--sub)}
+label b{color:var(--accent);font-weight:400}
+input,select,textarea{width:100%;font:inherit;font-size:16px;color:var(--text);background:rgba(18,22,51,.55);border:0;border-bottom:1px solid var(--line);border-radius:0;padding:12px 2px;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+input::placeholder,textarea::placeholder{color:#6f6c88}
+input:focus,select:focus,textarea:focus{border-bottom-color:var(--accent)}
+select{cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--sub) 50%),linear-gradient(135deg,var(--sub) 50%,transparent 50%);background-position:calc(100% - 14px) 52%,calc(100% - 9px) 52%;background-size:5px 5px;background-repeat:no-repeat;padding-right:28px}
+select:invalid{color:#6f6c88}
+option{color:#121633;background:#eee8dc}
+textarea{resize:vertical;min-height:132px;line-height:1.6;border:1px solid var(--line);padding:14px}
+textarea:focus{border-color:var(--accent)}
+.err{display:none;font-size:11px;letter-spacing:.06em;color:var(--error)}
+.field.invalid input,.field.invalid select{border-bottom-color:var(--error)}
+.field.invalid textarea{border-color:var(--error)}
+.field.invalid .err{display:block}
+.submit-row{grid-column:1/-1;display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:8px}
+button{font:inherit;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--bg);background:var(--text);border:0;padding:18px 34px;cursor:pointer;transition:opacity .2s}
+button:hover{opacity:.85}
+.note{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.done{display:none}
+.done h2{font-family:'Archivo',sans-serif;font-stretch:125%;font-weight:800;font-size:clamp(32px,4.4vw,56px);line-height:.95;margin:18px 0}
+.done p{font-size:14px;line-height:1.7;color:var(--sub);max-width:48ch}
+.done a{display:inline-block;margin-top:24px;border:1px solid var(--text);padding:15px 26px;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+body.sent .form-wrap{display:none}body.sent .done{display:block}
+@media (max-width:640px){
+  form{grid-template-columns:1fr}
+  .hand{display:none}
+  button{width:100%}
+}
+</style></head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><filter id="whiten" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1.028 0 0 0 0 0 1.164 0 0 0 0 0 1.545 0 0 0 0 0 1 0"></feColorMatrix></filter></svg>
+<img class="hand" src="../images/sommer_pic3.jpg" alt="" width="828" height="1019">
+<header><a class="mark" href="../">SOMMER</a><a class="back" href="../">← Back</a></header>
+<main>
+<div class="form-wrap">
+<div class="eyebrow"><i></i>Shenzhen · December 2026</div>
+<h1>Apply for<br>a place</h1>
+<p class="lede">SOMMER is by application only. Tell us who you are and what you want from a week inside the world's hardware capital. All fields are required.</p>
+<!-- Mockup: nothing is sent anywhere yet. Wire the submit handler to a backend (e.g. Formspree, Supabase, a Vercel function) before going live. -->
+<form id="apply" novalidate>
+  <div class="field"><label for="name">Name <b>*</b></label><input id="name" name="name" autocomplete="name" placeholder="Full name" required><span class="err">Please enter your name.</span></div>
+  <div class="field"><label for="company">Company <b>*</b></label><input id="company" name="company" autocomplete="organization" placeholder="Company name" required><span class="err">Please enter your company.</span></div>
+  <div class="field"><label for="linkedin">LinkedIn <b>*</b></label><input id="linkedin" name="linkedin" type="url" inputmode="url" placeholder="https://linkedin.com/in/…" pattern="https?://(www\.)?linkedin\.com/.+" required><span class="err">Please enter your LinkedIn profile URL.</span></div>
+  <div class="field"><label for="x">X / Twitter <b>*</b></label><input id="x" name="x" placeholder="@handle" pattern="@?[A-Za-z0-9_]{1,15}" autocapitalize="off" required><span class="err">Please enter your X handle.</span></div>
+  <div class="field full"><label for="role">Role <b>*</b></label><select id="role" name="role" required><option value="" disabled selected>Select your role</option><option>Founder</option><option>Investor</option><option>Operator</option></select><span class="err">Please choose a role.</span></div>
+  <div class="field full"><label for="why">What do you look forward to getting out of your trip to Shenzhen? <b>*</b></label><textarea id="why" name="why" placeholder="A few sentences is plenty." required minlength="20"></textarea><span class="err">Please write at least a couple of sentences.</span></div>
+  <div class="submit-row"><button type="submit">Submit application</button><span class="note">We reply within two weeks</span></div>
+</form>
+</div>
+<div class="done" aria-live="polite">
+<div class="eyebrow"><i></i>Application received</div>
+<h2>Thank you, <span id="first"></span>.</h2>
+<p>We've got your application for SOMMER, Shenzhen, December 2026. We review every application personally and will be in touch within two weeks.</p>
+<a href="../">Back to SOMMER</a>
+</div>
+</main>
+<svg class="grain" aria-hidden="true"><rect width="100%" height="100%" filter="url(#grain)"></rect></svg>
+<script>
+var form=document.getElementById('apply');
+function check(el){var f=el.closest('.field');var ok=el.value.trim()!==''&&el.checkValidity();f.classList.toggle('invalid',!ok);return ok;}
+form.querySelectorAll('input,select,textarea').forEach(function(el){
+  el.addEventListener('blur',function(){if(el.value)check(el);});
+  el.addEventListener('input',function(){if(el.closest('.field').classList.contains('invalid'))check(el);});
+});
+form.addEventListener('submit',function(e){
+  e.preventDefault();
+  var bad=null;
+  form.querySelectorAll('input,select,textarea').forEach(function(el){if(!check(el)&&!bad)bad=el;});
+  if(bad){bad.focus();return;}
+  document.getElementById('first').textContent=document.getElementById('name').value.trim().split(/\s+/)[0];
+  document.body.classList.add('sent');
+  scrollTo(0,0);
+});
+</script>
+</body></html>
