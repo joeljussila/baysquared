@@ -35,3 +35,7 @@ Open `styles/index.html` (picker) in a browser, or serve the folder (`npx serve 
 ## Deploy
 
 Static site — deploy to Vercel with no framework preset. To ship a single direction, make that direction the root page (see CLAUDE.md).
+
+## Font options
+
+`fonts/` holds five typography variants of `3d-night` (picker at `/fonts/`): 1 wide caps (Archivo), 2 tech caps (Michroma), 3 serif lowercase (Instrument Serif), 4 grotesk lowercase (Space Grotesk), 5 mono lowercase (IBM Plex Mono). Once one is chosen, fold its CSS into `3d-night`.
