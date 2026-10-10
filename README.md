@@ -12,6 +12,11 @@ Designs came from Claude Design (`Sommer_ Shenzhen robotics trip landing page.zi
 | `2f/` | Sepia | Full-bleed sepia photo, Cormorant Garamond serif, red dot, "Request to apply" | `sommer_pic5.jpg` |
 | `2h/` | Threshold | Dark warm brown, Instrument Serif left-aligned, photo fades in from right | `sommer_pic6.jpg` |
 | `3d/` | Glass hand | Light sand background, heavy wide Archivo, cobalt accent | `sommer_pic3.jpg` |
+| `3d-ochre/` | Glass hand · Ochre | Burnt ochre background, dark text, cobalt accent | `sommer_pic3.jpg` |
+| `3d-clay/` | Glass hand · Clay | Terracotta background, cream text | `sommer_pic3.jpg` |
+| `3d-night/` | Glass hand · Night | Deep navy, photo shown as a glowing negative, orange accent | `sommer_pic3.jpg` |
+
+The 3d variants use an SVG `#whiten` filter that maps the photo's baked-in sand to white, then `mix-blend-mode` (multiply, or invert + screen for Night) so the hand sits directly on the new background.
 
 `index.html` at the root is a picker linking to all four.
 
