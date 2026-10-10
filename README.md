@@ -18,7 +18,7 @@ Designs came from Claude Design (`Sommer_ Shenzhen robotics trip landing page.zi
 
 The 3d variants use an SVG `#whiten` filter that maps the photo's baked-in sand to white, then `mix-blend-mode` (multiply, or invert + screen for Night) so the hand sits directly on the new background.
 
-`index.html` at the root is a picker linking to all four.
+`styles/index.html` is a picker linking to every direction. On Vercel, `/` serves `3d-night` (rewrite in `vercel.json`).
 
 ## Structure
 
@@ -28,7 +28,7 @@ The 3d variants use an SVG `#whiten` filter that maps the photo's baked-in sand 
 
 ## Run locally
 
-Open `index.html` in a browser, or serve the folder (`npx serve .`).
+Open `styles/index.html` (picker) in a browser, or serve the folder (`npx serve .`).
 
 ## Deploy
 
