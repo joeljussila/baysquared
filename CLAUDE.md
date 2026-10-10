@@ -1,8 +1,8 @@
-# CLAUDE.md — bay² (baysquared)
+# CLAUDE.md — bay^2 (baysquared)
 
-This folder is the home for all work on the bay² project (Shenzhen robotics trip landing page). Make every change here.
+This folder is the home for all work on the bay^2 project (Shenzhen robotics trip landing page). Make every change here.
 
-- Brand: **bay²**, always lowercase with a superscript 2 (wordmarks use a `<span>` sized .42em, plain text uses the `²` character). Use `baysquared` for folders, repos, file names and URLs. Formerly SOMMER.
+- Brand: **bay^2**, written literally as `bay^2`, lowercase, with a caret and no superscript. Use `baysquared` for folders, repos, file names and URLs. Formerly SOMMER.
 - Plain static HTML, no framework, no build. Keep it that way unless asked.
 - Original style directions: `1a` Space, `2f` Sepia, `2h` Threshold, `3d` Glass hand, plus `3d-ochre`, `3d-clay`, `3d-night`. See README.md.
 - Live direction is `3d-night` (responsive, full-viewport, separate phone layout). The others are the original fixed 1280×800 scaled stages.

@@ -1,8 +1,8 @@
-# bay² (baysquared)
+# bay^2 (baysquared)
 
-Landing page for **bay² — "Live the future in Shenzhen"**, a by-application robotics trip to Shenzhen, December 2026.
+Landing page for **bay^2 — "Live the future in Shenzhen"**, a by-application robotics trip to Shenzhen, December 2026.
 
-Brand is written **bay²** (lowercase, superscript 2) on the site. Use `baysquared` for folders, repos, file names and URLs. The project was originally called SOMMER.
+Brand is written **bay^2** (lowercase, literal caret, no superscript) on the site. Use `baysquared` for folders, repos, file names and URLs. The project was originally called SOMMER.
 
 Designs came from Claude Design (`Sommer_ Shenzhen robotics trip landing page.zip`, Downloads, 2026-10-10).
 
