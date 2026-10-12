@@ -16,7 +16,7 @@ a{color:inherit;text-decoration:none}a:hover{opacity:.7}
 .name{margin:0;font-family:'Instrument Serif',serif;font-weight:400;letter-spacing:-.01em;line-height:.9;font-size:calc(1.45 * clamp(52px,min(9.7vw,15.5vh),210px))}
 .tag{font-family:'Instrument Serif',serif;font-style:italic;color:var(--sub);font-size:calc(1.9 * clamp(13px,min(1.48vw,2.4vh),26px))}
 .date{display:flex;align-items:center;gap:12px;font-size:clamp(11px,.94vw,15px);letter-spacing:.14em;text-transform:lowercase;color:var(--muted)}
-.date i,.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
 .cta{display:inline-block;margin-top:10px;border:1px solid var(--text);padding:15px 26px;font-size:clamp(11px,.86vw,13px);letter-spacing:.14em;text-transform:lowercase}
 .cta.solid{background:var(--text);color:var(--bg);border-color:var(--text)}
 .grain{position:fixed;inset:0;width:100%;height:100%;opacity:.14;mix-blend-mode:screen;pointer-events:none;z-index:10}
@@ -54,8 +54,6 @@ strong{font-weight:500;color:var(--text)}
 .steps li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:16px;padding:24px 0;border-top:1px solid var(--line);margin:0}
 .steps li::before{content:counter(s,decimal-leading-zero);font-size:12px;color:var(--accent);padding-top:8px}
 .steps p{margin:0}
-.note{border-left:2px solid var(--accent);padding:4px 0 4px 18px;margin:32px 0 0}
-.note p{margin:0;color:var(--text)}
 
 /* Price */
 .tiers{width:100%;border-collapse:collapse;margin:0 0 28px}
@@ -110,7 +108,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 <div class="hero">
 <h1 class="name" data-fade="0">bay^2</h1>
 <div class="tag" data-fade="400">live the future in shenzhen</div>
-<div class="date" data-fade="800"><i></i>11–17 january 2027 · by application</div>
+<div class="date" data-fade="800">11–17 january 2027</div>
 <a class="cta" href="../apply/" data-fade="1100">apply for a place</a>
 </div>
 </div>
@@ -132,7 +130,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 
 <section id="how">
 <div class="row">
-<div><div class="label"><i class="dot"></i>how it works</div><h2>by application and interview</h2></div>
+<div><div class="label"><i class="dot"></i>how it works</div><h2>how do i get in?</h2></div>
 <div>
 <div class="count" id="count">
 <div><b id="cd-d">--</b><span>days</span></div>
@@ -142,12 +140,11 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 </div>
 <p class="small" id="count-text">until seats open on 9 November, 9am PT</p>
 <ol class="steps">
-<li><div><h3>Apply</h3><p>Five minutes online. Free, and doesn't commit you to anything.</p></div></li>
+<li><div><h3>Apply</h3><p>Takes 5 minutes, no commitment.</p></div></li>
 <li><div><h3>Interview</h3><p>We review every application and invite applicants to a short call.</p></div></li>
 <li><div><h3>Decision</h3><p>We decide who joins based on your application and the interview, and let you know either way.</p></div></li>
 <li><div><h3>Book from 9 November, 9am PT</h3><p>Approved applicants get a booking link. Seats go in the order people pay, and the first five get founding pricing.</p></div></li>
 </ol>
-<div class="note"><p>The trip runs if at least 10 people have booked by 30 November. If not, everyone gets a full refund.</p></div>
 </div>
 </div>
 </section>
