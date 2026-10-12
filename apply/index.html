@@ -35,6 +35,9 @@ textarea:focus{border-color:var(--accent)}
 .submit-row{grid-column:1/-1;display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:8px}
 button{font:inherit;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--bg);background:var(--text);border:0;padding:18px 34px;cursor:pointer;transition:opacity .2s}
 button:hover{opacity:.85}
+button:disabled{opacity:.5;cursor:wait}
+.send-err{display:none;grid-column:1/-1;font-size:12px;line-height:1.6;color:var(--error)}
+.send-err.show{display:block}
 .note{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .done{display:none}
 .done h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,6vw,76px);line-height:.95;margin:18px 0}
@@ -64,7 +67,7 @@ body.sent .form-wrap{display:none}body.sent .done{display:block}
 <li>We decide based on your application and the interview.</li>
 <li>If approved, you get a booking link on 9 November, 9am PT.</li>
 </ol>
-<!-- Mockup: nothing is sent anywhere yet. Wire the submit handler to a backend (e.g. Formspree, Supabase, a Vercel function) before going live. -->
+<!-- Submissions go to Supabase project deltaandbay (kmbhcqnkbiddppzbubxp), table public.applications. The publishable key is public by design; RLS allows insert only. -->
 <form id="apply" novalidate>
   <div class="field"><label for="name">Name <b>*</b></label><input id="name" name="name" autocomplete="name" placeholder="Full name" required><span class="err">Please enter your name.</span></div>
   <div class="field"><label for="email">Email <b>*</b></label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required><span class="err">Please enter a valid email.</span></div>
@@ -78,6 +81,7 @@ body.sent .form-wrap{display:none}body.sent .done{display:block}
   <div class="field"><label for="dates">Can you join for the full trip, 11–17 January 2027? <b>*</b></label><select id="dates" name="dates" required><option value="" disabled selected>Select one</option><option>Yes</option><option>No</option></select><span class="err">Please choose one.</span></div>
   <div class="field"><label for="heard">How did you hear about us?</label><input id="heard" name="heard" placeholder="Optional"></div>
   <div class="submit-row"><button type="submit">Submit application</button><span class="note">Next step: a short call with us</span></div>
+  <p class="send-err" role="alert">Something went wrong sending your application. Please try again in a moment.</p>
 </form>
 </div>
 <div class="done" aria-live="polite">
@@ -95,14 +99,31 @@ form.querySelectorAll('input,select,textarea').forEach(function(el){
   el.addEventListener('blur',function(){if(el.value)check(el);});
   el.addEventListener('input',function(){if(el.closest('.field').classList.contains('invalid'))check(el);});
 });
+var SUPABASE_URL='https://kmbhcqnkbiddppzbubxp.supabase.co';
+var SUPABASE_KEY='sb_publishable_6uwyoaqph00b9QVKEu-nVA_Dxbhs-Wm';
+var FIELDS=['name','email','company','based','profile','role','area','building','why','dates','heard'];
 form.addEventListener('submit',function(e){
   e.preventDefault();
   var bad=null;
   form.querySelectorAll('input,select,textarea').forEach(function(el){if(!check(el)&&!bad)bad=el;});
   if(bad){bad.focus();return;}
-  document.getElementById('first').textContent=document.getElementById('name').value.trim().split(/\s+/)[0];
-  document.body.classList.add('sent');
-  scrollTo(0,0);
+  var btn=form.querySelector('button'),err=form.querySelector('.send-err');
+  var row={};
+  FIELDS.forEach(function(k){var v=form.elements[k].value.trim();row[k]=v||null;});
+  btn.disabled=true;btn.textContent='Sending…';err.classList.remove('show');
+  fetch(SUPABASE_URL+'/rest/v1/applications',{
+    method:'POST',
+    headers:{'apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+    body:JSON.stringify(row)
+  }).then(function(r){
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    document.getElementById('first').textContent=row.name.split(/\s+/)[0];
+    document.body.classList.add('sent');
+    scrollTo(0,0);
+  }).catch(function(){
+    err.classList.add('show');
+    btn.disabled=false;btn.textContent='Submit application';
+  });
 });
 </script>
 </body></html>
