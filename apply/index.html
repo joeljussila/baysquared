@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#121633"><title>Apply · delta and bay</title><meta name="description" content="Apply for a place on delta and bay, a seven-day robotics and hardware delegation to Shenzhen, 11–17 January 2027."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050A30"><title>Apply · delta and bay</title><meta name="description" content="Apply for a place on delta and bay, a seven-day robotics and hardware delegation to Shenzhen, 11–17 January 2027."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#121633;--panel:#181d40;--line:rgba(238,232,220,.28);--line-strong:rgba(238,232,220,.7);--text:#eee8dc;--sub:#d6d2e2;--muted:#9f9bb4;--accent:#ff8a3d;--error:#ff8a8a;--pad:clamp(20px,4.4vw,72px)}
+:root{--bg:#050A30;--panel:#0a1240;--line:rgba(236,232,224,.28);--line-strong:rgba(236,232,224,.7);--text:#ECE8E0;--sub:#cfd0d8;--muted:#a6a9bd;--accent:#6f8fff;--error:#ff8a8a;--pad:clamp(20px,4.4vw,72px)}
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;font-family:'IBM Plex Mono',monospace}
 a{color:inherit;text-decoration:none}a:hover{opacity:.7}
@@ -20,12 +20,12 @@ form{display:grid;grid-template-columns:1fr 1fr;gap:28px 24px}
 .field.full{grid-column:1/-1}
 label{font-size:12px;line-height:1.5;letter-spacing:.04em;color:var(--sub)}
 label b{color:var(--accent);font-weight:400}
-input,select,textarea{width:100%;font:inherit;font-size:16px;color:var(--text);background:rgba(18,22,51,.55);border:0;border-bottom:1px solid var(--line);border-radius:0;padding:12px 2px;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+input,select,textarea{width:100%;font:inherit;font-size:16px;color:var(--text);background:rgba(5,10,48,.55);border:0;border-bottom:1px solid var(--line);border-radius:0;padding:12px 2px;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
 input::placeholder,textarea::placeholder{color:#6f6c88}
 input:focus,select:focus,textarea:focus{border-bottom-color:var(--accent)}
 select{cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--sub) 50%),linear-gradient(135deg,var(--sub) 50%,transparent 50%);background-position:calc(100% - 14px) 52%,calc(100% - 9px) 52%;background-size:5px 5px;background-repeat:no-repeat;padding-right:28px}
 select:invalid{color:#6f6c88}
-option{color:#121633;background:#eee8dc}
+option{color:#050A30;background:#ECE8E0}
 textarea{resize:vertical;min-height:132px;line-height:1.6;border:1px solid var(--line);padding:14px}
 textarea:focus{border-color:var(--accent)}
 .err{display:none;font-size:11px;letter-spacing:.06em;color:var(--error)}
@@ -52,11 +52,16 @@ body.sent .form-wrap{display:none}body.sent .done{display:block}
   .hand{display:none}
   button{width:100%}
 }
+
+/* Delta & Bay brand (Shawn's kit). */
+body{background:radial-gradient(120% 70% at 100% 0%,rgba(0,53,177,.45) 0%,rgba(0,53,177,0) 55%) fixed,var(--bg)}
+.mark{display:block;height:44px}
+.mark img{display:block;height:100%;width:auto}
 </style></head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><filter id="whiten" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1.028 0 0 0 0 0 1.164 0 0 0 0 0 1.545 0 0 0 0 0 1 0"></feColorMatrix></filter></svg>
 <img class="hand" src="../images/deltaandbay_pic3.jpg" alt="" width="828" height="1019">
-<header><a class="mark" href="../">delta and bay</a><a class="back" href="../">← Back</a></header>
+<header><a class="mark" href="../" aria-label="delta and bay home"><img src="../images/deltaandbay_monogram_ivory.svg" alt="delta and bay" width="1200" height="1182"></a><a class="back" href="../">← Back</a></header>
 <main>
 <div class="form-wrap">
 <div class="eyebrow">Shenzhen · 11–17 January 2027</div>
@@ -94,7 +99,7 @@ body.sent .form-wrap{display:none}body.sent .done{display:block}
 <svg class="grain" aria-hidden="true"><rect width="100%" height="100%" filter="url(#grain)"></rect></svg>
 <script>
 var form=document.getElementById('apply');
-function check(el){var f=el.closest('.field');var ok=el.required?el.value.trim()!==''&&el.checkValidity():true;f.classList.toggle('invalid',!ok);return ok;}
+function check(el){var f=el.closest('.field');var v=el.value.trim();var ok=el.required?v!==''&&el.checkValidity()&&!(el.minLength>0&&v.length<el.minLength):true;f.classList.toggle('invalid',!ok);return ok;}
 form.querySelectorAll('input,select,textarea').forEach(function(el){
   el.addEventListener('blur',function(){if(el.value)check(el);});
   el.addEventListener('input',function(){if(el.closest('.field').classList.contains('invalid'))check(el);});
