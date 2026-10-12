@@ -13,7 +13,7 @@ header{position:relative;z-index:3;display:flex;justify-content:space-between;al
 main{position:relative;z-index:3;padding:clamp(40px,8vh,96px) var(--pad) clamp(48px,10vh,120px);max-width:calc(680px + 2*var(--pad))}
 .eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
 .eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--accent)}
-h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(52px,8vw,112px);line-height:.92;letter-spacing:-.01em;margin:18px 0 18px}
+h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:min(88px,calc((100vw - 2 * var(--pad)) / 7.4));line-height:.92;letter-spacing:-.01em;margin:18px 0 18px;white-space:nowrap}
 .lede{font-size:14px;line-height:1.7;color:var(--sub);margin:0 0 40px;max-width:52ch}
 form{display:grid;grid-template-columns:1fr 1fr;gap:28px 24px}
 .field{display:flex;flex-direction:column;gap:10px}
@@ -62,11 +62,11 @@ body{background:radial-gradient(120% 70% at 100% 0%,rgba(0,53,177,.45) 0%,rgba(0
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><filter id="whiten" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1.028 0 0 0 0 0 1.164 0 0 0 0 0 1.545 0 0 0 0 0 1 0"></feColorMatrix></filter></svg>
 <img class="hand" src="../images/deltaandbay_pic3.jpg" alt="" width="828" height="1019">
-<header><a class="mark" href="../" aria-label="delta and bay home"><img src="../images/deltaandbay_monogram_ivory.svg" alt="delta and bay" width="1167" height="1171"></a><a class="back" href="../">← Back</a></header>
+<header><a class="mark" href="../" aria-label="delta and bay home"><img src="../images/deltaandbay_monogram_ivory.svg" alt="delta and bay" width="1167" height="1171"></a></header>
 <main>
 <div class="form-wrap">
 <div class="eyebrow">Shenzhen · 11–17 January 2027</div>
-<h1>apply for<br>a place</h1>
+<h1>apply for a place</h1>
 <p class="lede">delta and bay is by application. This takes about five minutes, is free and doesn't commit you to anything.</p>
 <ol class="next">
 <li>We review your application and invite you to a short interview call.</li>
@@ -79,15 +79,17 @@ body{background:radial-gradient(120% 70% at 100% 0%,rgba(0,53,177,.45) 0%,rgba(0
   <div class="field"><label for="email">Email <b>*</b></label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required><span class="err">Please enter a valid email.</span></div>
   <div class="field"><label for="company">Company <b>*</b></label><input id="company" name="company" autocomplete="organization" placeholder="Company name" required><span class="err">Please enter your company.</span></div>
   <div class="field"><label for="based">Where are you based? <b>*</b></label><input id="based" name="based" placeholder="City, country" required><span class="err">Please tell us where you're based.</span></div>
-  <div class="field full"><label for="profile">LinkedIn, website or X <b>*</b></label><input id="profile" name="profile" inputmode="url" autocapitalize="off" placeholder="linkedin.com/in/…" required><span class="err">Please add a link so we can learn about you.</span></div>
+  <div class="field"><label for="linkedin">LinkedIn profile <b>*</b></label><input id="linkedin" name="linkedin" type="text" inputmode="url" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="linkedin.com/in/yourname" required><span class="err">Please enter your LinkedIn profile link (linkedin.com/in/…).</span></div>
+  <div class="field"><label for="x">X profile <b>*</b></label><input id="x" name="x" type="text" inputmode="url" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="x.com/yourhandle" required><span class="err">Please enter your X profile (x.com/yourhandle or @yourhandle).</span></div>
+  <div class="field full"><label for="website">Personal website</label><input id="website" name="website" type="text" inputmode="url" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Optional"><span class="err">Please enter a valid website address, or leave it empty.</span></div>
   <div class="field"><label for="role">How would you describe yourself? <b>*</b></label><select id="role" name="role" required><option value="" disabled selected>Select one</option><option>Founder</option><option>Investor</option><option>Engineer or researcher</option><option>Product, operations or sourcing lead</option><option>Other</option></select><span class="err">Please choose one.</span></div>
   <div class="field"><label for="area">What area are you working in? <b>*</b></label><select id="area" name="area" required><option value="" disabled selected>Select one</option><option>Robotics and automation</option><option>Physical AI and data</option><option>Consumer hardware and wearables</option><option>Energy and climate hardware</option><option>Medtech, BCI and neurotech</option><option>Semiconductors and sensors</option><option>Other</option></select><span class="err">Please choose one.</span></div>
   <div class="field full"><label for="building">In one or two sentences, what are you building? <b>*</b></label><textarea id="building" name="building" placeholder="If you're an investor, what you invest in." required minlength="10"></textarea><span class="err">Please write a sentence or two.</span></div>
   <div class="field full"><label for="why">What do you want to leave Shenzhen with? <b>*</b></label><textarea id="why" name="why" placeholder="For example: quotes for an actuator, a contract manufacturer for 1,000 units, a QA partner." required minlength="10"></textarea><span class="err">Please write a sentence or two.</span></div>
   <div class="field"><label for="dates">Can you join for the full trip, 11–17 January 2027? <b>*</b></label><select id="dates" name="dates" required><option value="" disabled selected>Select one</option><option>Yes</option><option>No</option></select><span class="err">Please choose one.</span></div>
   <div class="field"><label for="heard">How did you hear about us?</label><input id="heard" name="heard" placeholder="Optional"></div>
-  <div class="submit-row"><button type="submit">Submit application</button><span class="note">Next step: a short call with us</span></div>
-  <p class="privacy-note">We only use your answers to review your application and plan the trip. <a href="../privacy/">Privacy</a></p>
+  <div class="submit-row"><button type="submit">Submit application</button><span class="note">Applying doesn't commit you to anything</span></div>
+  <p class="privacy-note"><a href="../privacy/">Privacy</a></p>
   <p class="send-err" role="alert">Something went wrong sending your application. Please try again in a moment.</p>
 </form>
 </div>
@@ -101,14 +103,21 @@ body{background:radial-gradient(120% 70% at 100% 0%,rgba(0,53,177,.45) 0%,rgba(0
 <svg class="grain" aria-hidden="true"><rect width="100%" height="100%" filter="url(#grain)"></rect></svg>
 <script>
 var form=document.getElementById('apply');
-function check(el){var f=el.closest('.field');var v=el.value.trim();var ok=el.required?v!==''&&el.checkValidity()&&!(el.minLength>0&&v.length<el.minLength):true;f.classList.toggle('invalid',!ok);return ok;}
+// Link fields: each returns a canonical https URL, or null if the value isn't a valid link of that kind.
+function stripUrl(raw){var v=(raw||'').trim().replace(/[?#].*$/,'');if(v&&!/^https?:\/\//i.test(v))v='https://'+v;return v;}
+function normLinkedIn(raw){var m=stripUrl(raw).match(/^https?:\/\/(?:[a-z]{2,3}\.|www\.)?linkedin\.com\/in\/([A-Za-z0-9_%.-]{3,100})\/?$/i);return m?'https://www.linkedin.com/in/'+m[1]:null;}
+function normX(raw){var t=(raw||'').trim();var h=t.match(/^@([A-Za-z0-9_]{1,15})$/);if(h)return 'https://x.com/'+h[1];var m=stripUrl(t).match(/^https?:\/\/(?:www\.|mobile\.)?(?:x|twitter)\.com\/([A-Za-z0-9_]{1,15})\/?$/i);if(!m||/^(home|i|search|explore|settings|messages|notifications|login|signup|intent|share)$/i.test(m[1]))return null;return 'https://x.com/'+m[1];}
+function normWebsite(raw){var t=(raw||'').trim();if(!t)return null;if(!/^https?:\/\//i.test(t))t='https://'+t;return /^https?:\/\/[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}(:[0-9]{1,5})?(\/\S*)?$/i.test(t)&&t.length<=300?t:null;}
+var LINKS={linkedin:normLinkedIn,x:normX,website:normWebsite};
+function check(el){
+  if(LINKS[el.name]){var t=el.value.trim();var ok=t?!!LINKS[el.name](t):!el.required;el.closest('.field').classList.toggle('invalid',!ok);return ok;}var f=el.closest('.field');var v=el.value.trim();var ok=el.required?v!==''&&el.checkValidity()&&!(el.minLength>0&&v.length<el.minLength):true;f.classList.toggle('invalid',!ok);return ok;}
 form.querySelectorAll('input,select,textarea').forEach(function(el){
   el.addEventListener('blur',function(){if(el.value)check(el);});
   el.addEventListener('input',function(){if(el.closest('.field').classList.contains('invalid'))check(el);});
 });
 var SUPABASE_URL='https://kmbhcqnkbiddppzbubxp.supabase.co';
 var SUPABASE_KEY='sb_publishable_6uwyoaqph00b9QVKEu-nVA_Dxbhs-Wm';
-var FIELDS=['name','email','company','based','profile','role','area','building','why','dates','heard'];
+var FIELDS=['name','email','company','based','linkedin','x','website','role','area','building','why','dates','heard'];
 form.addEventListener('submit',function(e){
   e.preventDefault();
   var bad=null;
@@ -117,6 +126,7 @@ form.addEventListener('submit',function(e){
   var btn=form.querySelector('button'),err=form.querySelector('.send-err');
   var row={};
   FIELDS.forEach(function(k){var v=form.elements[k].value.trim();row[k]=v||null;});
+  row.linkedin=normLinkedIn(form.elements.linkedin.value);row.x=normX(form.elements.x.value);row.website=normWebsite(form.elements.website.value);
   btn.disabled=true;btn.textContent='Sending…';err.classList.remove('show');
   fetch(SUPABASE_URL+'/rest/v1/applications',{
     method:'POST',
