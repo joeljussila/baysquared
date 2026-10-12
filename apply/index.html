@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#121633"><title>Apply · bay^2</title><meta name="description" content="Apply for a place on bay^2, a robotics trip to Shenzhen, December 2026."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#121633"><title>Apply · bay^2</title><meta name="description" content="Apply for a place on bay^2, a seven-day robotics and hardware delegation to Shenzhen, 11–17 January 2027."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#121633;--panel:#181d40;--line:rgba(238,232,220,.28);--line-strong:rgba(238,232,220,.7);--text:#eee8dc;--sub:#d6d2e2;--muted:#9f9bb4;--accent:#ff8a3d;--error:#ff8a8a;--pad:clamp(20px,4.4vw,72px)}
 *{box-sizing:border-box}
@@ -18,7 +18,7 @@ h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(52px,8vw
 form{display:grid;grid-template-columns:1fr 1fr;gap:28px 24px}
 .field{display:flex;flex-direction:column;gap:10px}
 .field.full{grid-column:1/-1}
-label{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--sub)}
+label{font-size:12px;line-height:1.5;letter-spacing:.04em;color:var(--sub)}
 label b{color:var(--accent);font-weight:400}
 input,select,textarea{width:100%;font:inherit;font-size:16px;color:var(--text);background:rgba(18,22,51,.55);border:0;border-bottom:1px solid var(--line);border-radius:0;padding:12px 2px;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
 input::placeholder,textarea::placeholder{color:#6f6c88}
@@ -38,7 +38,10 @@ button:hover{opacity:.85}
 .note{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .done{display:none}
 .done h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,6vw,76px);line-height:.95;margin:18px 0}
-.done p{font-size:14px;line-height:1.7;color:var(--sub);max-width:48ch}
+.done p{font-size:14px;line-height:1.7;color:var(--sub);max-width:52ch;margin:0 0 14px}
+.next{margin:-16px 0 44px;padding:0 0 0 20px;max-width:56ch}
+.next li{font-size:13px;line-height:1.7;color:var(--muted);margin-bottom:6px}
+.next li::marker{color:var(--accent)}
 .done a{display:inline-block;margin-top:24px;border:1px solid var(--text);padding:15px 26px;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
 body.sent .form-wrap{display:none}body.sent .done{display:block}
 @media (max-width:640px){
@@ -53,31 +56,42 @@ body.sent .form-wrap{display:none}body.sent .done{display:block}
 <header><a class="mark" href="../">bay^2</a><a class="back" href="../">← Back</a></header>
 <main>
 <div class="form-wrap">
-<div class="eyebrow"><i></i>Shenzhen · December 2026</div>
+<div class="eyebrow"><i></i>Shenzhen · 11–17 January 2027</div>
 <h1>apply for<br>a place</h1>
-<p class="lede">bay^2 is by application only. Tell us who you are and what you want from a week inside the world's hardware capital. All fields are required.</p>
+<p class="lede">bay^2 is by application. This takes about five minutes, is free and doesn't commit you to anything.</p>
+<ol class="next">
+<li>We read every application and invite you to a short call.</li>
+<li>After the call we decide, based on your application and the conversation, and tell you either way.</li>
+<li>If you're approved, you get a booking link when seats open on 9 November at 9am PT. Seats go in the order people book.</li>
+</ol>
 <!-- Mockup: nothing is sent anywhere yet. Wire the submit handler to a backend (e.g. Formspree, Supabase, a Vercel function) before going live. -->
 <form id="apply" novalidate>
   <div class="field"><label for="name">Name <b>*</b></label><input id="name" name="name" autocomplete="name" placeholder="Full name" required><span class="err">Please enter your name.</span></div>
+  <div class="field"><label for="email">Email <b>*</b></label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required><span class="err">Please enter a valid email.</span></div>
   <div class="field"><label for="company">Company <b>*</b></label><input id="company" name="company" autocomplete="organization" placeholder="Company name" required><span class="err">Please enter your company.</span></div>
-  <div class="field"><label for="linkedin">LinkedIn <b>*</b></label><input id="linkedin" name="linkedin" type="url" inputmode="url" placeholder="https://linkedin.com/in/…" pattern="https?://(www\.)?linkedin\.com/.+" required><span class="err">Please enter your LinkedIn profile URL.</span></div>
-  <div class="field"><label for="x">X / Twitter <b>*</b></label><input id="x" name="x" placeholder="@handle" pattern="@?[A-Za-z0-9_]{1,15}" autocapitalize="off" required><span class="err">Please enter your X handle.</span></div>
-  <div class="field full"><label for="role">Role <b>*</b></label><select id="role" name="role" required><option value="" disabled selected>Select your role</option><option>Founder</option><option>Investor</option><option>Operator</option></select><span class="err">Please choose a role.</span></div>
-  <div class="field full"><label for="why">What do you look forward to getting out of your trip to Shenzhen? <b>*</b></label><textarea id="why" name="why" placeholder="A few sentences is plenty." required minlength="20"></textarea><span class="err">Please write at least a couple of sentences.</span></div>
-  <div class="submit-row"><button type="submit">Submit application</button><span class="note">We reply within two weeks</span></div>
+  <div class="field"><label for="based">Where are you based? <b>*</b></label><input id="based" name="based" placeholder="City, country" required><span class="err">Please tell us where you're based.</span></div>
+  <div class="field full"><label for="profile">LinkedIn, website or X <b>*</b></label><input id="profile" name="profile" inputmode="url" autocapitalize="off" placeholder="linkedin.com/in/…" required><span class="err">Please add a link so we can learn about you.</span></div>
+  <div class="field"><label for="role">How would you describe yourself? <b>*</b></label><select id="role" name="role" required><option value="" disabled selected>Select one</option><option>Founder</option><option>Investor</option><option>Engineer or researcher</option><option>Product, operations or sourcing lead</option><option>Other</option></select><span class="err">Please choose one.</span></div>
+  <div class="field"><label for="area">What area are you working in? <b>*</b></label><select id="area" name="area" required><option value="" disabled selected>Select one</option><option>Robotics and automation</option><option>Physical AI and data</option><option>Consumer hardware and wearables</option><option>Energy and climate hardware</option><option>Medtech, BCI and neurotech</option><option>Semiconductors and sensors</option><option>Other</option></select><span class="err">Please choose one.</span></div>
+  <div class="field full"><label for="building">In one or two sentences, what are you building? <b>*</b></label><textarea id="building" name="building" placeholder="If you're an investor, what you invest in." required minlength="10"></textarea><span class="err">Please write a sentence or two.</span></div>
+  <div class="field full"><label for="why">What do you want to leave Shenzhen with? <b>*</b></label><textarea id="why" name="why" placeholder="For example: quotes for an actuator, a contract manufacturer for 1,000 units, a QA partner." required minlength="10"></textarea><span class="err">Please write a sentence or two.</span></div>
+  <div class="field"><label for="dates">Can you join for the full trip, 11–17 January 2027? <b>*</b></label><select id="dates" name="dates" required><option value="" disabled selected>Select one</option><option>Yes</option><option>No</option></select><span class="err">Please choose one.</span></div>
+  <div class="field"><label for="heard">How did you hear about us?</label><input id="heard" name="heard" placeholder="Optional"></div>
+  <div class="submit-row"><button type="submit">Submit application</button><span class="note">Next step: a short call with us</span></div>
 </form>
 </div>
 <div class="done" aria-live="polite">
 <div class="eyebrow"><i></i>Application received</div>
 <h2>Thank you, <span id="first"></span>.</h2>
-<p>We've got your application for bay^2, Shenzhen, December 2026. We review every application personally and will be in touch within two weeks.</p>
-<a href="../">Back to bay^2</a>
+<p>We've got your application for bay^2, Shenzhen, 11–17 January 2027. We read every application ourselves and will email you to set up a short call.</p>
+<p>After the call we decide who joins and tell you either way. If you're approved, you get your booking link when seats open on 9 November at 9am PT. Seats go in the order people book, and the first five get founding pricing.</p>
+<a href="../#how">How it works</a>
 </div>
 </main>
 <svg class="grain" aria-hidden="true"><rect width="100%" height="100%" filter="url(#grain)"></rect></svg>
 <script>
 var form=document.getElementById('apply');
-function check(el){var f=el.closest('.field');var ok=el.value.trim()!==''&&el.checkValidity();f.classList.toggle('invalid',!ok);return ok;}
+function check(el){var f=el.closest('.field');var ok=el.required?el.value.trim()!==''&&el.checkValidity():true;f.classList.toggle('invalid',!ok);return ok;}
 form.querySelectorAll('input,select,textarea').forEach(function(el){
   el.addEventListener('blur',function(){if(el.value)check(el);});
   el.addEventListener('input',function(){if(el.closest('.field').classList.contains('invalid'))check(el);});
