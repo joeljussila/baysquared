@@ -29,12 +29,8 @@ h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,4.6
 h3{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,2.1vw,30px);line-height:1.15;margin:0 0 8px}
 p,li,dd{font-size:14.5px;line-height:1.75;color:var(--sub)}
 p{margin:0 0 18px;max-width:64ch}
-.big{font-family:'Instrument Serif',serif;font-size:clamp(24px,2.3vw,32px);line-height:1.3;color:var(--text);max-width:34ch}
 .small{font-size:13px;color:var(--muted)}
 strong{font-weight:500;color:var(--text)}
-ul.dots{list-style:none;padding:0;margin:0 0 24px}
-ul.dots li{position:relative;padding-left:22px;margin-bottom:12px;max-width:64ch}
-ul.dots li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--accent)}
 
 .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:40px 0 0;border-top:1px solid var(--line)}
 .facts div{padding:20px 20px 0 0}
@@ -42,12 +38,10 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.72em;width:6px;heigh
 .facts dd{margin:0;font-family:'Instrument Serif',serif;font-size:24px;line-height:1.2;color:var(--text)}
 
 /* Countdown */
-#seats{background:var(--panel)}
-.count{display:flex;gap:clamp(16px,3vw,44px);margin:28px 0 30px;flex-wrap:wrap}
+.count{display:flex;gap:clamp(16px,3vw,44px);margin:0 0 8px;flex-wrap:wrap}
 .count div{min-width:72px}
 .count b{display:block;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(52px,6vw,88px);line-height:1;color:var(--text);font-variant-numeric:tabular-nums}
 .count span{font-size:11px;letter-spacing:.14em;color:var(--dim)}
-.under{font-size:13px;line-height:1.7;color:var(--muted);max-width:58ch;margin-top:18px}
 
 /* Itinerary */
 .days{list-style:none;padding:0;margin:0 0 32px;border-top:1px solid var(--line)}
@@ -69,7 +63,6 @@ ul.dots li::before{content:"";position:absolute;left:0;top:.72em;width:6px;heigh
 .tiers tr:first-child td{border-top:1px solid var(--line)}
 .tiers td:first-child{color:var(--dim);font-size:12px;letter-spacing:.1em;width:34%}
 .tiers td:last-child{text-align:right;font-family:'Instrument Serif',serif;font-size:28px;color:var(--text)}
-.cols{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:40px}
 
 /* FAQ */
 details{border-top:1px solid var(--line)}
@@ -86,7 +79,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 @media (max-width:900px){
   .row{grid-template-columns:1fr}
   .facts{grid-template-columns:1fr 1fr}
-  .cols{grid-template-columns:1fr}
+
 }
 /* Portrait / phones: hand on top, text stacked below. */
 @media (max-aspect-ratio:1/1){
@@ -113,7 +106,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 
 <div id="stage" data-screen-label="3d Glass hand · Night">
 <img class="hand" data-drift="" src="../images/baysquared_pic3.jpg" alt="Iridescent glass hand" width="828" height="1019" fetchpriority="high">
-<nav class="nav"><div><a href="#trip">the trip</a><a class="opt" href="#how">how it works</a><a href="#faq">faq</a><a class="apply-link" href="../apply/">apply</a></div></nav>
+<nav class="nav"><div><a href="#trip">the trip</a><a class="opt" href="#how">how it works</a><a class="opt" href="#price">price</a><a href="#faq">faq</a><a class="apply-link" href="../apply/">apply</a></div></nav>
 <div class="hero">
 <h1 class="name" data-fade="0">bay^2</h1>
 <div class="tag" data-fade="400">live the future in shenzhen</div>
@@ -124,23 +117,22 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 
 <section id="trip">
 <div class="row">
-<div><div class="label"><i class="dot"></i>the trip</div><h2>seven days inside shenzhen's hardware industry</h2></div>
+<div><div class="label"><i class="dot"></i>the trip</div><h2>seven days in shenzhen</h2></div>
 <div>
-<p class="big">A small group of founders, investors and technology leaders in robotics, hardware and advanced manufacturing, visiting the companies and factories that make things in Shenzhen.</p>
-<p>You meet the people behind the products: operators and engineers on factory floors, and founders building companies in the city. We plan the week around what each participant is building, so you leave with supplier contacts, quotes and a clear view of how to take your product from prototype to production.</p>
+<p>A week of company and factory visits, supplier meetings and dinners with local founders, for people building or investing in robotics and hardware. Supplier meetings are matched to what you're building, so you leave with quotes and WeChat contacts you can follow up with.</p>
 <dl class="facts">
 <div><dt>dates</dt><dd>11–17 Jan 2027</dd></div>
 <div><dt>group</dt><dd>25–30 people</dd></div>
-<div><dt>base</dt><dd>Nanshan, Shenzhen</dd></div>
+<div><dt>hotel</dt><dd>Nanshan, Shenzhen</dd></div>
 <div><dt>price</dt><dd>from $8,900</dd></div>
 </dl>
 </div>
 </div>
 </section>
 
-<section id="seats">
+<section id="how">
 <div class="row">
-<div><div class="label"><i class="dot"></i>booking</div><h2>seats open 9 november, 9am PT</h2></div>
+<div><div class="label"><i class="dot"></i>how it works</div><h2>by application and interview</h2></div>
 <div>
 <div class="count" id="count">
 <div><b id="cd-d">--</b><span>days</span></div>
@@ -148,94 +140,38 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 <div><b id="cd-m">--</b><span>minutes</span></div>
 <div><b id="cd-s">--</b><span>seconds</span></div>
 </div>
-<p id="count-text">Apply now to get on the list. The first five approved applicants to book get founding pricing at $8,900.</p>
-<a class="cta solid" href="../apply/">apply for a place</a>
-<p class="under">Applying is free and doesn't commit you to anything. We review every application and run a short call with each applicant. If you're approved, you'll get the booking link the moment seats open. Seats are confirmed only on payment and go in the order people book.</p>
+<p class="small" id="count-text">until seats open on 9 November, 9am PT</p>
+<ol class="steps">
+<li><div><h3>Apply</h3><p>Five minutes online. Free, and doesn't commit you to anything.</p></div></li>
+<li><div><h3>Interview</h3><p>We review every application and invite applicants to a short call.</p></div></li>
+<li><div><h3>Decision</h3><p>We decide who joins based on your application and the interview, and let you know either way.</p></div></li>
+<li><div><h3>Book from 9 November, 9am PT</h3><p>Approved applicants get a booking link. Seats go in the order people pay, and the first five get founding pricing.</p></div></li>
+</ol>
+<div class="note"><p>The trip runs if at least 10 people have booked by 30 November. If not, everyone gets a full refund.</p></div>
 </div>
 </div>
 </section>
 
 <section id="itinerary">
 <div class="row">
-<div><div class="label"><i class="dot"></i>itinerary</div><h2>the week, day by day</h2><p class="small" style="margin-top:20px">Provisional. These are the hosts we expect to visit. We confirm each one in writing in November, and hosts and order may change with availability.</p></div>
+<div><div class="label"><i class="dot"></i>itinerary</div><h2>provisional itinerary</h2><p class="small" style="margin-top:20px">Hosts are confirmed in writing in November and may change with availability.</p></div>
 <div>
 <ol class="days">
-<li><time>mon 11 jan</time><div><h3>Arrival</h3><p>Airport pickup, hotel check-in, welcome dinner.</p></div></li>
-<li><time>tue 12 jan</time><div><h3>Autonomy and mobility</h3><p>Baidu Apollo Go robotaxi ride, SF Express Phoenix Wings drone base, BYD.</p></div></li>
+<li><time>mon 11 jan</time><div><h3>Arrival</h3><p>Airport pickup, check-in, welcome dinner.</p></div></li>
+<li><time>tue 12 jan</time><div><h3>Autonomy and mobility</h3><p>Baidu Apollo Go robotaxi, SF Express Phoenix Wings drone base, BYD.</p></div></li>
 <li><time>wed 13 jan</time><div><h3>The robotics stack</h3><p>ZeroErr, Orbbec, Daimon Robotics. Evening meetup with local hardware founders.</p></div></li>
 <li><time>thu 14 jan</time><div><h3>Humanoids</h3><p>UBTech, EngineAI, LimX Dynamics.</p></div></li>
 <li><time>fri 15 jan</time><div><h3>From lab to global brand</h3><p>DJI, BrainCo, Seeed Studio. Dinner with local founders and investors.</p></div></li>
-<li><time>sat 16 jan</time><div><h3>Sourcing day</h3><p>Guided walk through Huaqiangbei, one-on-one supplier meetings, closing dinner.</p></div></li>
+<li><time>sat 16 jan</time><div><h3>Sourcing day</h3><p>Huaqiangbei walkthrough, one-on-one supplier meetings, closing dinner.</p></div></li>
 <li><time>sun 17 jan</time><div><h3>Departure</h3><p>Airport transfers.</p></div></li>
 </ol>
-<p class="small"><strong>Also under consideration:</strong> Whale Dynamic, RoboSense, Damiao, XJC Sensor, AgileX, Hai Robotics, Daxiang Antai, Insta360, EcoFlow, Mindray, Sunwoda, JLCPCB, Foxconn's Longhua lighthouse factory, Lenovo's South China manufacturing base, Han's Laser, Chaihuo Maker Space, InnoX Lab and Robotuo's hardware space.</p>
-</div>
-</div>
-</section>
-
-<section id="why">
-<div class="row">
-<div><div class="label"><i class="dot"></i>why shenzhen</div><h2>what you can't see from home</h2></div>
-<div>
-<p>Few places put so many engineers, component suppliers, prototyping shops, factories, researchers and investors within an hour's drive of each other. Being that close to suppliers is why hardware teams in Shenzhen iterate so quickly.</p>
-<p>The week is built around the questions founders ask once they're on the ground: what worked for the companies we visit and what didn't, where the real bottlenecks are, which parts are turning into commodities, and where the next opportunities are.</p>
-<h3 style="margin-top:36px">What you get from the week</h3>
-<ul class="dots">
-<li><strong>Warm introductions</strong> at around 15 factories and company headquarters, with quotes in hand and WeChat contacts you can follow up with.</li>
-<li><strong>The whole supply chain.</strong> In robotics, from reducers and motors to joints, limbs and full platforms. In consumer electronics, from PCBs and enclosures to molds, assembly, QA and packaging.</li>
-<li><strong>How the ecosystem works:</strong> how far factory automation has gone, how prototypes become mass production, and how China's startup and investor scene operates.</li>
-<li><strong>Better prices.</strong> Suppliers negotiate differently when you're standing in their factory.</li>
-<li><strong>Doing business in China:</strong> how to negotiate, how to build trust, and why relationships (guanxi) matter.</li>
-<li><strong>Local mixers</strong> with Shenzhen founders, engineers you could hire and potential partners.</li>
-<li><strong>A group worth staying in touch with:</strong> 25–30 founders, investors and operators across robotics, physical AI, consumer electronics, energy and neurotech.</li>
-</ul>
-<p>By the end of the week you'll know the city well enough to come back on your own and go straight to your suppliers.</p>
-</div>
-</div>
-</section>
-
-<section id="who">
-<div class="row">
-<div><div class="label"><i class="dot"></i>who it's for</div><h2>who joins</h2></div>
-<div>
-<ul class="dots">
-<li>Founders building robotics, consumer electronics, energy, medtech or neurotech hardware, from prototype to first production run</li>
-<li>Investors in robotics, physical AI and deep tech</li>
-<li>Engineers and researchers exploring Chinese supply chains</li>
-<li>Product, operations and sourcing leads</li>
-</ul>
-<p>You don't need a technical background. What matters is a real interest in how hardware gets made.</p>
-<h3 style="margin-top:36px">What you leave with</h3>
-<ul class="dots">
-<li>Quotes gathered in person, not over email</li>
-<li>WeChat contacts for every factory and founder you meet</li>
-<li>A map of the supply chain from components to finished product</li>
-<li>30 days of follow-up support after the trip</li>
-</ul>
-</div>
-</div>
-</section>
-
-<section id="how">
-<div class="row">
-<div><div class="label"><i class="dot"></i>how it works</div><h2>apply, talk to us, then we decide</h2><p class="small" style="margin-top:20px">bay^2 is by application. Not everyone who applies gets a place.</p></div>
-<div>
-<ol class="steps">
-<li><div><h3>Apply online</h3><p>It takes about five minutes. Applying is free and doesn't commit you to anything.</p></div></li>
-<li><div><h3>Short interview call</h3><p>We read every application and invite applicants to a short call. We'll ask what you're building, what you want to leave Shenzhen with, and whether the dates and price work for you. It's also your chance to ask us anything.</p></div></li>
-<li><div><h3>We make a decision</h3><p>We decide who joins based on your application and the call. We keep the group to 25–30 people and pick a mix of founders, investors and operators who will get value from each other. We'll tell you either way.</p></div></li>
-<li><div><h3>Seats open 9 November, 9am PT</h3><p>Approved applicants get a booking link. Seats are confirmed only on payment and go in the order people book, so the earlier you book, the lower your price.</p></div></li>
-<li><div><h3>30 November: trip confirmed</h3><p>The trip runs once at least 10 people have booked. Wait until then before booking flights.</p></div></li>
-<li><div><h3>14 December: balance due</h3><p>Then you get a pre-trip pack and we hold a group call before we fly.</p></div></li>
-</ol>
-<div class="note"><p>If fewer than 10 people have booked by 30 November 2026, we cancel the trip and refund everyone in full.</p></div>
 </div>
 </div>
 </section>
 
 <section id="price">
 <div class="row">
-<div><div class="label"><i class="dot"></i>price</div><h2>price per person</h2><p class="small" style="margin-top:20px">Accommodation included. The price goes up as seats fill.</p></div>
+<div><div class="label"><i class="dot"></i>price</div><h2>price per person</h2><p class="small" style="margin-top:20px">The price goes up as seats fill.</p></div>
 <div>
 <table class="tiers">
 <tr><td>seats 1–5</td><td>Founding</td><td>$8,900</td></tr>
@@ -243,40 +179,9 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 <tr><td>seats 13–22</td><td>Standard</td><td>$12,900</td></tr>
 <tr><td>seats 23–30</td><td>Final call</td><td>$14,900</td></tr>
 </table>
-<p>Two people from the same company each get $500 off. Refer someone who gets accepted and you get $500 off.</p>
-<p>The trip runs only if at least 10 people have booked by 30 November. If it doesn't run, you get a full refund.</p>
-<div class="cols">
-<div><h3>Included</h3><ul class="dots">
-<li>Six nights in a single hotel room</li>
-<li>Group lunches and dinners</li>
-<li>All company and factory visits</li>
-<li>Private ground transport and airport transfers</li>
-<li>A bilingual coordinator and translation</li>
-<li>Supplier matching before the trip</li>
-<li>Access to the delegation community</li>
-</ul></div>
-<div><h3>Not included</h3><ul class="dots">
-<li>Flights</li>
-<li>Visa fees</li>
-<li>Travel insurance (required)</li>
-<li>Extra nights</li>
-</ul></div>
-</div>
-</div>
-</div>
-</section>
-
-<section id="logistics">
-<div class="row">
-<div><div class="label"><i class="dot"></i>logistics</div><h2>on the ground</h2></div>
-<div>
-<ul class="dots">
-<li><strong>Hotel:</strong> a business hotel in Nanshan, with a single room for every participant.</li>
-<li><strong>Arrival:</strong> we pick you up from Shenzhen Bao'an Airport (SZX) on 11 January. If you fly into Hong Kong, we send directions for the cross-border trip.</li>
-<li><strong>Group format:</strong> 25–30 people, split into groups of about 15 on factory floors and at smaller hosts.</li>
-<li><strong>Visas:</strong> we provide invitation letters on request.</li>
-<li><strong>Insurance:</strong> travel insurance covering medical treatment, repatriation and cancellation is required.</li>
-</ul>
+<p><strong>Included:</strong> six nights in a single hotel room, group lunches and dinners, all visits, ground transport and airport transfers, a bilingual coordinator and translation, supplier matching before the trip.</p>
+<p><strong>Not included:</strong> flights, visa fees, travel insurance (required), extra nights.</p>
+<p class="small">Two people from the same company each get $500 off.</p>
 </div>
 </div>
 </section>
@@ -285,15 +190,14 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 <div class="row">
 <div><div class="label"><i class="dot"></i>faq</div><h2>questions</h2></div>
 <div>
-<details><summary>Why do I have to apply?</summary><p>We keep the group to 25–30 people and choose a mix of founders, investors and operators who will get value from each other. Your application also tells us what you're building, so we can match visits and supplier meetings to it.</p></details>
-<details><summary>What happens on the call?</summary><p>It's a short conversation about what you're building, what you want from the week and whether the dates and price work for you. We decide on your place after the call, based on your application and what we talked about.</p></details>
-<details><summary>When do I pay?</summary><p>Nothing is due when you apply. If you're approved, you get a booking link when seats open on 9 November at 9am PT. Your seat is confirmed when you pay, and the balance is due on 14 December. If fewer than 10 people have booked by 30 November, you get a full refund.</p></details>
-<details><summary>Which companies will we visit?</summary><p>The itinerary lists the hosts we expect to visit, plus others we're considering. We confirm each one in writing in November and send you the final list before the balance is due. We may add hosts beyond those listed, chosen around what the group is building.</p></details>
-<details><summary>Do I need a visa?</summary><p>It depends on your passport. Many nationalities can currently enter China without a visa, and US passport holders may qualify for the 240-hour visa-free transit scheme if they arrive from one country and leave for a different one. The rules change, so check the latest requirements for your passport before you book flights. We provide invitation letters for anyone who needs a visa.</p></details>
-<details><summary>When should I book flights?</summary><p>After we confirm the trip on 30 November. Arrive at Shenzhen Bao'an Airport (SZX) on 11 January and leave on 17 January.</p></details>
-<details><summary>Do I need a technical background?</summary><p>No. Founders, investors and operators all join. What matters is a real interest in how hardware gets made.</p></details>
+<details><summary>Why do I have to apply?</summary><p>The group is capped at 25–30, and we pick a mix of founders, investors and operators. Your application also tells us what you're building, so we can match visits and supplier meetings to it.</p></details>
+<details><summary>What is the interview?</summary><p>A short call about what you're building, what you want from the trip, and whether the dates and price work for you.</p></details>
+<details><summary>When do I pay?</summary><p>Nothing when you apply. If you're approved, you book when seats open on 9 November. The balance is due on 14 December.</p></details>
+<details><summary>When should I book flights?</summary><p>After we confirm the trip on 30 November. Fly into Shenzhen Bao'an (SZX) on 11 January, where we pick you up. If you fly into Hong Kong, we send directions for the border crossing.</p></details>
+<details><summary>Do I need a visa?</summary><p>It depends on your passport. Many nationalities can enter China visa-free, and US passport holders may qualify for 240-hour visa-free transit if arriving from one country and leaving for another. Check the current rules for your passport. We provide invitation letters if you need a visa.</p></details>
+<details><summary>Do I need a technical background?</summary><p>No. Founders, investors and operators all join.</p></details>
 <details><summary>Will there be translation?</summary><p>Yes. A bilingual coordinator travels with the group and translates in every meeting.</p></details>
-<details><summary>Can I bring samples or drawings?</summary><p>Yes. Drawings, a bill of materials or a sample make supplier meetings far more useful. Tell us in advance so we can match suppliers, and keep anything confidential under an NDA.</p></details>
+<details><summary>Can I bring samples or drawings?</summary><p>Yes, and they make supplier meetings more useful. Tell us in advance so we can match suppliers.</p></details>
 </div>
 </div>
 </section>
@@ -301,10 +205,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 <section>
 <div class="row">
 <div><h2>apply for a place</h2></div>
-<div>
-<p>Applications are open now. Approved applicants get their booking link on 9 November at 9am PT.</p>
-<a class="cta solid" href="../apply/">apply for a place</a>
-</div>
+<div><a class="cta solid" href="../apply/">apply for a place</a></div>
 </div>
 </section>
 
@@ -325,7 +226,7 @@ function tick(){
   var s=Math.max(0,Math.floor((open-Date.now())/1000));
   if(s===0){
     document.getElementById('count').style.display='none';
-    document.getElementById('count-text').textContent='Seats are open. Approved applicants have their booking link. You can still apply for any seats that remain.';
+    document.getElementById('count-text').textContent='Seats are open. Approved applicants have their booking link.';
     return;
   }
   ids[0].textContent=Math.floor(s/86400);
