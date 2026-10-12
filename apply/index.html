@@ -57,6 +57,7 @@ body.sent .form-wrap{display:none}body.sent .done{display:block}
 body{background:radial-gradient(120% 70% at 100% 0%,rgba(0,53,177,.45) 0%,rgba(0,53,177,0) 55%) fixed,var(--bg)}
 .mark{display:block;height:44px}
 .mark img{display:block;height:100%;width:auto}
+.privacy-note{grid-column:1/-1;font-size:11.5px;line-height:1.6;color:var(--muted);margin:4px 0 0}.privacy-note a{color:var(--sub)}
 </style></head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><filter id="whiten" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1.028 0 0 0 0 0 1.164 0 0 0 0 0 1.545 0 0 0 0 0 1 0"></feColorMatrix></filter></svg>
@@ -86,6 +87,7 @@ body{background:radial-gradient(120% 70% at 100% 0%,rgba(0,53,177,.45) 0%,rgba(0
   <div class="field"><label for="dates">Can you join for the full trip, 11–17 January 2027? <b>*</b></label><select id="dates" name="dates" required><option value="" disabled selected>Select one</option><option>Yes</option><option>No</option></select><span class="err">Please choose one.</span></div>
   <div class="field"><label for="heard">How did you hear about us?</label><input id="heard" name="heard" placeholder="Optional"></div>
   <div class="submit-row"><button type="submit">Submit application</button><span class="note">Next step: a short call with us</span></div>
+  <p class="privacy-note">We only use your answers to review your application and plan the trip. <a href="../privacy/">Privacy</a></p>
   <p class="send-err" role="alert">Something went wrong sending your application. Please try again in a moment.</p>
 </form>
 </div>
