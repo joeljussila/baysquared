@@ -116,14 +116,17 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 .name{font-size:min(calc(0.98 * clamp(52px,min(9.7vw,15.5vh),210px)),calc((102vw - 71vh - var(--pad) - 192px) / var(--name-em,4.5)))}
 .tag{font-size:min(calc(1.9 * clamp(13px,min(1.48vw,2.4vh),26px)),calc((102vw - 95px - 70vh - var(--pad) - 81px) / 12))}
 .nav{left:calc(var(--pad) + 59px)}
-.hosts{max-width:1240px;margin:clamp(40px,7vh,72px) auto 0;padding-top:28px;border-top:1px solid var(--line)}
-.hosts-label{font-size:12px;letter-spacing:.14em;color:var(--dim);margin:0 0 22px}
-.host-logos{list-style:none;margin:0;padding:0;display:flex;align-items:center;justify-content:space-between;gap:clamp(10px,1.6vw,26px);flex-wrap:nowrap}
-.host-logos li{flex:none;display:flex;align-items:center;height:30px}
-.host-logos{--k:min(40px,3.1vw)}
-.host-logos img{display:block;height:calc(var(--k) * var(--m,.5));width:auto;max-width:none;filter:brightness(0) invert(1);opacity:.62;transition:opacity .2s}
-.host-logos img:hover{opacity:.95}
-@media (max-width:900px){.host-logos{flex-wrap:wrap;justify-content:flex-start;gap:22px 30px}.host-logos li{flex:0 0 auto}.host-logos{--k:34px}}
+.hosts{margin:8px 0 0}
+.hosts-label{font-size:12px;letter-spacing:.14em;color:var(--dim);margin:0 0 18px}
+.host-logos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:26px 18px;--k:min(56px,4vw)}
+.host-logos li{margin:0;display:flex}
+.host-logos a{display:flex;align-items:center;justify-content:flex-start;width:100%;height:48px}
+.host-logos a:hover{opacity:1}
+.host-logos img{display:block;height:calc(var(--k) * var(--m,.5));width:auto;max-width:100%;object-fit:contain;filter:brightness(0) invert(1);opacity:.62;transition:opacity .2s}
+.host-logos a:hover img,.host-logos a:focus-visible img{opacity:1}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+@media (max-width:900px){.host-logos{--k:52px}}
+@media (max-width:560px){.host-logos{grid-template-columns:repeat(3,1fr);gap:22px 14px;--k:46px}}
 @media (max-aspect-ratio:1/1){.nav{left:var(--pad)}.name{font-size:min(18.5vw,10vh)}.tag{font-size:clamp(22px,6.4vw,30px)}}
 </style></head>
 <body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><filter id="whiten" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1.028 0 0 0 0 0 1.164 0 0 0 0 0 1.545 0 0 0 0 0 1 0"></feColorMatrix></filter></svg>
@@ -188,9 +191,9 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 <li><time>sat 16 jan</time><div><h3>Sourcing day</h3><p>Huaqiangbei walkthrough, one-on-one supplier meetings, closing dinner.</p></div></li>
 <li><time>sun 17 jan</time><div><h3>Departure</h3><p>Airport transfers.</p></div></li>
 </ol>
+<div class="hosts"><p class="hosts-label">companies on the provisional itinerary</p><ul class="host-logos"><li><a href="https://www.apollogo.com/" target="_blank" rel="noopener" aria-label="Baidu Apollo Go website"><img style="--m:0.85" src="../images/hosts/baidu.svg" alt="Baidu Apollo Go" title="Baidu Apollo Go"></a></li><li><a href="https://www.sf-express.com/" target="_blank" rel="noopener" aria-label="SF Express website"><img style="--m:0.80" src="../images/hosts/sf-express.png" alt="SF Express" title="SF Express"></a></li><li><a href="https://www.byd.com/" target="_blank" rel="noopener" aria-label="BYD website"><img style="--m:0.500" src="../images/hosts/byd.svg" alt="BYD" title="BYD"></a></li><li><a href="https://www.zeroerr.com/" target="_blank" rel="noopener" aria-label="ZeroErr website"><img style="--m:0.485" src="../images/hosts/zeroerr.png" alt="ZeroErr" title="ZeroErr"></a></li><li><a href="https://www.orbbec.com/" target="_blank" rel="noopener" aria-label="Orbbec website"><img style="--m:0.356" src="../images/hosts/orbbec.png" alt="Orbbec" title="Orbbec"></a></li><li><a href="https://www.dmrobot.com/" target="_blank" rel="noopener" aria-label="Daimon Robotics website"><img style="--m:0.426" src="../images/hosts/daimon.svg" alt="Daimon Robotics" title="Daimon Robotics"></a></li><li><a href="https://www.ubtrobot.com/" target="_blank" rel="noopener" aria-label="UBTech website"><img style="--m:0.499" src="../images/hosts/ubtech.svg" alt="UBTech" title="UBTech"></a></li><li><a href="https://www.engineai.com.cn/" target="_blank" rel="noopener" aria-label="EngineAI website"><img style="--m:0.518" src="../images/hosts/engineai.png" alt="EngineAI" title="EngineAI"></a></li><li><a href="https://www.limxdynamics.com/en" target="_blank" rel="noopener" aria-label="LimX Dynamics website"><img style="--m:0.563" src="../images/hosts/limx.svg" alt="LimX Dynamics" title="LimX Dynamics"></a></li><li><a href="https://www.dji.com/" target="_blank" rel="noopener" aria-label="DJI website"><img style="--m:0.95" src="../images/hosts/dji.svg" alt="DJI" title="DJI"></a></li><li><a href="https://www.brainco.tech/" target="_blank" rel="noopener" aria-label="BrainCo website"><img style="--m:0.432" src="../images/hosts/brainco.png" alt="BrainCo" title="BrainCo"></a></li><li><a href="https://www.seeedstudio.com/" target="_blank" rel="noopener" aria-label="Seeed Studio website"><img style="--m:0.336" src="../images/hosts/seeed-studio.png" alt="Seeed Studio" title="Seeed Studio"></a></li></ul></div>
 </div>
 </div>
-<div class="hosts"><p class="hosts-label">companies on the provisional itinerary</p><ul class="host-logos"><li><img style="--m:0.620" src="../images/hosts/baidu.svg" alt="Baidu Apollo Go" title="Baidu Apollo Go"></li><li><img style="--m:0.620" src="../images/hosts/sf-express.png" alt="SF Express" title="SF Express"></li><li><img style="--m:0.500" src="../images/hosts/byd.svg" alt="BYD" title="BYD"></li><li><img style="--m:0.485" src="../images/hosts/zeroerr.png" alt="ZeroErr" title="ZeroErr"></li><li><img style="--m:0.356" src="../images/hosts/orbbec.png" alt="Orbbec" title="Orbbec"></li><li><img style="--m:0.426" src="../images/hosts/daimon.svg" alt="Daimon Robotics" title="Daimon Robotics"></li><li><img style="--m:0.499" src="../images/hosts/ubtech.svg" alt="UBTech" title="UBTech"></li><li><img style="--m:0.518" src="../images/hosts/engineai.png" alt="EngineAI" title="EngineAI"></li><li><img style="--m:0.563" src="../images/hosts/limx.svg" alt="LimX Dynamics" title="LimX Dynamics"></li><li><img style="--m:0.620" src="../images/hosts/dji.svg" alt="DJI" title="DJI"></li><li><img style="--m:0.432" src="../images/hosts/brainco.png" alt="BrainCo" title="BrainCo"></li><li><img style="--m:0.336" src="../images/hosts/seeed-studio.png" alt="Seeed Studio" title="Seeed Studio"></li></ul></div>
 </section>
 
 <section id="price">
