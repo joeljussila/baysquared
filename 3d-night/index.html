@@ -130,15 +130,15 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 @media (max-aspect-ratio:1/1){.nav{left:var(--pad)}.name{font-size:min(18.5vw,10vh)}.tag{font-size:clamp(22px,6.4vw,30px)}}
 
 /* Preview: minimalist blue Shenzhen skyline instead of the hand. */
-.skyline{position:absolute;inset:0;z-index:0;background:url(../images/deltaandbay_skyline_blue.jpg) center 62%/cover no-repeat;opacity:.85}
+.skyline{position:absolute;left:0;right:0;bottom:0;top:clamp(72px,11vh,110px);z-index:0;background:url(../images/deltaandbay_skyline_blue.jpg) 70% 0/cover no-repeat;opacity:.85;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 9%);mask-image:linear-gradient(180deg,transparent 0,#000 9%)}
 .skyline::after{content:"";position:absolute;inset:0;background:
   linear-gradient(90deg,rgba(5,10,48,.92) 0%,rgba(5,10,48,.7) 28%,rgba(5,10,48,.15) 60%,rgba(5,10,48,0) 100%),
   linear-gradient(0deg,rgba(5,10,48,.95) 0%,rgba(5,10,48,.35) 30%,rgba(5,10,48,0) 55%),
-  linear-gradient(180deg,rgba(5,10,48,.55) 0%,rgba(5,10,48,0) 22%)}
+  linear-gradient(180deg,rgba(5,10,48,.25) 0%,rgba(5,10,48,0) 12%)}
 /* No hand to dodge any more: let the title use the full width. */
 .name{font-size:calc(0.98 * clamp(52px,min(9.7vw,15.5vh),210px))}
 @media (max-aspect-ratio:1/1){
-  .skyline{background-size:auto 64%;background-position:86% 16%;background-color:var(--bg);opacity:.95}
+  .skyline{background-size:auto 62%;background-position:86% 40px;background-color:transparent;opacity:.95;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 6%);mask-image:linear-gradient(180deg,transparent 0,#000 6%)}
   .skyline::after{background:linear-gradient(0deg,rgba(5,10,48,1) 0%,rgba(5,10,48,1) 34%,rgba(5,10,48,.6) 46%,rgba(5,10,48,0) 64%),linear-gradient(180deg,rgba(5,10,48,.6) 0%,rgba(5,10,48,0) 16%)}
   #stage::after{display:none}
   .name{font-size:min(18.5vw,10vh)}
