@@ -1,6 +1,6 @@
 # bay^2 (baysquared)
 
-Landing page for **bay^2 — "Live the future in Shenzhen"**, a by-application robotics trip to Shenzhen, December 2026.
+Landing page for **bay^2 — "Live the future in Shenzhen"**, a by-application robotics and hardware delegation to Shenzhen, 11–17 January 2027.
 
 Brand is written **bay^2** (lowercase, literal caret, no superscript) on the site. Use `baysquared` for folders, repos, file names and URLs. The project was originally called SOMMER.
 
