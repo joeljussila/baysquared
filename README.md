@@ -39,3 +39,7 @@ Static site — deploy to Vercel with no framework preset. To ship a single dire
 ## Font options
 
 `fonts/` holds five typography variants of `3d-night` (picker at `/fonts/`): 1 wide caps (Archivo), 2 tech caps (Michroma), 3 serif lowercase (Instrument Serif), 4 grotesk lowercase (Space Grotesk), 5 mono lowercase (IBM Plex Mono). Once one is chosen, fold its CSS into `3d-night`.
+
+## Brand directions
+
+`brand/` holds three full-page brand directions built on the live page (picker and logo board at `/brand/`): A Deco Machine (a16z-inspired, Big Shoulders Display, brass on ink, sunburst), B Signal (FR8-inspired, Chakra Petch, black/white/signal orange), C Bridge (SILTA-inspired, Syncopate, midnight navy). Each adds a square logo top-left and slow rays + waves behind the hand. Fold the chosen one into `3d-night` and `apply/`.
