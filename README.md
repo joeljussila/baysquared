@@ -1,5 +1,7 @@
 # delta and bay (deltaandbay)
 
+**Shared context for all contributors:** read [docs/CHAT_HANDOFF.md](docs/CHAT_HANDOFF.md) before changing the live site. It records approved design decisions, deployed changes, test results, pending requests and operational gaps from the audit and follow-up chat.
+
 Landing page for **delta and bay — "Bridging the Frontiers"**, a by-application robotics and hardware delegation to Shenzhen, 11–17 January 2027.
 
 Brand is written **delta and bay** (lowercase). Use `deltaandbay` for folders, repos, file names and URLs. Earlier names: bay^2 (baysquared), SOMMER. Live at https://deltaandbay.com.

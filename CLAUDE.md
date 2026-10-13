@@ -1,5 +1,7 @@
 # CLAUDE.md — delta and bay (deltaandbay)
 
+Read `docs/CHAT_HANDOFF.md` first for current shared context, production decisions and pending requests. Inspect Git status and uncommitted changes before editing; multiple chats may be working simultaneously.
+
 This folder is the home for all work on the delta and bay project (Shenzhen robotics trip landing page). Make every change here.
 
 - Brand: **delta and bay**, lowercase, words spaced. Use `deltaandbay` for folders, repos, file names and URLs. Formerly bay^2 (baysquared), before that SOMMER.
