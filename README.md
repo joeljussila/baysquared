@@ -1,6 +1,6 @@
 # delta and bay (deltaandbay)
 
-Landing page for **delta and bay — "Live the future in Shenzhen"**, a by-application robotics and hardware delegation to Shenzhen, 11–17 January 2027.
+Landing page for **delta and bay — "Bridging the Frontiers"**, a by-application robotics and hardware delegation to Shenzhen, 11–17 January 2027.
 
 Brand is written **delta and bay** (lowercase). Use `deltaandbay` for folders, repos, file names and URLs. Earlier names: bay^2 (baysquared), SOMMER. Live at https://deltaandbay.com.
 
@@ -26,7 +26,7 @@ The 3d variants use an SVG `#whiten` filter that maps the photo's baked-in sand 
 
 - Each direction is a self-contained static page (`<dir>/index.html`), no build step.
 - Shared images live in `images/` and are referenced as `../images/...`.
-- Pages render a fixed 1280×800 stage scaled to fit the viewport.
+- The live landing page and application form are responsive. Earlier style explorations use a fixed 1280×800 stage.
 
 ## Run locally
 
@@ -35,6 +35,12 @@ Open `styles/index.html` (picker) in a browser, or serve the folder (`npx serve 
 ## Deploy
 
 Static site — deploy to Vercel with no framework preset. To ship a single direction, make that direction the root page (see CLAUDE.md).
+
+## Tests
+
+Run `node --test tests/*.test.mjs` for application validation, submission error recovery, and background-video behavior. No package installation is required.
+
+The hero uses muted inline video with a 720p mobile source and a 1080p desktop source. If the browser blocks autoplay, the first touch or keypress retries playback. Reduced-motion users see the skyline poster. The mobile video is H.264 Main level 3.1; desktop is Main level 4.0, both 24 fps, YUV 4:2:0, with no audio and fast-start metadata.
 
 ## Font options
 

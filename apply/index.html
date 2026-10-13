@@ -9,9 +9,9 @@ a{color:inherit;text-decoration:none}a:hover{opacity:.7}
 .grain{position:fixed;inset:0;width:100%;height:100%;opacity:.14;mix-blend-mode:screen;pointer-events:none;z-index:4}
 header{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;padding:max(36px,env(safe-area-inset-top)) var(--pad) 0}
 .mark{font-family:'Instrument Serif',serif;font-size:30px;line-height:1}
-.back{font-size:clamp(10px,.86vw,13px);letter-spacing:.22em;text-transform:uppercase;color:#cfcadb}
+.back{font-size:clamp(10px,.86vw,13px);letter-spacing:.22em;text-transform:none;color:#cfcadb}
 main{position:relative;z-index:3;padding:clamp(40px,8vh,96px) var(--pad) clamp(48px,10vh,120px);max-width:calc(680px + 2*var(--pad))}
-.eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.3em;text-transform:none;color:var(--muted)}
 .eyebrow i{width:6px;height:6px;border-radius:50%;background:var(--accent)}
 h1{font-family:'Instrument Serif',serif;font-weight:400;font-size:min(88px,calc((100vw - 2 * var(--pad)) / 7.4));line-height:.92;letter-spacing:-.01em;margin:18px 0 18px;white-space:nowrap}
 .lede{font-size:14px;line-height:1.7;color:var(--sub);margin:0 0 40px;max-width:52ch}
@@ -33,19 +33,19 @@ textarea:focus{border-color:var(--accent)}
 .field.invalid textarea{border-color:var(--error)}
 .field.invalid .err{display:block}
 .submit-row{grid-column:1/-1;display:flex;align-items:center;gap:24px;flex-wrap:wrap;margin-top:8px}
-button{font:inherit;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--bg);background:var(--text);border:0;padding:18px 34px;cursor:pointer;transition:opacity .2s}
+button{font:inherit;font-size:12px;letter-spacing:.24em;text-transform:none;color:var(--bg);background:var(--text);border:0;padding:18px 34px;cursor:pointer;transition:opacity .2s}
 button:hover{opacity:.85}
 button:disabled{opacity:.5;cursor:wait}
 .send-err{display:none;grid-column:1/-1;font-size:12px;line-height:1.6;color:var(--error)}
 .send-err.show{display:block}
-.note{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.note{font-size:11px;letter-spacing:.14em;text-transform:none;color:var(--muted)}
 .done{display:none}
 .done h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(44px,6vw,76px);line-height:.95;margin:18px 0}
 .done p{font-size:14px;line-height:1.7;color:var(--sub);max-width:52ch;margin:0 0 14px}
 .next{margin:-16px 0 44px;padding:0 0 0 20px;max-width:56ch}
 .next li{font-size:13px;line-height:1.7;color:var(--muted);margin-bottom:6px}
 .next li::marker{color:var(--accent)}
-.done a{display:inline-block;margin-top:24px;border:1px solid var(--text);padding:15px 26px;font-size:11px;letter-spacing:.24em;text-transform:uppercase}
+.done a{display:inline-block;margin-top:24px;border:1px solid var(--text);padding:15px 26px;font-size:11px;letter-spacing:.24em;text-transform:none}
 body.sent .form-wrap{display:none}body.sent .done{display:block}
 @media (max-width:640px){
   form{grid-template-columns:1fr}
@@ -62,11 +62,11 @@ body{background:radial-gradient(120% 70% at 100% 0%,rgba(0,53,177,.45) 0%,rgba(0
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><filter id="whiten" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1.028 0 0 0 0 0 1.164 0 0 0 0 0 1.545 0 0 0 0 0 1 0"></feColorMatrix></filter></svg>
 <img class="hand" src="../images/deltaandbay_pic3.jpg" alt="" width="828" height="1019">
-<header><a class="mark" href="../" aria-label="delta and bay home"><img src="../images/deltaandbay_monogram_ivory.svg" alt="delta and bay" width="1167" height="1171"></a><a class="back" href="../">back</a></header>
+<header><a class="mark" href="../" aria-label="delta and bay home"><img src="../images/deltaandbay_monogram_ivory.svg" alt="delta and bay" width="1167" height="1171"></a><a class="back" href="../">Back</a></header>
 <main>
 <div class="form-wrap">
 <div class="eyebrow">Shenzhen · 11–17 January 2027</div>
-<h1>apply for a place</h1>
+<h1>Apply for a place</h1>
 <p class="lede">delta and bay is by application. This takes about five minutes, is free and doesn't commit you to anything.</p>
 <ol class="next">
 <li>We review your application and invite you to a short interview call.</li>
@@ -87,7 +87,7 @@ body{background:radial-gradient(120% 70% at 100% 0%,rgba(0,53,177,.45) 0%,rgba(0
   <div class="field full"><label for="building">In one or two sentences, what are you building? <b>*</b></label><textarea id="building" name="building" placeholder="If you're an investor, what you invest in." required minlength="10"></textarea><span class="err">Please write a sentence or two.</span></div>
   <div class="field full"><label for="why">What do you want to leave Shenzhen with? <b>*</b></label><textarea id="why" name="why" placeholder="For example: quotes for an actuator, a contract manufacturer for 1,000 units, a QA partner." required minlength="10"></textarea><span class="err">Please write a sentence or two.</span></div>
   <div class="field"><label for="dates">Can you join for the full trip, 11–17 January 2027? <b>*</b></label><select id="dates" name="dates" required><option value="" disabled selected>Select one</option><option>Yes</option><option>No</option></select><span class="err">Please choose one.</span></div>
-  <div class="field"><label for="heard">How did you hear about us?</label><input id="heard" name="heard" placeholder="Optional"></div>
+  <div class="field"><label for="heard">How did you hear about us?</label><input id="heard" name="heard" placeholder="Optional"><span class="err">Please use 500 characters or fewer.</span></div>
   <div class="submit-row"><button type="submit">Submit application</button><span class="note">Applying doesn't commit you to anything</span></div>
   <p class="privacy-note"><a href="../privacy/">Privacy</a></p>
   <p class="send-err" role="alert">Something went wrong sending your application. Please try again in a moment.</p>
@@ -107,11 +107,13 @@ var form=document.getElementById('apply');
 function stripUrl(raw){var v=(raw||'').trim().replace(/[?#].*$/,'');if(v&&!/^https?:\/\//i.test(v))v='https://'+v;return v;}
 function normLinkedIn(raw){var m=stripUrl(raw).match(/^https?:\/\/(?:[a-z]{2,3}\.|www\.)?linkedin\.com\/in\/([A-Za-z0-9_%.-]{3,100})\/?$/i);return m?'https://www.linkedin.com/in/'+m[1]:null;}
 function normX(raw){var t=(raw||'').trim();var h=t.match(/^@([A-Za-z0-9_]{1,15})$/);if(h)return 'https://x.com/'+h[1];var m=stripUrl(t).match(/^https?:\/\/(?:www\.|mobile\.)?(?:x|twitter)\.com\/([A-Za-z0-9_]{1,15})\/?$/i);if(!m||/^(home|i|search|explore|settings|messages|notifications|login|signup|intent|share)$/i.test(m[1]))return null;return 'https://x.com/'+m[1];}
-function normWebsite(raw){var t=(raw||'').trim();if(!t)return null;if(!/^https?:\/\//i.test(t))t='https://'+t;return /^https?:\/\/[a-z0-9-]+(\.[a-z0-9-]+)*\.[a-z]{2,}(:[0-9]{1,5})?(\/\S*)?$/i.test(t)&&t.length<=300?t:null;}
+function normWebsite(raw){var t=(raw||'').trim();if(!t||/\s/.test(t))return null;if(!/^https?:\/\//i.test(t))t='https://'+t;try{var u=new URL(t);if(!/^https?:$/.test(u.protocol)||u.username||u.password||!/^([a-z0-9-]+\.)+[a-z]{2,}$/i.test(u.hostname))return null;return u.href.length<=300?u.href:null;}catch(e){return null;}}
 var LINKS={linkedin:normLinkedIn,x:normX,website:normWebsite};
+var LIMITS={name:200,email:320,company:200,based:200,building:4000,why:4000,heard:500};
 function check(el){
-  if(LINKS[el.name]){var t=el.value.trim();var ok=t?!!LINKS[el.name](t):!el.required;el.closest('.field').classList.toggle('invalid',!ok);return ok;}var f=el.closest('.field');var v=el.value.trim();var ok=el.required?v!==''&&el.checkValidity()&&!(el.minLength>0&&v.length<el.minLength):true;f.classList.toggle('invalid',!ok);return ok;}
+  if(LINKS[el.name]){var t=el.value.trim();var ok=t?!!LINKS[el.name](t):!el.required;el.closest('.field').classList.toggle('invalid',!ok);return ok;}var f=el.closest('.field');var v=el.value.trim();var tooLong=LIMITS[el.name]&&v.length>LIMITS[el.name];var ok=(!el.required||v!=='')&&el.checkValidity()&&!(el.minLength>0&&v.length<el.minLength)&&!tooLong;var msg=f.querySelector('.err');if(msg){if(!msg.dataset.defaultText)msg.dataset.defaultText=msg.textContent;msg.textContent=tooLong?'Please use '+LIMITS[el.name]+' characters or fewer.':msg.dataset.defaultText;}f.classList.toggle('invalid',!ok);return ok;}
 form.querySelectorAll('input,select,textarea').forEach(function(el){
+  if(LIMITS[el.name])el.maxLength=LIMITS[el.name];
   el.addEventListener('blur',function(){if(el.value)check(el);});
   el.addEventListener('input',function(){if(el.closest('.field').classList.contains('invalid'))check(el);});
 });
