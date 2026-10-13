@@ -13,4 +13,6 @@ This folder is the home for all work on the delta and bay project (Shenzhen robo
 - Trip: 11–17 January 2027. Content source is the Google Doc "Make it out of the hood".
 - Deploy target: Vercel project `deltaandbay` (domain deltaandbay.com), auto-deployed from GitHub `joeljussila/deltaandbay` main. `/` is rewritten to the live direction in `vercel.json` (currently `3d-night`); the picker is at `/styles/`.
 
-- Brand background artwork: `images/deltaandbay_edge_glow.svg` is copied verbatim from `syqgenesis/sz-trips`, branch `claude/focused-euler-hw4jrr`, commit `fd42b97da18129ab06f6ddd72d38277696799ebe`, `brand/backgrounds/edge-glow-16x9.svg`. Preserve its blue hue when compositing hero media; do not replace it with approximate purple/navy gradients.
+- Brand background artwork: `images/deltaandbay_edge_glow.svg` uses the original gradient definitions from `syqgenesis/sz-trips`, branch `claude/focused-euler-hw4jrr`, commit `fd42b97da18129ab06f6ddd72d38277696799ebe`, `brand/backgrounds/edge-glow-16x9.svg`. Preserve its blue hue when compositing hero media; do not replace it with approximate purple/navy gradients.
+
+- The decorative edge-glow SVG uses `preserveAspectRatio="none"` so its gradients fill portrait backgrounds without transparent letterbox bands. Do not remove this attribute.
