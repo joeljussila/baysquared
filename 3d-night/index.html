@@ -165,7 +165,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 <body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><filter id="whiten" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1.028 0 0 0 0 0 1.164 0 0 0 0 0 1.545 0 0 0 0 0 1 0"></feColorMatrix></filter></svg>
 
 <div id="stage" data-screen-label="3d Glass hand · Night">
-<div class="skyline" aria-hidden="true"><video class="sky-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="../images/deltaandbay_hero_poster.jpg" data-mobile-src="../video/deltaandbay_hero_mobile_hq.mp4" data-desktop-src="../video/deltaandbay_hero_1080.mp4"></video></div>
+<div class="skyline" aria-hidden="true"><video class="sky-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="../images/deltaandbay_hero_poster.jpg" data-fallback-src="../video/deltaandbay_hero_720.mp4"><source src="../video/deltaandbay_hero_portrait.mp4" type="video/mp4" media="(max-aspect-ratio: 1/1)"><source src="../video/deltaandbay_hero_1080.mp4" type="video/mp4"></video></div>
 <nav class="nav" aria-label="Main navigation"><a class="logo" href="#" aria-label="delta and bay"><img src="../images/deltaandbay_monogram_ivory.svg" alt="delta and bay" width="1167" height="1171"></a><div><a href="#trip">Intro</a><a href="#price">Price</a><a href="#faq">FAQ</a><a class="apply-link" href="../apply/">Apply</a></div></nav>
 <div class="hero">
 <h1 class="name" data-fade="0">delta and bay</h1>
@@ -298,19 +298,21 @@ tick();
   var v=document.querySelector('.sky-video');
   if(!v)return;
   v.muted=true;v.defaultMuted=true;v.playsInline=true;
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');return;}
-  v.src=matchMedia('(max-width: 900px)').matches?v.dataset.mobileSrc:v.dataset.desktopSrc;
-  function play(){
+  var fallback=false;
+  function retry(){
+    if(document.hidden||!v.paused)return;
     var attempt=v.play();
     if(attempt&&attempt.catch)attempt.catch(function(){});
   }
-  function retry(){if(v.paused&&!document.hidden)play();}
-  document.addEventListener('touchstart',retry,{once:true,passive:true});
-  document.addEventListener('pointerdown',retry,{once:true,passive:true});
-  document.addEventListener('keydown',retry,{once:true});
+  // Keep retrying on real user gestures: the first gesture can precede media readiness.
+  ['touchstart','touchend','pointerdown','pointerup','click','keydown'].forEach(function(name){document.addEventListener(name,retry,{passive:true});});
+  ['loadeddata','canplay'].forEach(function(name){v.addEventListener(name,retry);});
+  window.addEventListener('pageshow',retry);
   document.addEventListener('visibilitychange',function(){if(document.hidden)v.pause();else retry();});
-  v.addEventListener('error',function(){v.style.display='none';});
-  play();
+  v.addEventListener('error',function(){
+    if(!fallback){fallback=true;v.src=v.dataset.fallbackSrc;v.load();retry();}
+  });
+  retry();
 })();
 </script>
 </body></html>
