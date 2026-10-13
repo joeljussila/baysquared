@@ -34,6 +34,8 @@ Read this before changing the site. This document records decisions and results 
 
 ## Applications and Supabase
 
+- 13 October update: X is optional. A blank/whitespace X field is submitted as `null`; malformed nonblank X input is still rejected. LinkedIn remains required. Migration `20261013190000_optional_x_profile.sql` was applied through the signed-in Supabase SQL editor and recorded in migration history; the live `applications_links_required` constraint now checks only `linkedin is not null`. The X-format constraint remains. All 17 form/video tests pass, including blank-X submission and malformed-X rejection. Privacy wording reflects the optional field.
+
 - Project ref `kmbhcqnkbiddppzbubxp`, US West region; REST inserts into `public.applications`. Public publishable key is intentionally client-side; never expose a service-role key.
 - Audit found RLS enabled, public INSERT only with new status; anonymous read/update/delete denied. No database triggers found. Deployed migration versions matched repository migrations during the audit. Recheck if another chat changes the database.
 - Form normalises website/profile URLs, validates required fields and lengths against database limits, prevents invalid submissions, and recovers from HTTP/network failures without losing answers or showing false success.

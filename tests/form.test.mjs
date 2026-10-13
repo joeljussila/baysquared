@@ -14,7 +14,8 @@ function setup(response=()=>Promise.resolve({ok:true,status:201})) {
   const elements=Object.fromEntries(Object.entries(values).map(([name,value])=>{
     const message={dataset:{},textContent:'Original field error'};
     const field={classList:{toggle(){},contains(){return false;}},querySelector:()=>message};
-    return [name,{name,value,required:!['website','heard'].includes(name),minLength:['building','why'].includes(name)?10:-1,checkValidity:()=>true,closest:()=>field,addEventListener(){},focus(){}}];
+    const input=html.match(new RegExp('<(?:input|select|textarea)\\b[^>]*\\bname="'+name+'"[^>]*>'))[0];
+    return [name,{name,value,required:/\srequired(?:\s|>)/.test(input),minLength:['building','why'].includes(name)?10:-1,checkValidity:()=>true,closest:()=>field,addEventListener(){},focus(){}}];
   }));
   let submit,requests=0,lastPayload;
   const form={elements,querySelectorAll:()=>Object.values(elements),addEventListener:(event,fn)=>{if(event==='submit')submit=fn;},querySelector:selector=>selector==='button'?button:error};
@@ -60,6 +61,18 @@ test('successful response displays confirmation and sends normalized payload',as
 test('HTTP errors preserve answers, show error and allow retry',async()=>{
   const s=setup(()=>Promise.resolve({ok:false,status:503}));s.submit();await new Promise(setImmediate);
   assert.equal(s.classes.has('sent'),false);assert.equal(s.errors.has('show'),true);assert.equal(s.button.disabled,false);assert.equal(s.elements.name.value,'QA Tester');
+});
+
+test('blank or whitespace X profiles submit as null while LinkedIn remains required',async()=>{
+  for(const value of ['', '   ']){
+    const s=setup();s.elements.x.value=value;s.submit();await new Promise(setImmediate);
+    assert.equal(s.requests(),1);assert.equal(s.payload().x,null);assert.equal(s.classes.has('sent'),true);
+  }
+  const s=setup();s.elements.linkedin.value='';s.elements.x.value='';s.submit();assert.equal(s.requests(),0);
+});
+
+test('an optional X profile still rejects malformed input',()=>{
+  const s=setup();s.elements.x.value='not a profile';s.submit();assert.equal(s.requests(),0);
 });
 test('network errors recover the submit button without false success',async()=>{
   const s=setup(()=>Promise.reject(new Error('offline')));s.submit();await new Promise(setImmediate);
