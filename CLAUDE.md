@@ -3,7 +3,7 @@
 This folder is the home for all work on the delta and bay project (Shenzhen robotics trip landing page). Make every change here.
 
 - Brand: **delta and bay**, lowercase, words spaced. Use `deltaandbay` for folders, repos, file names and URLs. Formerly bay^2 (baysquared), before that SOMMER.
-- Current tagline: **Breaching the Frontiers**. Navigation, section headings and buttons use sentence case; the brand wordmark remains lowercase.
+- Current tagline: **Bridging the Frontiers**. Navigation, section headings and buttons use sentence case; the brand wordmark remains lowercase.
 - Plain static HTML, no framework, no build. Keep it that way unless asked.
 - Original style directions: `1a` Space, `2f` Sepia, `2h` Threshold, `3d` Glass hand, plus `3d-ochre`, `3d-clay`, `3d-night`. See README.md.
 - Live direction is `3d-night`: Shawn's brand colours (Prussian blue `#050A30`, ivory `#ECE8E0`, glow blue `#0035B1` as a corner edge glow), his vector monogram top-left (`images/deltaandbay_monogram_ivory.svg`, from his brand kit, no frame), Instrument Serif lowercase wordmark. `apply/` matches it.

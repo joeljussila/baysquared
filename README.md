@@ -1,6 +1,6 @@
 # delta and bay (deltaandbay)
 
-Landing page for **delta and bay — "Breaching the Frontiers"**, a by-application robotics and hardware delegation to Shenzhen, 11–17 January 2027.
+Landing page for **delta and bay — "Bridging the Frontiers"**, a by-application robotics and hardware delegation to Shenzhen, 11–17 January 2027.
 
 Brand is written **delta and bay** (lowercase). Use `deltaandbay` for folders, repos, file names and URLs. Earlier names: bay^2 (baysquared), SOMMER. Live at https://deltaandbay.com.
 
