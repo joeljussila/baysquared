@@ -40,7 +40,7 @@ Static site — deploy to Vercel with no framework preset. To ship a single dire
 
 Run `node --test tests/*.test.mjs` for application validation, submission error recovery, and background-video behavior. No package installation is required.
 
-The hero uses muted inline video with a 720p mobile source and a 1080p desktop source. If the browser blocks autoplay, the first touch or keypress retries playback. Reduced-motion users see the skyline poster. The mobile video is H.264 Main level 3.1; desktop is Main level 4.0, both 24 fps, YUV 4:2:0, with no audio and fast-start metadata.
+The hero uses muted inline video with a high-quality 1080p mobile source and a 1080p desktop source. If the browser blocks autoplay, the first touch or keypress retries playback. Reduced-motion users see the skyline poster. The mobile video is encoded from the original 1080p file at CRF 18, H.264 High level 4.0; desktop is Main level 4.0, both 24 fps, YUV 4:2:0, with no audio and fast-start metadata.
 
 ## Font options
 

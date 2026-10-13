@@ -11,7 +11,7 @@ function setup({mobile=true,reduced=false,blocked=false}={}){
   vm.runInNewContext(code,{document,matchMedia:q=>({matches:q.includes('reduced-motion')?reduced:mobile})});
   return {video,document,events,videoEvents,attempts:()=>attempts,unblock:()=>{blocked=false;}};
 }
-test('mobile autoplay selects smaller source and enables muted inline playback',()=>{const s=setup();assert.equal(s.video.src,'mobile.mp4');assert.equal(s.video.muted,true);assert.equal(s.video.defaultMuted,true);assert.equal(s.video.playsInline,true);assert.equal(s.video.paused,false);});
+test('mobile autoplay selects mobile source and enables muted inline playback',()=>{const s=setup();assert.equal(s.video.src,'mobile.mp4');assert.equal(s.video.muted,true);assert.equal(s.video.defaultMuted,true);assert.equal(s.video.playsInline,true);assert.equal(s.video.paused,false);});
 test('desktop selects desktop source',()=>assert.equal(setup({mobile:false}).video.src,'desktop.mp4'));
 test('blocked autoplay retries on the first touch without adding controls',async()=>{const s=setup({blocked:true});await new Promise(setImmediate);assert.equal(s.video.paused,true);s.unblock();s.events.touchstart();assert.equal(s.video.paused,false);assert.equal(s.attempts(),2);assert.doesNotMatch(html,/video-toggle|<video[^>]*\scontrols(?:\s|>)/);});
 test('hidden pages pause and visible pages resume',()=>{const s=setup();s.document.hidden=true;s.events.visibilitychange();assert.equal(s.video.paused,true);s.document.hidden=false;s.events.visibilitychange();assert.equal(s.video.paused,false);});
