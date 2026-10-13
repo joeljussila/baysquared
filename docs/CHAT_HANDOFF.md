@@ -21,7 +21,7 @@ Read this before changing the site. This document records decisions and results 
 - Visible top of the top-left logo aligns with the visible navigation text on desktop and mobile, including application and privacy pages. Existing header offsets implement this; do not recenter them casually.
 - Application hand remains on desktop, moved left twice: first 3 CSS cm, then another 2 CSS cm. Current rule: `right:calc(-6vw + 5cm)`. CSS cm are not a guaranteed physical screen measurement. Hand is hidden at widths up to 640px.
 - Application introduction is exactly **Applying doesn't commit you to anything.**
-- Most recent request: change rendered brand wording from “delta and bay” to **delta & bay**, and show several **upright, non-cursive** options for the homepage tagline before choosing its new font. These are pending at this handoff. Do not mistake a font preview for an approved production choice.
+- Most recent request: change rendered brand wording from “delta and bay” to **delta & bay**, and show several **upright, non-cursive** options for the homepage tagline before choosing its new font. The branding change is prepared on `codex/chat-context-font-options` for the homepage, application and privacy pages, including accessibility labels and sharing metadata. `font-options/` compares A Instrument Serif regular, B Montserrat, C Space Grotesk and D IBM Plex Mono. The tagline font choice is pending; do not mistake a preview for an approved production choice.
 
 ## Hero video: final implementation
 

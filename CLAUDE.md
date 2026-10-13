@@ -4,7 +4,7 @@ Read `docs/CHAT_HANDOFF.md` first for current shared context, production decisio
 
 This folder is the home for all work on the delta and bay project (Shenzhen robotics trip landing page). Make every change here.
 
-- Brand: **delta and bay**, lowercase, words spaced. Use `deltaandbay` for folders, repos, file names and URLs. Formerly bay^2 (baysquared), before that SOMMER.
+- Brand: **delta & bay**, lowercase, with an ampersand, following the latest user request. Use `deltaandbay` for folders, repos, file names and URLs. Formerly delta and bay, bay^2 (baysquared), before that SOMMER.
 - Current tagline: **Bridging the Frontiers**. Navigation, section headings and buttons use sentence case; the brand wordmark remains lowercase.
 - Plain static HTML, no framework, no build. Keep it that way unless asked.
 - Original style directions: `1a` Space, `2f` Sepia, `2h` Threshold, `3d` Glass hand, plus `3d-ochre`, `3d-clay`, `3d-night`. See README.md.

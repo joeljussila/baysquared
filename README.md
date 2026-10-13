@@ -4,7 +4,7 @@
 
 Landing page for **delta and bay — "Bridging the Frontiers"**, a by-application robotics and hardware delegation to Shenzhen, 11–17 January 2027.
 
-Brand is written **delta and bay** (lowercase). Use `deltaandbay` for folders, repos, file names and URLs. Earlier names: bay^2 (baysquared), SOMMER. Live at https://deltaandbay.com.
+Brand is written **delta & bay** (lowercase, with an ampersand), following the latest user request. Use `deltaandbay` for folders, repos, file names and URLs. Earlier names: delta and bay, bay^2 (baysquared), SOMMER. Live at https://deltaandbay.com.
 
 Designs came from Claude Design (`Sommer_ Shenzhen robotics trip landing page.zip`, Downloads, 2026-10-10).
 
