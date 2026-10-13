@@ -131,17 +131,17 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 @media (max-aspect-ratio:1/1){.nav{left:var(--pad)}.name{font-size:min(18.5vw,10vh)}.tag{font-size:clamp(22px,6.4vw,30px)}}
 
 /* Full-bleed skyline; the poster uses the same crop when motion is unavailable. */
-.skyline{position:absolute;inset:0;z-index:0;background:url(../images/deltaandbay_hero_poster.jpg) 62% 45%/cover no-repeat}
+.skyline{position:absolute;inset:0;z-index:0;background:url(../images/deltaandbay_hero_poster.jpg) 62% 45%/cover no-repeat;opacity:.85}
 .skyline::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(90deg,rgba(5,10,48,.65) 0%,rgba(5,10,48,.15) 65%,transparent 100%),
-  linear-gradient(0deg,rgba(5,10,48,.95) 0%,rgba(5,10,48,.25) 48%,transparent 72%),
-  linear-gradient(180deg,rgba(5,10,48,.55) 0%,transparent 25%)}
+  linear-gradient(90deg,rgba(5,10,48,.92) 0%,rgba(5,10,48,.7) 28%,rgba(5,10,48,.15) 60%,rgba(5,10,48,0) 100%),
+  linear-gradient(0deg,rgba(5,10,48,.95) 0%,rgba(5,10,48,.35) 30%,rgba(5,10,48,0) 55%),
+  linear-gradient(180deg,rgba(5,10,48,.25) 0%,rgba(5,10,48,0) 12%)}
 .name{font-size:calc(0.98 * clamp(52px,min(9.7vw,15.5vh),210px))}
 .tag{font-size:clamp(25px,3.1vw,46px);line-height:1.2}
 .nav,.cta,.date{text-transform:none}
 @media (max-aspect-ratio:1/1){
-  .skyline{background-size:auto 125%;background-position:62% 70%}
-  .skyline::after{background:linear-gradient(0deg,rgba(5,10,48,.98) 0%,rgba(5,10,48,.7) 27%,rgba(5,10,48,.08) 62%),linear-gradient(180deg,rgba(5,10,48,.6) 0%,transparent 24%)}
+  .skyline{background-size:auto 125%;background-position:62% 70%;opacity:.95}
+  .skyline::after{background:linear-gradient(0deg,rgba(5,10,48,1) 0%,rgba(5,10,48,1) 34%,rgba(5,10,48,.6) 46%,rgba(5,10,48,0) 64%),linear-gradient(180deg,rgba(5,10,48,.6) 0%,rgba(5,10,48,0) 16%)}
   #stage::after{display:none}
   .name{font-size:min(18.5vw,10vh)}
   .tag{font-size:clamp(24px,6.4vw,30px)}
@@ -149,6 +149,11 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
   .nav div{gap:clamp(12px,3.6vw,24px)}
   .logo{height:40px}
 }
+
+/* Keep the original bottom-left brand glow above the full-height video. */
+#stage::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 0% 100%,rgba(0,53,177,.28) 0%,rgba(0,53,177,0) 60%);z-index:2;pointer-events:none}
+/* Align the visible logo top with the navigation capitals, keeping 44px tap targets. */
+@media(max-width:900px){.nav{left:var(--pad);right:var(--pad);display:flex;align-items:flex-start;gap:12px}.nav .logo{display:flex;align-items:flex-start;justify-content:center;height:44px;width:40px;padding-top:2px}.nav .logo img{height:40px;width:auto}.nav div{align-items:flex-start;gap:clamp(12px,3.6vw,24px)}.nav div a{align-items:flex-start;height:44px;white-space:nowrap}}
 
 /* Background video: Shenzhen Bay at night, blue treatment baked in, plays forward then back for a seamless loop. */
 .sky-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 45%;z-index:0}
@@ -160,8 +165,8 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 <body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><filter id="whiten" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1.028 0 0 0 0 0 1.164 0 0 0 0 0 1.545 0 0 0 0 0 1 0"></feColorMatrix></filter></svg>
 
 <div id="stage" data-screen-label="3d Glass hand · Night">
-<div class="skyline" aria-hidden="true"><video class="sky-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="../images/deltaandbay_hero_poster.jpg" data-mobile-src="../video/deltaandbay_hero_720.mp4" data-desktop-src="../video/deltaandbay_hero_1080.mp4"></video></div>
-<nav class="nav" aria-label="Main navigation"><a class="logo" href="#" aria-label="delta and bay"><img src="../images/deltaandbay_monogram_ivory.svg" alt="delta and bay" width="1167" height="1171"></a><div><a href="#trip">Info</a><a href="#price">Price</a><a href="#faq">FAQ</a><a class="apply-link" href="../apply/">Apply</a></div></nav>
+<div class="skyline" aria-hidden="true"><video class="sky-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="../images/deltaandbay_hero_poster.jpg" data-mobile-src="../video/deltaandbay_hero_mobile_hq.mp4" data-desktop-src="../video/deltaandbay_hero_1080.mp4"></video></div>
+<nav class="nav" aria-label="Main navigation"><a class="logo" href="#" aria-label="delta and bay"><img src="../images/deltaandbay_monogram_ivory.svg" alt="delta and bay" width="1167" height="1171"></a><div><a href="#trip">Intro</a><a href="#price">Price</a><a href="#faq">FAQ</a><a class="apply-link" href="../apply/">Apply</a></div></nav>
 <div class="hero">
 <h1 class="name" data-fade="0">delta and bay</h1>
 <div class="tag" data-fade="400">Bridging the Frontiers</div>
