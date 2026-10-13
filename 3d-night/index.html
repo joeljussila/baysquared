@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050A30"><title>delta and bay · Live the future in Shenzhen</title><meta name="description" content="delta and bay is a seven-day delegation to Shenzhen for founders, investors and technology leaders in robotics and hardware. 11–17 January 2027. By application."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="image" href="../images/deltaandbay_hero_poster.jpg"><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050A30"><title>delta and bay · Breaching the Frontiers</title><meta name="description" content="A week in Shenzhen, the hardware capital of the world, for founders, investors and technology leaders. 11–17 January 2027. By application."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="image" href="../images/deltaandbay_hero_poster.jpg"><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#050A30;--panel:#0a1240;--text:#ECE8E0;--sub:#cfd0d8;--muted:#a6a9bd;--dim:#7d82a1;--nav:#d3d2d6;--line:rgba(236,232,224,.15);--accent:#6f8fff;--glow:#0035B1;--pad:clamp(20px,4.4vw,72px)}
 *{box-sizing:border-box}
@@ -10,8 +10,9 @@ a{color:inherit;text-decoration:none}a:hover{opacity:.7}
 /* Photo: sand mapped to white, inverted to black, hues rotated back, screened onto the navy. */
 .hand{position:absolute;right:calc(95px - 2vw);top:-6vh;height:112vh;height:112svh;width:auto;max-width:none;filter:url(#whiten) invert(1) hue-rotate(180deg);mix-blend-mode:screen;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 18%);mask-image:linear-gradient(90deg,transparent 0%,#000 18%)}
 .nav{position:absolute;left:var(--pad);right:var(--pad);top:max(44px,env(safe-area-inset-top));display:flex;justify-content:flex-end;font-size:clamp(10px,.86vw,13px);letter-spacing:.14em;text-transform:lowercase;color:var(--nav);z-index:3}
-.nav div{display:flex;gap:clamp(20px,2.8vw,44px)}
-.apply-link{border-bottom:1px solid var(--accent);padding-bottom:3px}
+.nav div{display:flex;align-items:center;gap:clamp(20px,2.8vw,44px)}
+.nav div a{display:flex;align-items:center;min-height:44px;line-height:1}
+.apply-link{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:7px}
 .hero{position:absolute;left:calc(var(--pad) + 57px);right:var(--pad);bottom:max(clamp(28px,7vh,72px),env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:clamp(12px,2.2vh,22px);align-items:flex-start;z-index:3}
 .name{margin:0;font-family:'Instrument Serif',serif;font-weight:400;letter-spacing:-.01em;line-height:.9;font-size:calc(0.98 * clamp(52px,min(9.7vw,15.5vh),210px));white-space:nowrap}
 .tag{font-family:'Instrument Serif',serif;font-style:italic;color:var(--sub);font-size:calc(1.9 * clamp(13px,min(1.48vw,2.4vh),26px))}
@@ -129,52 +130,56 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 @media (max-width:560px){.host-logos{grid-template-columns:repeat(3,1fr);gap:22px 14px;--k:46px}}
 @media (max-aspect-ratio:1/1){.nav{left:var(--pad)}.name{font-size:min(18.5vw,10vh)}.tag{font-size:clamp(22px,6.4vw,30px)}}
 
-/* Preview: minimalist blue Shenzhen skyline instead of the hand. */
-.skyline{position:absolute;left:0;right:0;bottom:0;top:clamp(72px,11vh,110px);z-index:0;background:url(../images/deltaandbay_hero_poster.jpg) 62% 0/cover no-repeat;opacity:.85;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 9%);mask-image:linear-gradient(180deg,transparent 0,#000 9%)}
+/* Full-bleed skyline; the poster uses the same crop when motion is unavailable. */
+.skyline{position:absolute;inset:0;z-index:0;background:url(../images/deltaandbay_hero_poster.jpg) 62% 45%/cover no-repeat}
 .skyline::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(90deg,rgba(5,10,48,.92) 0%,rgba(5,10,48,.7) 28%,rgba(5,10,48,.15) 60%,rgba(5,10,48,0) 100%),
-  linear-gradient(0deg,rgba(5,10,48,.95) 0%,rgba(5,10,48,.35) 30%,rgba(5,10,48,0) 55%),
-  linear-gradient(180deg,rgba(5,10,48,.25) 0%,rgba(5,10,48,0) 12%)}
-/* No hand to dodge any more: let the title use the full width. */
+  linear-gradient(90deg,rgba(5,10,48,.65) 0%,rgba(5,10,48,.15) 65%,transparent 100%),
+  linear-gradient(0deg,rgba(5,10,48,.95) 0%,rgba(5,10,48,.25) 48%,transparent 72%),
+  linear-gradient(180deg,rgba(5,10,48,.55) 0%,transparent 25%)}
 .name{font-size:calc(0.98 * clamp(52px,min(9.7vw,15.5vh),210px))}
+.tag{font-size:clamp(25px,3.1vw,46px);line-height:1.2}
+.nav,.cta,.date{text-transform:none}
 @media (max-aspect-ratio:1/1){
-  .skyline{background-size:auto 62%;background-position:66% 40px;background-color:transparent;opacity:.95;-webkit-mask-image:linear-gradient(180deg,transparent 0,#000 6%);mask-image:linear-gradient(180deg,transparent 0,#000 6%)}
-  .skyline::after{background:linear-gradient(0deg,rgba(5,10,48,1) 0%,rgba(5,10,48,1) 34%,rgba(5,10,48,.6) 46%,rgba(5,10,48,0) 64%),linear-gradient(180deg,rgba(5,10,48,.6) 0%,rgba(5,10,48,0) 16%)}
+  .skyline{background-size:auto 125%;background-position:62% 70%}
+  .skyline::after{background:linear-gradient(0deg,rgba(5,10,48,.98) 0%,rgba(5,10,48,.7) 27%,rgba(5,10,48,.08) 62%),linear-gradient(180deg,rgba(5,10,48,.6) 0%,transparent 24%)}
   #stage::after{display:none}
   .name{font-size:min(18.5vw,10vh)}
+  .tag{font-size:clamp(24px,6.4vw,30px)}
+  .nav{left:var(--pad);right:var(--pad);gap:16px;align-items:center;font-size:11px}
+  .nav div{gap:clamp(12px,3.6vw,24px)}
+  .logo{height:40px}
 }
 
 /* Background video: Shenzhen Bay at night, blue treatment baked in, plays forward then back for a seamless loop. */
-.sky-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 0;z-index:0}
+.sky-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 45%;z-index:0}
 .skyline::after{z-index:1}
 @media (max-aspect-ratio:1/1){
-  .sky-video{top:40px;height:62%;object-position:66% 0}
+  .sky-video{transform:scale(1.25);transform-origin:62% 70%}
 }
-@media (prefers-reduced-motion:reduce){.sky-video{display:none}}
 </style></head>
 <body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><filter id="whiten" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1.028 0 0 0 0 0 1.164 0 0 0 0 0 1.545 0 0 0 0 0 1 0"></feColorMatrix></filter></svg>
 
 <div id="stage" data-screen-label="3d Glass hand · Night">
-<div class="skyline" aria-hidden="true"><video class="sky-video" autoplay muted loop playsinline preload="auto" poster="../images/deltaandbay_hero_poster.jpg"><source src="../video/deltaandbay_hero_720.mp4" type="video/mp4" media="(max-width: 900px)"><source src="../video/deltaandbay_hero_1080.mp4" type="video/mp4"></video></div>
-<nav class="nav"><a class="logo" href="#" aria-label="delta and bay"><img src="../images/deltaandbay_monogram_ivory.svg" alt="delta and bay" width="1167" height="1171"></a><div><a href="#trip">info</a><a href="#price">price</a><a href="#faq">faq</a><a class="apply-link" href="../apply/">apply</a></div></nav>
+<div class="skyline" aria-hidden="true"><video class="sky-video" autoplay muted loop playsinline webkit-playsinline preload="metadata" poster="../images/deltaandbay_hero_poster.jpg" data-mobile-src="../video/deltaandbay_hero_720.mp4" data-desktop-src="../video/deltaandbay_hero_1080.mp4"></video></div>
+<nav class="nav" aria-label="Main navigation"><a class="logo" href="#" aria-label="delta and bay"><img src="../images/deltaandbay_monogram_ivory.svg" alt="delta and bay" width="1167" height="1171"></a><div><a href="#trip">Info</a><a href="#price">Price</a><a href="#faq">FAQ</a><a class="apply-link" href="../apply/">Apply</a></div></nav>
 <div class="hero">
 <h1 class="name" data-fade="0">delta and bay</h1>
-<div class="tag" data-fade="400">live the future in shenzhen</div>
-<div class="date" data-fade="800">11–17 january 2027</div>
-<a class="cta" href="../apply/" data-fade="1100">apply for a place</a>
+<div class="tag" data-fade="400">Breaching the Frontiers</div>
+<div class="date" data-fade="800">11–17 January 2027</div>
+<a class="cta" href="../apply/" data-fade="1100">Apply for a place</a>
 </div>
 </div>
 
 <section id="trip">
 <div class="row">
-<div><h2>the trip</h2></div>
+<div><h2>The trip</h2></div>
 <div>
-<p>A week of company and factory visits, supplier meetings and dinners with local founders, for people building or investing in robotics and hardware. Supplier meetings are matched to what you're building, so you leave with quotes and WeChat contacts you can follow up with.</p>
+<p>A week in Shenzhen, the hardware capital of the world. Visit robotics companies and factories, meet local founders, and find suppliers for what you're building.</p>
 <dl class="facts">
-<div><dt>dates</dt><dd>11–17 Jan 2027</dd></div>
-<div><dt>group</dt><dd>25–30 people</dd></div>
-<div><dt>hotel</dt><dd>Nanshan, Shenzhen</dd></div>
-<div><dt>price</dt><dd>$8,900+</dd></div>
+<div><dt>Dates</dt><dd>11–17 Jan 2027</dd></div>
+<div><dt>Group</dt><dd>25–30 people</dd></div>
+<div><dt>Hotel</dt><dd>Nanshan, Shenzhen</dd></div>
+<div><dt>Price</dt><dd>$8,900+</dd></div>
 </dl>
 </div>
 </div>
@@ -182,7 +187,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 
 <section id="how">
 <div class="row">
-<div><h2>how it works</h2></div>
+<div><h2>How it works</h2></div>
 <div>
 <div class="count" id="count">
 <div><b id="cd-d">--</b><span>days</span></div>
@@ -190,7 +195,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 <div><b id="cd-m">--</b><span>minutes</span></div>
 <div><b id="cd-s">--</b><span>seconds</span></div>
 </div>
-<p class="small" id="count-text">until seats open on 9 November, 9am PT</p>
+<p class="small" id="count-text">Until seats open on 9 November, 9am PT</p>
 <ol class="steps">
 <li><div><h3>Apply</h3><p>Takes 5 minutes, no commitment.</p></div></li>
 <li><div><h3>Interview</h3><p>We review every application and invite applicants to a short call.</p></div></li>
@@ -203,7 +208,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 
 <section id="itinerary">
 <div class="row">
-<div><h2>itinerary</h2><p class="small" style="margin-top:20px">Hosts are confirmed in writing in November and may change with availability.</p></div>
+<div><h2>Itinerary</h2><p class="small" style="margin-top:20px">Hosts are confirmed in writing in November and may change with availability.</p></div>
 <div>
 <ol class="days">
 <li><time>mon 11 jan</time><div><h3>Arrival</h3><p>Airport pickup, check-in, welcome dinner.</p></div></li>
@@ -214,17 +219,17 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 <li><time>sat 16 jan</time><div><h3>Sourcing day</h3><p>Huaqiangbei walkthrough, one-on-one supplier meetings, closing dinner.</p></div></li>
 <li><time>sun 17 jan</time><div><h3>Departure</h3><p>Airport transfers.</p></div></li>
 </ol>
-<div class="hosts"><p class="hosts-label">companies on the provisional itinerary</p><ul class="host-logos"><li><a href="https://www.apollogo.com/" target="_blank" rel="noopener" aria-label="Baidu Apollo Go website"><img style="--m:0.85" src="../images/hosts/baidu.svg" alt="Baidu Apollo Go" title="Baidu Apollo Go"></a></li><li><a href="https://www.sf-express.com/" target="_blank" rel="noopener" aria-label="SF Express website"><img style="--m:0.80" src="../images/hosts/sf-express.png" alt="SF Express" title="SF Express"></a></li><li><a href="https://www.byd.com/" target="_blank" rel="noopener" aria-label="BYD website"><img style="--m:0.500" src="../images/hosts/byd.svg" alt="BYD" title="BYD"></a></li><li><a href="https://www.zeroerr.com/" target="_blank" rel="noopener" aria-label="ZeroErr website"><img style="--m:0.485" src="../images/hosts/zeroerr.png" alt="ZeroErr" title="ZeroErr"></a></li><li><a href="https://www.orbbec.com/" target="_blank" rel="noopener" aria-label="Orbbec website"><img style="--m:0.356" src="../images/hosts/orbbec.png" alt="Orbbec" title="Orbbec"></a></li><li><a href="https://www.dmrobot.com/" target="_blank" rel="noopener" aria-label="Daimon Robotics website"><img style="--m:0.426" src="../images/hosts/daimon.svg" alt="Daimon Robotics" title="Daimon Robotics"></a></li><li><a href="https://www.ubtrobot.com/" target="_blank" rel="noopener" aria-label="UBTech website"><img style="--m:0.499" src="../images/hosts/ubtech.svg" alt="UBTech" title="UBTech"></a></li><li><a href="https://www.engineai.com.cn/" target="_blank" rel="noopener" aria-label="EngineAI website"><img style="--m:0.518" src="../images/hosts/engineai.png" alt="EngineAI" title="EngineAI"></a></li><li><a href="https://www.limxdynamics.com/en" target="_blank" rel="noopener" aria-label="LimX Dynamics website"><img style="--m:0.563" src="../images/hosts/limx.svg" alt="LimX Dynamics" title="LimX Dynamics"></a></li><li><a href="https://www.dji.com/" target="_blank" rel="noopener" aria-label="DJI website"><img style="--m:0.95" src="../images/hosts/dji.svg" alt="DJI" title="DJI"></a></li><li><a href="https://www.brainco.tech/" target="_blank" rel="noopener" aria-label="BrainCo website"><img style="--m:0.432" src="../images/hosts/brainco.png" alt="BrainCo" title="BrainCo"></a></li><li><a href="https://www.seeedstudio.com/" target="_blank" rel="noopener" aria-label="Seeed Studio website"><img style="--m:0.336" src="../images/hosts/seeed-studio.png" alt="Seeed Studio" title="Seeed Studio"></a></li></ul></div>
+<div class="hosts"><p class="hosts-label">Companies on the provisional itinerary</p><ul class="host-logos"><li><a href="https://www.apollogo.com/" target="_blank" rel="noopener" aria-label="Baidu Apollo Go website"><img style="--m:0.85" src="../images/hosts/baidu.svg" alt="Baidu Apollo Go" title="Baidu Apollo Go"></a></li><li><a href="https://www.sf-express.com/" target="_blank" rel="noopener" aria-label="SF Express website"><img style="--m:0.80" src="../images/hosts/sf-express.png" alt="SF Express" title="SF Express"></a></li><li><a href="https://www.byd.com/" target="_blank" rel="noopener" aria-label="BYD website"><img style="--m:0.500" src="../images/hosts/byd.svg" alt="BYD" title="BYD"></a></li><li><a href="https://www.zeroerr.com/" target="_blank" rel="noopener" aria-label="ZeroErr website"><img style="--m:0.485" src="../images/hosts/zeroerr.png" alt="ZeroErr" title="ZeroErr"></a></li><li><a href="https://www.orbbec.com/" target="_blank" rel="noopener" aria-label="Orbbec website"><img style="--m:0.356" src="../images/hosts/orbbec.png" alt="Orbbec" title="Orbbec"></a></li><li><a href="https://www.dmrobot.com/" target="_blank" rel="noopener" aria-label="Daimon Robotics website"><img style="--m:0.426" src="../images/hosts/daimon.svg" alt="Daimon Robotics" title="Daimon Robotics"></a></li><li><a href="https://www.ubtrobot.com/" target="_blank" rel="noopener" aria-label="UBTech website"><img style="--m:0.499" src="../images/hosts/ubtech.svg" alt="UBTech" title="UBTech"></a></li><li><a href="https://www.engineai.com.cn/" target="_blank" rel="noopener" aria-label="EngineAI website"><img style="--m:0.518" src="../images/hosts/engineai.png" alt="EngineAI" title="EngineAI"></a></li><li><a href="https://www.limxdynamics.com/en" target="_blank" rel="noopener" aria-label="LimX Dynamics website"><img style="--m:0.563" src="../images/hosts/limx.svg" alt="LimX Dynamics" title="LimX Dynamics"></a></li><li><a href="https://www.dji.com/" target="_blank" rel="noopener" aria-label="DJI website"><img style="--m:0.95" src="../images/hosts/dji.svg" alt="DJI" title="DJI"></a></li><li><a href="https://www.brainco.tech/" target="_blank" rel="noopener" aria-label="BrainCo website"><img style="--m:0.432" src="../images/hosts/brainco.png" alt="BrainCo" title="BrainCo"></a></li><li><a href="https://www.seeedstudio.com/" target="_blank" rel="noopener" aria-label="Seeed Studio website"><img style="--m:0.336" src="../images/hosts/seeed-studio.png" alt="Seeed Studio" title="Seeed Studio"></a></li></ul></div>
 </div>
 </div>
 </section>
 
 <section id="price">
 <div class="row">
-<div><h2>price</h2></div>
+<div><h2>Price</h2></div>
 <div>
 <table class="tiers">
-<tr><td>per person</td><td>$8,900+</td></tr>
+<tr><td>Per person</td><td>$8,900+</td></tr>
 </table>
 <p><strong>Included:</strong> six nights in a single hotel room, group lunches and dinners, all visits, ground transport and airport transfers, a bilingual coordinator and translation, supplier matching before the trip.</p>
 <p><strong>Not included:</strong> flights, visa fees, travel insurance (required), extra nights.</p>
@@ -234,7 +239,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 
 <section id="faq">
 <div class="row">
-<div><h2>faq</h2></div>
+<div><h2>FAQ</h2></div>
 <div>
 <details><summary>Why do I have to apply?</summary><p>The group is capped at 25–30, and we pick a mix of founders, investors and operators. Your application also tells us what you're building, so we can match visits and supplier meetings to it.</p></details>
 <details><summary>What is the interview?</summary><p>A short call about what you're building, what you want from the trip, and whether the dates and price work for you.</p></details>
@@ -250,12 +255,12 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 
 <section>
 <div class="row">
-<div><h2>apply for a place</h2></div>
-<div><a class="cta" href="../apply/">apply for a place</a></div>
+<div><h2>Apply for a place</h2></div>
+<div><a class="cta" href="../apply/">Apply for a place</a></div>
 </div>
 </section>
 
-<footer><span class="mark">delta and bay</span><a href="../privacy/">privacy</a></footer>
+<footer><span class="mark">delta and bay</span><a href="../privacy/">Privacy</a></footer>
 
 <svg class="grain" aria-hidden="true"><rect width="100%" height="100%" filter="url(#grain)"></rect></svg>
 <script>
@@ -284,6 +289,23 @@ function tick(){
 tick();
 })();
 </script><script>
-(function(){var v=document.querySelector('.sky-video');if(!v)return;var c=navigator.connection;if((c&&c.saveData)||matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();v.style.display='none';return}var p=v.play();if(p&&p.catch)p.catch(function(){});})();
+(function(){
+  var v=document.querySelector('.sky-video');
+  if(!v)return;
+  v.muted=true;v.defaultMuted=true;v.playsInline=true;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');return;}
+  v.src=matchMedia('(max-width: 900px)').matches?v.dataset.mobileSrc:v.dataset.desktopSrc;
+  function play(){
+    var attempt=v.play();
+    if(attempt&&attempt.catch)attempt.catch(function(){});
+  }
+  function retry(){if(v.paused&&!document.hidden)play();}
+  document.addEventListener('touchstart',retry,{once:true,passive:true});
+  document.addEventListener('pointerdown',retry,{once:true,passive:true});
+  document.addEventListener('keydown',retry,{once:true});
+  document.addEventListener('visibilitychange',function(){if(document.hidden)v.pause();else retry();});
+  v.addEventListener('error',function(){v.style.display='none';});
+  play();
+})();
 </script>
 </body></html>
