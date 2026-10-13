@@ -11,7 +11,7 @@ function setup({blocked=false,reduced=false}={}){
   vm.runInNewContext(code,{document,window:{addEventListener(name,fn){windowEvents[name]=fn;}},matchMedia:()=>({matches:reduced})});
   return {video,document,events,videoEvents,windowEvents,attempts:()=>attempts,loads:()=>loads,unblock:()=>{blocked=false;}};
 }
-test('native video sources start loading before JavaScript and use portrait media',()=>{assert.match(html,/<video[^>]*autoplay[^>]*muted[^>]*playsinline[^>]*preload="auto"/);assert.match(html,/<source src="[^"]*hero_portrait.mp4"[^>]*media="\(max-aspect-ratio: 1\/1\)"/);assert.doesNotMatch(html,/<video[^>]*\scontrols(?:\s|>)/);});
+test('native video sources start loading before JavaScript and use portrait media',()=>{assert.match(html,/<video[^>]*autoplay[^>]*muted[^>]*playsinline[^>]*preload="auto"/);assert.match(html,/<source src="[^"]*hero_blue_portrait.mp4"[^>]*media="\(max-aspect-ratio: 1\/1\)"/);assert.doesNotMatch(html,/<video[^>]*\scontrols(?:\s|>)/);});
 test('startup explicitly enables muted inline playback',()=>{const s=setup();assert.equal(s.video.muted,true);assert.equal(s.video.defaultMuted,true);assert.equal(s.video.playsInline,true);assert.equal(s.video.paused,false);});
 test('a blocked early gesture does not consume later playback retries',async()=>{const s=setup({blocked:true});s.events.touchstart();await new Promise(setImmediate);s.unblock();s.events.touchend();assert.equal(s.video.paused,false);assert.equal(s.attempts(),3);});
 test('media readiness retries playback after an initial rejection',async()=>{const s=setup({blocked:true});await new Promise(setImmediate);s.unblock();s.videoEvents.canplay();assert.equal(s.video.paused,false);});

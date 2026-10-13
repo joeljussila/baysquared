@@ -3,7 +3,7 @@
 <style>
 :root{--bg:#050A30;--text:#ECE8E0;--sub:#cfd0d8;--muted:#a6a9bd;--dim:#7d82a1;--line:rgba(236,232,224,.15);--accent:#6f8fff;--pad:clamp(20px,4.4vw,72px)}
 *{box-sizing:border-box}
-html,body{margin:0;background:radial-gradient(120% 70% at 100% 0%,rgba(0,53,177,.45) 0%,rgba(0,53,177,0) 55%) fixed,var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;font-family:'IBM Plex Mono',monospace}
+html,body{margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;font-family:'IBM Plex Mono',monospace}
 a{color:inherit}
 header{display:flex;justify-content:space-between;align-items:center;padding:max(36px,env(safe-area-inset-top)) var(--pad) 0}
 .mark{display:block;height:44px}.mark img{display:block;height:100%;width:auto}
@@ -20,8 +20,6 @@ footer{padding:32px var(--pad) max(32px,env(safe-area-inset-bottom));border-top:
 footer .wm{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:0;color:var(--text)}
 /* Match the logo top to the visible navigation text, with a full tap target. */
 header{align-items:flex-start}header .mark{position:relative;top:2px}header .back{display:flex;align-items:flex-start;min-height:44px;line-height:1}
-/* Original edge-glow artwork from Shawn's brand kit. */
-html,body{background:var(--bg) url(../images/deltaandbay_edge_glow.svg) center/100% 100% fixed no-repeat}
 </style></head>
 <body>
 <header><a class="mark" href="../" aria-label="delta and bay home"><img src="../images/deltaandbay_monogram_ivory.svg" alt="delta and bay" width="1167" height="1171"></a><a class="back" href="../">back</a></header>

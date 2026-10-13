@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050A30"><title>delta and bay · Bridging the Frontiers</title><meta name="description" content="A week in Shenzhen, the hardware capital of the world, for founders, investors and technology leaders. 11–17 January 2027. By application."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="image" href="../images/deltaandbay_hero_poster.jpg"><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050A30"><title>delta and bay · Bridging the Frontiers</title><meta name="description" content="A week in Shenzhen, the hardware capital of the world, for founders, investors and technology leaders. 11–17 January 2027. By application."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="image" href="../images/deltaandbay_hero_blue_poster.jpg"><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#050A30;--panel:#0a1240;--text:#ECE8E0;--sub:#cfd0d8;--muted:#a6a9bd;--dim:#7d82a1;--nav:#d3d2d6;--line:rgba(236,232,224,.15);--accent:#6f8fff;--glow:#0035B1;--pad:clamp(20px,4.4vw,72px)}
 *{box-sizing:border-box}
@@ -20,7 +20,7 @@ a{color:inherit;text-decoration:none}a:hover{opacity:.7}
 .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
 .cta{display:inline-block;margin-top:10px;border:1px solid var(--text);padding:15px 26px;font-size:clamp(11px,.86vw,13px);letter-spacing:.14em;text-transform:lowercase}
 .cta.solid{background:var(--text);color:var(--bg);border-color:var(--text)}
-.grain{position:fixed;inset:0;width:100%;height:100%;opacity:.14;mix-blend-mode:screen;pointer-events:none;z-index:10}
+.grain{position:fixed;inset:0;width:100%;height:100%;opacity:.025;mix-blend-mode:normal;pointer-events:none;z-index:10}
 
 /* Content sections */
 section{padding:clamp(64px,11vh,128px) var(--pad);border-top:1px solid var(--line)}
@@ -83,7 +83,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 /* Portrait / phones: hand on top, text stacked below. */
 @media (max-aspect-ratio:1/1){
   .hand{right:-4vw;top:calc(4vh - 38px);width:100vw;height:auto;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 14%);mask-image:linear-gradient(180deg,transparent 0%,#000 14%)}
-  #stage::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--bg) 0%,rgba(5,10,48,.85) 30%,rgba(5,10,48,0) 55%);z-index:2;pointer-events:none}
+  #stage::after{display:none}
   .nav{top:max(24px,env(safe-area-inset-top))}
   .hero{left:var(--pad)}
   .name{font-size:min(18.5vw,10vh)}
@@ -101,8 +101,8 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important}html{scroll-behavior:auto}}
 
-/* Delta & Bay brand (Shawn's kit): Prussian blue, ivory, edge glow; monogram top-left; rays behind the hand. */
-#stage{background:radial-gradient(120% 90% at 100% 0%,rgba(0,53,177,.55) 0%,rgba(0,53,177,.18) 35%,rgba(0,53,177,0) 60%),radial-gradient(80% 60% at 0% 100%,rgba(0,53,177,.28) 0%,rgba(0,53,177,0) 60%),var(--bg)}
+/* Delta & Bay brand (Shawn's kit): Prussian blue and ivory; monogram top-left. */
+#stage{background:var(--bg)}
 .nav{justify-content:space-between;align-items:center}
 .logo{display:block;height:clamp(40px,3.6vw,56px);flex:none}
 .logo img{display:block;height:100%;width:auto}
@@ -131,17 +131,14 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 @media (max-aspect-ratio:1/1){.nav{left:var(--pad)}.name{font-size:min(18.5vw,10vh)}.tag{font-size:clamp(22px,6.4vw,30px)}}
 
 /* Full-bleed skyline; the poster uses the same crop when motion is unavailable. */
-.skyline{position:absolute;inset:0;z-index:0;background:url(../images/deltaandbay_hero_poster.jpg) 62% 45%/cover no-repeat;opacity:.85}
-.skyline::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(90deg,rgba(5,10,48,.92) 0%,rgba(5,10,48,.7) 28%,rgba(5,10,48,.15) 60%,rgba(5,10,48,0) 100%),
-  linear-gradient(0deg,rgba(5,10,48,.95) 0%,rgba(5,10,48,.35) 30%,rgba(5,10,48,0) 55%),
-  linear-gradient(180deg,rgba(5,10,48,.25) 0%,rgba(5,10,48,0) 12%)}
+.skyline{position:absolute;inset:0;z-index:0;background:url(../images/deltaandbay_hero_blue_poster.jpg) 62% 45%/cover no-repeat;opacity:.85}
+.skyline::after{content:"";position:absolute;inset:0;background:rgba(5,10,48,.32)}
 .name{font-size:calc(0.98 * clamp(52px,min(9.7vw,15.5vh),210px))}
 .tag{font-size:clamp(25px,3.1vw,46px);line-height:1.2}
 .nav,.cta,.date{text-transform:none}
 @media (max-aspect-ratio:1/1){
   .skyline{background-size:auto 125%;background-position:62% 70%;opacity:.95}
-  .skyline::after{background:linear-gradient(0deg,rgba(5,10,48,1) 0%,rgba(5,10,48,1) 34%,rgba(5,10,48,.6) 46%,rgba(5,10,48,0) 64%),linear-gradient(180deg,rgba(5,10,48,.6) 0%,rgba(5,10,48,0) 16%)}
+
   #stage::after{display:none}
   .name{font-size:min(18.5vw,10vh)}
   .tag{font-size:clamp(24px,6.4vw,30px)}
@@ -150,8 +147,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
   .logo{height:40px}
 }
 
-/* Keep the original bottom-left brand glow above the full-height video. */
-#stage::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 0% 100%,rgba(0,53,177,.28) 0%,rgba(0,53,177,0) 60%);z-index:2;pointer-events:none}
+
 /* Align the visible logo top with the navigation capitals, keeping 44px tap targets. */
 @media(min-width:901px){.nav,.nav div,.nav div a{align-items:flex-start}.nav .logo{position:relative;top:2px}}
 @media(max-width:900px){.nav{left:var(--pad);right:var(--pad);display:flex;align-items:flex-start;gap:12px}.nav .logo{display:flex;align-items:flex-start;justify-content:center;height:44px;width:40px;padding-top:2px}.nav .logo img{height:40px;width:auto}.nav div{align-items:flex-start;gap:clamp(12px,3.6vw,24px)}.nav div a{align-items:flex-start;height:44px;white-space:nowrap}}
@@ -162,15 +158,11 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 @media (max-aspect-ratio:1/1){
   .sky-video{transform:scale(1.25);transform-origin:62% 70%}
 }
-/* Original edge-glow artwork from Shawn's brand kit. Apply its hue above the video. */
-#stage{isolation:isolate;background:var(--bg) url(../images/deltaandbay_edge_glow.svg) center/100% 100% no-repeat}
-#stage::before{background:url(../images/deltaandbay_edge_glow.svg) center/100% 100% no-repeat;mix-blend-mode:color}
-.grain{mix-blend-mode:soft-light}
 </style></head>
 <body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><filter id="whiten" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1.028 0 0 0 0 0 1.164 0 0 0 0 0 1.545 0 0 0 0 0 1 0"></feColorMatrix></filter></svg>
 
 <div id="stage" data-screen-label="3d Glass hand · Night">
-<div class="skyline" aria-hidden="true"><video class="sky-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="../images/deltaandbay_hero_poster.jpg" data-fallback-src="../video/deltaandbay_hero_720.mp4"><source src="../video/deltaandbay_hero_portrait.mp4" type="video/mp4" media="(max-aspect-ratio: 1/1)"><source src="../video/deltaandbay_hero_1080.mp4" type="video/mp4"></video></div>
+<div class="skyline" aria-hidden="true"><video class="sky-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="../images/deltaandbay_hero_blue_poster.jpg" data-fallback-src="../video/deltaandbay_hero_blue_720.mp4"><source src="../video/deltaandbay_hero_blue_portrait.mp4" type="video/mp4" media="(max-aspect-ratio: 1/1)"><source src="../video/deltaandbay_hero_blue_1080.mp4" type="video/mp4"></video></div>
 <nav class="nav" aria-label="Main navigation"><a class="logo" href="#" aria-label="delta and bay"><img src="../images/deltaandbay_monogram_ivory.svg" alt="delta and bay" width="1167" height="1171"></a><div><a href="#trip">Intro</a><a href="#price">Price</a><a href="#faq">FAQ</a><a class="apply-link" href="../apply/">Apply</a></div></nav>
 <div class="hero">
 <h1 class="name" data-fade="0">delta and bay</h1>
