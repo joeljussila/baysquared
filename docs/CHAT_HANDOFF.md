@@ -6,7 +6,7 @@ Read this before changing the site. This document records decisions and results 
 
 - Repository: https://github.com/joeljussila/deltaandbay
 - Production: https://deltaandbay.com, Vercel project `deltaandbay`, automatically deployed from `main`.
-- Latest verified production commit at this handoff: `3552e66`, following privacy update `83ac9d8`.
+- Latest code baseline at this handoff: `1787a70`, following logo/privacy changes `3552e66`, social preview commits `096e35d`/`56019d8`, and privacy update `83ac9d8`. The live homepage was checked after fetching: it still used the serif “delta and bay” wordmark, not the local Montserrat proposal.
 - Static HTML; no framework or build step. `vercel.json` rewrites `/` to `3d-night/`. Application: `/apply/`; privacy: `/privacy/`.
 - `styles/`, `fonts/`, `type/` and `brand/` are historical design explorations. They do not override the production homepage.
 - Run `node --test tests/*.test.mjs`. The 15 existing tests passed after the privacy changes: eight form tests and seven video tests. Later logo/heading changes were checked visually on desktop and mobile, with all twelve logo images loading and no mobile horizontal overflow.
@@ -15,7 +15,7 @@ Read this before changing the site. This document records decisions and results 
 
 - Tagline is exactly **Bridging the Frontiers**. Earlier “Breaching” and “Leave the future in Shenzhen” wording was superseded.
 - A week in Shenzhen, the hardware capital of the world; dates 11–17 January 2027. Application does not commit the applicant to anything.
-- Navigation: **Intro**, **Price**, **FAQ**, **Apply**. Button: **Apply for a place**. Privacy heading: **Privacy**.
+- Earlier navigation was Intro / Price / FAQ / Apply. A simultaneous chat's shipped commit `1787a70` superseded this: navigation is now **Intro**, **FAQ**, **Apply**, Price sits below FAQ, and the price wording includes tax. Preserve that newer arrangement. Button: **Apply for a place**. Privacy heading: **Privacy**.
 - Approved colours: solid Prussian blue `#050A30`, ivory `#ECE8E0`. User rejected purple/violet and newly added decorative gradients. Do not restore the abandoned gradient artwork or compositing treatments from earlier commits.
 - Use Shawn's existing vector monogram `images/deltaandbay_monogram_ivory.svg`. Brand reference was `syqgenesis/sz-trips`, branch `claude/focused-euler-hw4jrr`, commit `fd42b97da18129ab06f6ddd72d38277696799ebe`.
 - Visible top of the top-left logo aligns with the visible navigation text on desktop and mobile, including application and privacy pages. Existing header offsets implement this; do not recenter them casually.
@@ -61,6 +61,7 @@ Apollo Go was the exception: the old row used Baidu's parent-company paw. It now
 
 - PRs #3–#7 covered mobile launch fixes, colour/video quality, native mobile playback, header alignment, and Shawn brand restoration. Later user requests superseded the gradient portions of that work.
 - Final direct commits: `e7cd6f0` removed decorative gradients and graded media blue; `69544d8` matched mobile opacity; `bd4a937` moved the application hand again; `2e2b642` shortened application intro; `83ac9d8` clarified privacy; `3552e66` capitalised Privacy and corrected Apollo Go.
+- Simultaneous-chat commits discovered by fetching: `096e35d` added sharing metadata, favicon and preview image; `56019d8` sharpened the preview image; `1787a70` moved Price below FAQ, added tax wording and removed Price from navigation/facts. These are part of the current baseline.
 - Original working folder had an unresolved README merge and existing staged brand files. Preserve unrelated work. `.audit-work` was a separate clean clone, but simultaneous chats have since edited its homepage. At handoff, those uncommitted edits included Montserrat and “Delta & Bay”; their approval/deployment status was not verified. This handoff/font-preview task uses another isolated checkout.
 - Before editing: fetch GitHub, inspect branch/status/diff and reread this file. Record new approved decisions here. Before reporting “deployed”: verify the live domain actually serves the new content; a push or successful Vercel status alone can precede the domain updating.
 - Keep credentials, real applicant records and private personal details out of GitHub context documents. The operational summary is intentional; the full conversation is not published verbatim.
