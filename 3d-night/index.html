@@ -153,6 +153,7 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 /* Keep the original bottom-left brand glow above the full-height video. */
 #stage::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 60% at 0% 100%,rgba(0,53,177,.28) 0%,rgba(0,53,177,0) 60%);z-index:2;pointer-events:none}
 /* Align the visible logo top with the navigation capitals, keeping 44px tap targets. */
+@media(min-width:901px){.nav,.nav div,.nav div a{align-items:flex-start}.nav .logo{position:relative;top:2px}}
 @media(max-width:900px){.nav{left:var(--pad);right:var(--pad);display:flex;align-items:flex-start;gap:12px}.nav .logo{display:flex;align-items:flex-start;justify-content:center;height:44px;width:40px;padding-top:2px}.nav .logo img{height:40px;width:auto}.nav div{align-items:flex-start;gap:clamp(12px,3.6vw,24px)}.nav div a{align-items:flex-start;height:44px;white-space:nowrap}}
 
 /* Background video: Shenzhen Bay at night, blue treatment baked in, plays forward then back for a seamless loop. */
