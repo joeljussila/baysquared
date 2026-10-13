@@ -162,6 +162,10 @@ footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:
 @media (max-aspect-ratio:1/1){
   .sky-video{transform:scale(1.25);transform-origin:62% 70%}
 }
+/* Original edge-glow artwork from Shawn's brand kit. Apply its hue above the video. */
+#stage{isolation:isolate;background:var(--bg) url(../images/deltaandbay_edge_glow.svg) center/100% 100% no-repeat}
+#stage::before{background:url(../images/deltaandbay_edge_glow.svg) center/100% 100% no-repeat;mix-blend-mode:color}
+.grain{mix-blend-mode:soft-light}
 </style></head>
 <body><svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"></feTurbulence><feColorMatrix type="saturate" values="0"></feColorMatrix></filter><filter id="whiten" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1.028 0 0 0 0 0 1.164 0 0 0 0 0 1.545 0 0 0 0 0 1 0"></feColorMatrix></filter></svg>
 

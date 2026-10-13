@@ -12,3 +12,5 @@ This folder is the home for all work on the delta and bay project (Shenzhen robo
 - `3d-night` is a scrolling page: full-screen hero, then sections (trip, how it works with countdown, itinerary, price, FAQ). Keep it to key facts only. Nav links jump to `#trip`, `#how`, `#price`, `#faq`; `Apply` goes to `../apply/`. Countdown targets 9 Nov 2026, 9am PT (17:00 UTC).
 - Trip: 11–17 January 2027. Content source is the Google Doc "Make it out of the hood".
 - Deploy target: Vercel project `deltaandbay` (domain deltaandbay.com), auto-deployed from GitHub `joeljussila/deltaandbay` main. `/` is rewritten to the live direction in `vercel.json` (currently `3d-night`); the picker is at `/styles/`.
+
+- Brand background artwork: `images/deltaandbay_edge_glow.svg` is copied verbatim from `syqgenesis/sz-trips`, branch `claude/focused-euler-hw4jrr`, commit `fd42b97da18129ab06f6ddd72d38277696799ebe`, `brand/backgrounds/edge-glow-16x9.svg`. Preserve its blue hue when compositing hero media; do not replace it with approximate purple/navy gradients.
