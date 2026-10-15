@@ -34,7 +34,7 @@ Read this before changing the site. This document records decisions and results 
 
 ## Applications and Supabase
 
-- 14 October notification setup: Shawn's Resend DNS records are present. A private notification outbox, retrying dispatcher and Cron migration are prepared on `codex/application-email-notifications`; transactional Supabase tests passed and rolled back. Resend login/domain verification, scoped sending key, production activation and inbox test remain pending. See `docs/APPLICATION_NOTIFICATIONS.md`. Do not describe notifications as live yet.
+- 14 October notification setup: Resend verified the domain, and the private outbox, application trigger and minute-by-minute retry dispatcher are installed in Supabase (migration 20261015010000). The user approved creation and secure storage of the sending-only, domain-scoped key. Vault connection and live inbox verification are in progress. See `docs/APPLICATION_NOTIFICATIONS.md`; do not claim end-to-end completion before the delivery result is recorded.
 
 - 13 October update: X is optional. A blank/whitespace X field is submitted as `null`; malformed nonblank X input is still rejected. LinkedIn remains required. Migration `20261013190000_optional_x_profile.sql` was applied through the signed-in Supabase SQL editor and recorded in migration history; the live `applications_links_required` constraint now checks only `linkedin is not null`. The X-format constraint remains. All 17 form/video tests pass, including blank-X submission and malformed-X rejection. Privacy wording reflects the optional field.
 

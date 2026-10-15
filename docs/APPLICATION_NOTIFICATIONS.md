@@ -2,9 +2,7 @@
 
 ## Status — 14 October 2026
 
-Prepared on `codex/application-email-notifications`, not activated. Public DNS contains the DKIM TXT record at `resend._domainkey.deltaandbay.com`, and CNAMEs `rsend` → `rsend.forge.rmta.net` and `send` → `send.forge.rmta.net`. Matching the DKIM value and verifying the domain in Resend still require its authenticated dashboard.
-
-The Resend account was signed out. Automatic approval review blocked continuing Google sign-in because the intended account was unconfirmed. The user has been asked to sign in to the account owning deltaandbay.com. Supabase remained accessible. No Resend key was created, no secrets were stored, no email was sent, and no production notification migration was committed to the database.
+Resend has verified deltaandbay.com. The private notification queue, trigger and Cron dispatcher are installed in Supabase and migration history records version 20261015010000. A sending-only key scoped to deltaandbay.com was created after user confirmation. Secure Vault storage and the live application/inbox delivery test are in progress; do not call the end-to-end setup complete until those are recorded below.
 
 ## Prepared implementation
 
