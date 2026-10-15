@@ -1,18 +1,5 @@
 # Shared project context — 12 October 2026
 
-# Update — 14 October 2026 (branch `shawn/fomo-and-originality`)
-
-Shawn's requests after a competitor check against Inside Physical AI (insidephysical.ai) and Future Factory (thefuturefactory.ai and its Cohort 0/1 recaps):
-
-- **Brand is capitalised: Delta & Bay** on the homepage, application and privacy pages, metadata and labels. This supersedes the lowercase decision below.
-- **No company names or host logos on the site.** Six of the twelve named companies (ZeroErr, Orbbec, Daimon Robotics, LimX Dynamics, DJI, Seeed Studio) appear in Future Factory's published recaps, and the logo row implied partnerships that aren't confirmed. The itinerary section is now "The week", described by theme; the day-by-day plan and companies are shared on the interview call.
-- **Meta description no longer uses Inside Physical AI's audience line** ("founders, investors and technology leaders"); it now names robotics and hardware founders. The "Do I need a technical background?" FAQ became "Is it only for engineers?"; "delegation" (their word) was removed from the apply page.
-- **Countdown now targets the first-round application deadline** (Sunday 1 Nov 2026, 11:59pm PT), not the 9 Nov booking date, so it matches "applications close soon". Apply page and closing section repeat the deadline.
-- **Price moved above the FAQ and back into the nav**, with the full ladder ($8,900 / $9,900 / $12,900 / $14,900 for seats 1–5 / 6–12 / 13–22 / 23–30) and the rule that the trip runs only if 10 people book by 30 November, otherwise full refunds. This supersedes the "Price below FAQ, not in nav" arrangement below.
-- Added "You leave with" (quotes in person, WeChat contacts, supply-chain map, 30 days of follow-up), "Shenzhen" in the hero date line, and info@deltaandbay.com in the footer.
-- Still open: organiser names, photos and bios (the biggest trust gap); the deadline date itself; deposit amount.
-
-
 Read this before changing the site. This document records decisions and results from the website audit and follow-up chat. It is a practical handoff, not a verbatim transcript. GitHub `main` and the deployed source are the authority for what has shipped. Local edits and open branches may contain work from simultaneous chats.
 
 ## Production baseline
