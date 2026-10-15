@@ -6,7 +6,7 @@ Live. Resend verified deltaandbay.com on 14 October 2026. The sending-only API k
 
 A QA application submitted through the public form with X empty created application `f401a1c4-6350-48fa-b1c9-b23c656c980f`. The scheduler automatically sent its notification on the first attempt (HTTP 200); the outbox reconciled to `sent`. Resend email `01a13d0f-1209-7a0f-9678-d3d78cb45293` records both sent and delivered events to info@deltaandbay.com at approximately 5:56 PM Pacific, 14 October. Applicant answers were not included in the email.
 
-Actual inbox placement still awaits the user's confirmation: the info@deltaandbay.com mailbox was not accessible through the connected personal Gmail account or the signed-in SILTA mailbox. Provider-confirmed delivery is established; do not describe an inbox readback as completed without that confirmation. The QA application is retained and clearly marked as a test; exclude it from real outreach.
+Inbox receipt is confirmed: on 14 October 2026 the user answered that the email arrived and supplied a Gmail screenshot showing the Inbox label, sender applications@deltaandbay.com, subject New delta & bay application, and the matching QA application ID. The complete public form → Supabase → automatic scheduler → Resend → receiving inbox flow is verified. The QA application is retained and clearly marked as a test; exclude it from real outreach.
 
 ## Live implementation
 
@@ -26,7 +26,7 @@ Ran the migration and `supabase/tests/application_notifications.sql` together in
 
 ## Setup completion
 
-Domain verification, user-confirmed restricted-key creation, Vault storage, migration installation/history, public privacy disclosure and the live form-to-Resend delivery test are complete. Remaining check: the user should confirm receipt of “New delta & bay application” in info@deltaandbay.com (including Spam if needed). No historical applications were backfilled and no applicants were emailed.
+Domain verification, user-confirmed restricted-key creation, Vault storage, migration installation/history, public privacy disclosure and the complete form-to-inbox test are complete. The user confirmed receipt and supplied matching inbox evidence on 14 October 2026. No historical applications were backfilled and no applicants were emailed.
 
 ## Operations
 
