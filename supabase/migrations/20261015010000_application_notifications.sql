@@ -1,3 +1,4 @@
+-- Applied to Supabase and recorded in migration history on 2026-10-14.
 -- Requires a sending-only Resend key for deltaandbay.com in Vault, named
 -- deltaandbay_resend_api_key. Never put its value in this file or frontend code.
 -- This migration does not notify for old applications.

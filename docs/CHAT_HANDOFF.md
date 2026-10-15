@@ -34,16 +34,16 @@ Read this before changing the site. This document records decisions and results 
 
 ## Applications and Supabase
 
-- 14 October notification setup: Resend verified the domain, and the private outbox, application trigger and minute-by-minute retry dispatcher are installed in Supabase (migration 20261015010000). The user approved creation and secure storage of the sending-only, domain-scoped key. Vault connection and live inbox verification are in progress. See `docs/APPLICATION_NOTIFICATIONS.md`; do not claim end-to-end completion before the delivery result is recorded.
+- 14 October notification setup is live: Resend verified the domain; the user-confirmed sending-only key is scoped to deltaandbay.com and stored in Supabase Vault. Migration 20261015010000 installs the private outbox, INSERT trigger and active Cron dispatcher. The live form test omitted X, saved QA application f401a1c4-6350-48fa-b1c9-b23c656c980f, and automatically sent its notification on the first attempt (HTTP 200). Resend confirms delivery to info@deltaandbay.com; actual inbox placement awaits the user because that mailbox is not connected. No applicants were emailed or old applications backfilled. See `docs/APPLICATION_NOTIFICATIONS.md`.
 
 - 13 October update: X is optional. A blank/whitespace X field is submitted as `null`; malformed nonblank X input is still rejected. LinkedIn remains required. Migration `20261013190000_optional_x_profile.sql` was applied through the signed-in Supabase SQL editor and recorded in migration history; the live `applications_links_required` constraint now checks only `linkedin is not null`. The X-format constraint remains. All 17 form/video tests pass, including blank-X submission and malformed-X rejection. Privacy wording reflects the optional field.
 
 - Project ref `kmbhcqnkbiddppzbubxp`, US West region; REST inserts into `public.applications`. Public publishable key is intentionally client-side; never expose a service-role key.
-- Audit found RLS enabled, public INSERT only with new status; anonymous read/update/delete denied. No database triggers found. Deployed migration versions matched repository migrations during the audit. Recheck if another chat changes the database.
+- Audit found RLS enabled, public INSERT only with new status; anonymous read/update/delete denied. No database triggers were found during the original audit; the notification trigger was added on 14 October. Deployed migration versions matched repository migrations during the audit. Recheck if another chat changes the database.
 - Form normalises website/profile URLs, validates required fields and lengths against database limits, prevents invalid submissions, and recovers from HTTP/network failures without losing answers or showing false success.
 - One labelled production QA application was submitted and read back: record `6ef5f8f8-0829-4157-8780-d853d0e49d2a`, company “QA TEST — not a real application”. Exclude it from real outreach. It was retained; do not assume it has been deleted.
 - Supabase dashboard was healthy with no advisor findings at audit time, but showed **no backups**. Backup arrangements remain an open operational item.
-- No email notification implementation or database notification trigger was found. Application follow-up currently needs manual handling unless an external automation exists outside the audited code.
+- New-application notifications are now automatic through Resend (14 October update above). Application review, interview invitations and applicant follow-up remain manual; this integration only notifies the team.
 - If changing form fields, coordinate HTML inputs, client `FIELDS`, SQL schema, grants and validation. Do not submit additional production test applications without a clear need.
 
 ## Privacy policy
