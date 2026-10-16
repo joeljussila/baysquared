@@ -159,6 +159,21 @@ form.querySelectorAll('input:not([type=checkbox]),select,textarea').forEach(func
 var SUPABASE_URL='https://kmbhcqnkbiddppzbubxp.supabase.co';
 var SUPABASE_KEY='sb_publishable_6uwyoaqph00b9QVKEu-nVA_Dxbhs-Wm';
 var FIELDS=['name','email','company','based','linkedin','x','role','area','stage','timing','building','why','teammate','dates','heard'];
+function send(body){return fetch(SUPABASE_URL+'/rest/v1/applications',{method:'POST',headers:{'apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(body)});}
+// Original columns only (before migration 20261016120000); the newer answers are appended to "why".
+var LEGACY=['name','email','company','based','linkedin','x','role','area','building','why','dates','heard'];
+function legacyRow(row){
+  var out={},extra=[];
+  LEGACY.forEach(function(k){out[k]=row[k];});
+  if(row.dates==='Not sure yet'){out.dates='No';extra.push('Full trip: Not sure yet');}
+  if(row.stage)extra.push('Stage: '+row.stage);
+  if(row.timing)extra.push('Picking suppliers: '+row.timing);
+  if(row.wants)extra.push('Wants: '+row.wants.join(', '));
+  if(row.parts)extra.push('Parts: '+row.parts.join(', '));
+  if(row.teammate)extra.push('Teammate: '+row.teammate);
+  if(extra.length)out.why=(row.why+'\n\n[More answers] '+extra.join(' · ')).slice(0,4000);
+  return out;
+}
 form.addEventListener('submit',function(e){
   e.preventDefault();
   var bad=null;
@@ -172,10 +187,9 @@ form.addEventListener('submit',function(e){
   row.linkedin=normLinkedIn(form.elements.linkedin.value);row.x=normX(form.elements.x.value);
   Object.keys(GROUPS).forEach(function(n){var v=picked(n);row[n]=v.length?v:null;});
   btn.disabled=true;btn.textContent='Sending…';err.classList.remove('show');
-  fetch(SUPABASE_URL+'/rest/v1/applications',{
-    method:'POST',
-    headers:{'apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
-    body:JSON.stringify(row)
+  send(row).then(function(r){
+    // 400 means the database doesn't have the newer columns yet: resend in the original format so nothing is lost.
+    return r.status===400?send(legacyRow(row)):r;
   }).then(function(r){
     if(!r.ok)throw new Error('HTTP '+r.status);
     document.getElementById('first').textContent=row.name.split(/\s+/)[0];

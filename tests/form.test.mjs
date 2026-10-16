@@ -83,3 +83,19 @@ test('network errors recover the submit button without false success',async()=>{
   const s=setup(()=>Promise.reject(new Error('offline')));s.submit();await new Promise(setImmediate);
   assert.equal(s.classes.has('sent'),false);assert.equal(s.button.disabled,false);assert.equal(s.errors.has('show'),true);
 });
+
+test('before the database has the new columns, a 400 resends the application in the original format',async()=>{
+  let calls=0;
+  const s=setup(()=>Promise.resolve(++calls===1?{ok:false,status:400}:{ok:true,status:201}));
+  s.elements.dates.value='Not sure yet';s.submit();
+  await new Promise(setImmediate);await new Promise(setImmediate);
+  assert.equal(s.requests(),2);assert.equal(s.classes.has('sent'),true);
+  const p=s.payload();
+  for(const k of ['stage','timing','wants','parts','teammate']) assert.equal(k in p,false,k);
+  assert.equal(p.dates,'No');
+  assert.match(p.why,/\[More answers\] Full trip: Not sure yet · Stage: Prototype · Picking suppliers: In 3–6 months · Wants: Factory visits, The electronics market/);
+});
+test('other failures are not resent',async()=>{
+  const s=setup(()=>Promise.resolve({ok:false,status:503}));s.submit();await new Promise(setImmediate);
+  assert.equal(s.requests(),1);assert.equal(s.errors.has('show'),true);
+});
