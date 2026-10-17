@@ -13,7 +13,7 @@ This folder is the home for all work on the delta and bay project (Shenzhen robo
 - Images are shared in `images/` as `deltaandbay_pic*.jpg`; pages reference them as `../images/<file>`. More source photos are in the user's Downloads folder, still named `sommer_pic1..23.jpg`.
 - `3d-night` is a scrolling page: full-screen hero, then sections (trip, itinerary, FAQ, price, apply). Keep it to key facts only. No countdown. The itinerary names kinds of hosts, never company names or logos (the full itinerary goes to accepted participants). Price shows named tiers (Founding, Early bird, Regular, Final call) and never seat counts. The Apply section holds the three steps: apply, 15-minute call, decision within 2 days. Nav links jump to `#trip`, `#faq`; `Apply` goes to `../apply/`.
 - Trip: 11–17 January 2027. Content source is the Google Doc "Make it out of the hood".
-- Deploy target: Vercel project `deltaandbay` (domain deltaandbay.com), auto-deployed from GitHub `joeljussila/deltaandbay` main. `/` is rewritten to the live direction in `vercel.json` (currently `3d-night`); the picker is at `/styles/`.
+- Deploy target: Vercel project `deltaandbay` (domain deltaandbay.com), auto-deployed from GitHub `joeljussila/deltaandbay` main. `/` is rewritten to the live direction in `vercel.json` (currently `3d-night`). `.vercelignore` keeps internal files (`CLAUDE.md`, `README.md`, `docs/`, `tests/`, `supabase/`, `*.csv`) and the old design directions and pickers (`1a/ 2f/ 2h/ 3d/ 3d-clay/ 3d-ochre/ styles/ fonts/ type/ font-options/ brand/`) off the live site; the pickers still work locally.
 
 
 
