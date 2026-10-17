@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050A30"><title>Why Shenzhen · Delta &amp; Bay</title><meta name="description" content="Why robotics founders and investors should spend a week in Shenzhen this January, and what the week looks like day by day."><link rel="canonical" href="https://deltaandbay.com/shenzhen/"><link rel="icon" href="/favicon.ico?v=3" sizes="16x16 32x32 48x48"><link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml"><link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3"><link rel="manifest" href="/site.webmanifest"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Montserrat:wght@400&family=Michroma&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050A30;--panel:#0a1240;--text:#ECE8E0;--sub:#cfd0d8;--muted:#a6a9bd;--dim:#7d82a1;--nav:#d3d2d6;--line:rgba(236,232,224,.15);--accent:#6f8fff;--glow:#0035B1;--pad:clamp(20px,4.4vw,72px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;font-family:'IBM Plex Mono',monospace}
+a{color:inherit;text-decoration:none}a:hover{opacity:.7}
+#stage{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;background:var(--bg);color:var(--text)}
+/* Photo: sand mapped to white, inverted to black, hues rotated back, screened onto the navy. */
+.hand{position:absolute;right:calc(95px - 2vw);top:-6vh;height:112vh;height:112svh;width:auto;max-width:none;filter:url(#whiten) invert(1) hue-rotate(180deg);mix-blend-mode:screen;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 18%);mask-image:linear-gradient(90deg,transparent 0%,#000 18%)}
+.nav{position:absolute;left:var(--pad);right:var(--pad);top:max(44px,env(safe-area-inset-top));display:flex;justify-content:flex-end;font-size:clamp(10px,.86vw,13px);letter-spacing:.14em;text-transform:lowercase;color:var(--nav);z-index:3}
+.nav div{display:flex;align-items:center;gap:clamp(20px,2.8vw,44px)}
+.nav div a{display:flex;align-items:center;min-height:44px;line-height:1}
+.apply-link{text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:7px}
+.hero{position:absolute;left:calc(var(--pad) + 57px);right:var(--pad);bottom:max(clamp(28px,7vh,72px),env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:clamp(12px,2.2vh,22px);align-items:flex-start;z-index:3}
+.name{margin:0;font-family:'Instrument Serif',serif;font-weight:400;letter-spacing:-.01em;line-height:.9;font-size:calc(0.98 * clamp(52px,min(9.7vw,15.5vh),210px));white-space:nowrap}
+.tag{font-family:'Instrument Serif',serif;font-style:normal;color:var(--sub);font-size:calc(1.9 * clamp(13px,min(1.48vw,2.4vh),26px))}
+.date{display:flex;align-items:center;gap:12px;font-size:clamp(11px,.94vw,15px);letter-spacing:.14em;text-transform:lowercase;color:var(--muted)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:none}
+.cta{display:inline-block;margin-top:10px;border:1px solid var(--text);padding:15px 26px;font-size:clamp(11px,.86vw,13px);letter-spacing:.14em;text-transform:lowercase}
+.cta.solid{background:var(--text);color:var(--bg);border-color:var(--text)}
+.grain{position:fixed;inset:0;width:100%;height:100%;opacity:.025;mix-blend-mode:normal;pointer-events:none;z-index:10}
+
+/* Content sections */
+section{padding:clamp(64px,11vh,128px) var(--pad);border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:minmax(200px,1fr) 2.2fr;gap:clamp(24px,5vw,80px);max-width:1240px;margin:0 auto}
+.label{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.14em;text-transform:lowercase;color:var(--dim);margin-bottom:16px}
+h2{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(40px,4.6vw,68px);line-height:.98;letter-spacing:-.01em;margin:0}
+h3{font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(24px,2.1vw,30px);line-height:1.15;margin:0 0 8px}
+p,li,dd{font-size:14.5px;line-height:1.75;color:var(--sub)}
+p{margin:0 0 18px;max-width:64ch}
+.small{font-size:13px;color:var(--muted)}
+strong{font-weight:500;color:var(--text)}
+
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:40px 0 0;border-top:1px solid var(--line)}
+.facts div{padding:20px 20px 0 0}
+.facts dt{font-size:11px;letter-spacing:.14em;color:var(--dim);margin-bottom:6px}
+.facts dd{margin:0;font-family:'Instrument Serif',serif;font-size:24px;line-height:1.2;color:var(--text)}
+
+/* Countdown */
+.count{display:flex;gap:clamp(16px,3vw,44px);margin:0 0 8px;flex-wrap:wrap}
+.count div{min-width:72px}
+.count b{display:block;font-family:'Instrument Serif',serif;font-weight:400;font-size:clamp(52px,6vw,88px);line-height:1;color:var(--text);font-variant-numeric:tabular-nums}
+.count span{font-size:11px;letter-spacing:.14em;color:var(--dim)}
+
+/* Itinerary */
+.days{list-style:none;padding:0;margin:0 0 32px;border-top:1px solid var(--line)}
+.days li{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);margin:0}
+.days time{font-size:12px;letter-spacing:.1em;color:var(--dim);padding-top:7px}
+.days p{margin:0}
+
+/* Steps */
+.steps{list-style:none;padding:0;margin:0;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;gap:16px;padding:24px 0;border-top:1px solid var(--line);margin:0}
+.steps li::before{content:counter(s,decimal-leading-zero);font-size:12px;color:var(--accent);padding-top:8px}
+.steps p{margin:0}
+
+/* Price */
+.tiers{width:100%;border-collapse:collapse;margin:0 0 28px}
+.tiers td{padding:18px 0;border-bottom:1px solid var(--line);font-size:14.5px;color:var(--sub);vertical-align:baseline}
+.tiers tr:first-child td{border-top:1px solid var(--line)}
+.tiers td:first-child{color:var(--dim);font-size:12px;letter-spacing:.1em;width:34%}
+.tiers td:last-child{text-align:right;font-family:'Instrument Serif',serif;font-size:28px;color:var(--text)}
+
+/* FAQ */
+details{border-top:1px solid var(--line)}
+details:last-of-type{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:22px 0;font-family:'Instrument Serif',serif;font-size:clamp(22px,1.9vw,27px);line-height:1.25;color:var(--text)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:'IBM Plex Mono',monospace;font-size:18px;color:var(--accent);flex:none}
+details[open] summary::after{content:"–"}
+details p{padding-bottom:6px}
+
+footer{padding:32px var(--pad) max(32px,env(safe-area-inset-bottom));border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;font-size:12px;letter-spacing:.1em;color:var(--dim)}
+footer .mark{font-family:'Instrument Serif',serif;font-size:22px;letter-spacing:0;color:var(--text)}
+
+@media (max-width:900px){
+  .row{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+
+}
+/* Portrait / phones: hand on top, text stacked below. */
+@media (max-aspect-ratio:1/1){
+  .hand{right:-4vw;top:calc(4vh - 38px);width:100vw;height:auto;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 14%);mask-image:linear-gradient(180deg,transparent 0%,#000 14%)}
+  #stage::after{display:none}
+  .nav{top:max(24px,env(safe-area-inset-top))}
+  .hero{left:var(--pad)}
+  .name{font-size:min(18.5vw,10vh)}
+  .tag{font-size:clamp(22px,6.4vw,30px);line-height:1.2}
+  .date{font-size:11px}
+  .hero .cta{align-self:stretch;text-align:center}
+}
+@media (max-width:560px){
+  .nav .opt{display:none}
+  .days li{grid-template-columns:1fr;gap:4px}
+  .days time{padding-top:0}
+  .steps li{grid-template-columns:36px 1fr}
+  .tiers td:first-child{width:auto}
+  .cta{display:block;text-align:center}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}html{scroll-behavior:auto}}
+
+/* Delta & Bay brand (Shawn's kit): Prussian blue and ivory; monogram top-left. */
+#stage{background:var(--bg)}
+.nav{justify-content:space-between;align-items:center}
+.logo{display:block;height:clamp(40px,3.6vw,56px);flex:none}
+.logo img{display:block;height:100%;width:auto}
+.logo:hover{opacity:.85}
+.hand{z-index:1}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-aspect-ratio:1/1){
+  .logo{height:40px}
+  }
+
+/* Preview updates: hero kept clear of the hand, logo aligned with the wordmark, host logos row. */
+.name{font-size:min(calc(0.98 * clamp(52px,min(9.7vw,15.5vh),210px)),calc((102vw - 71vh - var(--pad) - 192px) / var(--name-em,4.5)))}
+.tag{font-size:min(calc(1.9 * clamp(13px,min(1.48vw,2.4vh),26px)),calc((102vw - 95px - 70vh - var(--pad) - 81px) / 12))}
+.nav{left:calc(var(--pad) + 59px)}
+.hosts{margin:8px 0 0}
+.hosts-label{font-size:12px;letter-spacing:.14em;color:var(--dim);margin:0 0 18px}
+.host-logos{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:26px 18px;--k:min(56px,4vw)}
+.host-logos li{margin:0;display:flex}
+.host-logos a{display:flex;align-items:center;justify-content:flex-start;width:100%;height:48px}
+.host-logos a:hover{opacity:1}
+.host-logos img{display:block;height:calc(var(--k) * var(--m,.5));width:auto;max-width:100%;object-fit:contain;filter:brightness(0) invert(1);opacity:.62;transition:opacity .2s}
+.host-logos a:hover img,.host-logos a:focus-visible img{opacity:1}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+@media (max-width:900px){.host-logos{--k:52px}}
+@media (max-width:560px){.host-logos{grid-template-columns:repeat(3,1fr);gap:22px 14px;--k:46px}}
+@media (max-aspect-ratio:1/1){.nav{left:var(--pad)}.name{font-size:min(18.5vw,10vh)}.tag{font-size:clamp(22px,6.4vw,30px)}}
+
+/* Full-bleed skyline; the poster uses the same crop when motion is unavailable. */
+.skyline{position:absolute;inset:0;z-index:0;background:url(../images/deltaandbay_hero_blue_poster.jpg) 62% 45%/cover no-repeat;opacity:.85}
+.skyline::after{content:"";position:absolute;inset:0;background:rgba(5,10,48,.32)}
+.name{font-size:calc(0.98 * clamp(52px,min(9.7vw,15.5vh),210px))}
+.tag{font-size:clamp(21px,2.65vw,39px);line-height:1.2}
+.nav,.cta,.date{text-transform:none}
+@media (max-aspect-ratio:1/1){
+  .skyline{background-size:auto 125%;background-position:62% 70%}
+
+  #stage::after{display:none}
+  .name{font-size:min(18.5vw,10vh)}
+  .tag{font-size:clamp(21px,5.45vw,26px)}
+  .nav{left:var(--pad);right:var(--pad);gap:16px;align-items:center;font-size:11px}
+  .nav div{gap:clamp(12px,3.6vw,24px)}
+  .logo{height:40px}
+}
+
+
+/* Align the visible logo top with the navigation capitals, keeping 44px tap targets. */
+@media(min-width:901px){.nav,.nav div,.nav div a{align-items:flex-start}.nav .logo{position:relative;top:2px}}
+@media(max-width:900px){.nav{left:var(--pad);right:var(--pad);display:flex;align-items:flex-start;gap:12px}.nav .logo{display:flex;align-items:flex-start;justify-content:center;height:44px;width:40px;padding-top:2px}.nav .logo img{height:40px;width:auto}.nav div{align-items:flex-start;gap:clamp(12px,3.6vw,24px)}.nav div a{align-items:flex-start;height:44px;white-space:nowrap}}
+
+/* Header lockup: monogram with DELTA & BAY underneath (outlines from the brand kit). */
+.nav .logo,.nav .logo img{height:clamp(62px,5.4vw,84px);width:auto}
+@media(max-width:900px){.nav .logo{width:auto;height:58px;padding-top:2px}.nav .logo img{height:56px}}
+.rolling{margin:0;font-size:clamp(10px,.8vw,12px);letter-spacing:.1em;color:var(--muted)}
+@media (max-aspect-ratio:1/1){.hero .name{white-space:normal;line-height:.95}.hero .rolling{align-self:stretch;text-align:center}}
+footer .mark{font-family:'Montserrat',sans-serif;font-size:13px;letter-spacing:.32em;text-transform:uppercase}
+
+/* Edge glow below the hero (brand kit: deep blue right edge, lighter blue bottom-left). Fades in after the hero and drifts with scroll. */
+.glow{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:var(--glow-o,0);background:
+  radial-gradient(62vw 75vh at calc(100% + 20vw) var(--gy1,22%),rgba(0,40,194,.62),rgba(0,53,177,.26) 42%,transparent 72%),
+  radial-gradient(58vw 62vh at -18vw var(--gy2,84%),rgba(0,101,255,.34),rgba(0,101,255,.12) 45%,transparent 72%),
+  radial-gradient(34vw 34vh at calc(100% + 8vw) var(--gy3,62%),rgba(90,162,255,.18),transparent 70%)}
+section,footer{position:relative;z-index:1}
+#stage{z-index:2}
+@media (max-width:640px){.glow{background:
+  radial-gradient(95vw 60vh at calc(100% + 35vw) var(--gy1,22%),rgba(0,40,194,.6),rgba(0,53,177,.24) 45%,transparent 72%),
+  radial-gradient(90vw 50vh at -35vw var(--gy2,84%),rgba(0,101,255,.32),transparent 72%)}}
+
+/* Background video: Shenzhen Bay at night, blue treatment baked in, plays forward then back for a seamless loop. */
+.sky-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% 45%;z-index:0}
+.skyline::after{z-index:1}
+@media (max-aspect-ratio:1/1){
+  .sky-video{transform:scale(1.25);transform-origin:62% 70%}
+}
+
+/* Display type: Michroma for the title, tagline and headings; IBM Plex Mono for body text. */
+:root{--display:'Michroma',sans-serif}
+.name,.tag,h2,h3,summary,.facts dd,.tiers td:last-child{font-family:var(--display)}
+.hero .name{font-weight:400;letter-spacing:0;line-height:1;font-size:calc(.645 * clamp(52px,min(9.7vw,15.5vh),210px))}
+.hero .tag{text-transform:uppercase;letter-spacing:.32em;font-size:clamp(11px,1vw,15px);color:var(--sub)}
+h2{font-weight:400;font-size:calc(.645 * clamp(40px,4.6vw,68px))}
+h3,summary{font-weight:400;font-size:calc(.645 * clamp(22px,1.9vw,27px))}
+.facts dd,.tiers td:last-child{font-weight:400;font-size:17px}
+@media (max-aspect-ratio:1/1){.hero .name{font-size:calc(.73 * min(18.5vw,10vh))}.hero .tag{font-size:11px;letter-spacing:.26em}}
+
+/* Itinerary: small logo block in the side column, and the link to the in-depth page */
+.hosts.side{margin:40px 0 0}
+.hosts.side .hosts-label{font-size:11px;margin:0 0 14px}
+.hosts.side .host-logos{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px;--k:48px;max-width:260px}
+.hosts.side .host-logos li{height:36px;align-items:center}
+.cta.deep{margin-top:0}
+@media (max-width:900px){.hosts.side .host-logos{grid-template-columns:repeat(4,minmax(0,1fr));max-width:none;--k:44px}}
+@media (max-width:560px){.hosts.side .host-logos{grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;--k:38px}}
+</style>
+<style>
+.page-top{position:relative;z-index:2;padding:max(44px,env(safe-area-inset-top)) var(--pad) 0}
+.page-top .nav{position:static;justify-content:space-between}
+.intro{padding-top:clamp(56px,10vh,110px);border-top:0}
+.intro h1{font-family:var(--display);font-weight:400;font-size:calc(.645 * clamp(52px,7vw,104px));line-height:1.05;margin:0 0 24px}
+.intro .lede{font-size:clamp(15px,1.2vw,17px);color:var(--sub);max-width:58ch}
+.reasons{list-style:none;padding:0;margin:0;counter-reset:r}
+.reasons li{counter-increment:r;display:grid;grid-template-columns:56px 1fr;gap:16px;padding:28px 0;border-top:1px solid var(--line);margin:0}
+.reasons li:last-child{border-bottom:1px solid var(--line)}
+.reasons li::before{content:counter(r,decimal-leading-zero);font-size:12px;color:var(--accent);padding-top:8px}
+.reasons p{margin:0}
+.days ul{margin:10px 0 0;padding-left:18px}
+.days ul li{display:list-item;border:0;padding:2px 0;font-size:14px;line-height:1.65;color:var(--sub)}
+.src{font-size:12px;color:var(--dim)}
+.src a{text-decoration:underline;text-underline-offset:3px}
+.glow{opacity:1}
+.tier-label{font-size:11px;letter-spacing:.14em;color:var(--dim);margin:28px 0 12px;text-transform:lowercase}
+.tier-label:first-child{margin-top:0}
+.host-logos.tier{grid-template-columns:repeat(4,minmax(0,1fr));max-width:none;gap:20px 24px}
+.host-logos.tier li{height:52px;align-items:center}
+.host-logos.t1{--k:64px}
+.host-logos.t1 img{opacity:.85}
+.host-logos.t2{--k:54px}
+.host-logos.t2 img{opacity:.7}
+.host-logos.t3{--k:46px;grid-template-columns:repeat(6,minmax(0,1fr))}
+.host-logos.t3 img{opacity:.55}
+@media (max-width:700px){.host-logos.tier{grid-template-columns:repeat(3,minmax(0,1fr))}.host-logos.t3{grid-template-columns:repeat(4,minmax(0,1fr))}}
+
+/* Photo treatment: any photo is dimmed, slightly desaturated and tinted toward Prussian blue so it sits in the theme */
+.shot{margin:0}
+.treat{position:relative;overflow:hidden;background:#0a1240}
+.treat img{display:block;width:100%;height:100%;object-fit:cover;filter:saturate(.7) contrast(1.05) brightness(.78)}
+.treat::before{content:"";position:absolute;inset:0;background:#0035B1;mix-blend-mode:color;opacity:.28;z-index:1;pointer-events:none}
+.treat::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,10,48,0) 45%,rgba(5,10,48,.55));z-index:2;pointer-events:none}
+.shot figcaption{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:10px;font-size:11px;letter-spacing:.06em;color:var(--dim)}
+.shot figcaption a{text-decoration:underline;text-underline-offset:3px}
+
+.intro.hero-photo{position:relative;min-height:min(78vh,760px);display:flex;align-items:flex-end;padding-top:0;margin-top:calc(-1 * clamp(110px,12vw,150px));padding-bottom:clamp(48px,8vh,96px)}
+.intro.hero-photo .bg{position:absolute;inset:0;z-index:0}
+.intro.hero-photo .bg .treat{height:100%}
+.intro.hero-photo .bg .treat::after{background:linear-gradient(90deg,rgba(5,10,48,.92) 0%,rgba(5,10,48,.55) 45%,rgba(5,10,48,.2) 100%),linear-gradient(0deg,var(--bg) 0%,rgba(5,10,48,0) 40%)}
+.intro.hero-photo .row{position:relative;z-index:1;width:100%}
+.intro.hero-photo .credit{position:absolute;right:var(--pad);bottom:16px;z-index:1;font-size:10.5px;color:var(--dim)}
+.intro.hero-photo .credit a{text-decoration:underline}
+.page-top{z-index:3}
+.band{padding:0 var(--pad) clamp(40px,6vh,64px);border-top:0}
+.band .shot{max-width:1240px;margin:0 auto}
+.band .treat{aspect-ratio:21/8}
+@media (max-width:700px){.band .treat{aspect-ratio:4/3}}
+
+
+/* Gallery: horizontal scroll-snap slider */
+.gallery{padding-left:0;padding-right:0}
+.gal-head{display:flex;justify-content:space-between;align-items:center;gap:16px;max-width:1240px;margin:0 auto 16px;padding:0 var(--pad)}
+.gal-head .label{margin:0}
+.gal-nav{display:flex;align-items:center;gap:10px}
+.gal-count{font-size:12px;letter-spacing:.1em;color:var(--dim);font-variant-numeric:tabular-nums;min-width:48px;text-align:right}
+.gal-btn{width:44px;height:44px;border:1px solid var(--line);background:transparent;color:var(--text);font-size:16px;cursor:pointer;border-radius:0}
+.gal-btn:hover{border-color:var(--text)}
+.gal-btn:disabled{opacity:.3;cursor:default}
+.track{list-style:none;margin:0;padding:0 var(--pad);display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 var(--pad);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 min(78vw,1000px);scroll-snap-align:start;margin:0}
+.slide .treat{aspect-ratio:16/9}
+@media (max-width:700px){.slide{flex-basis:86vw}.slide .treat{aspect-ratio:4/3}}
+@media (prefers-reduced-motion:reduce){.track{scroll-behavior:auto}}
+.wide{max-width:1240px;margin:0 auto}
+#numbers{padding-block:clamp(40px,7vh,72px)}
+.closing{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.host-logos{grid-template-columns:repeat(4,minmax(0,1fr));max-width:620px}
+@media (max-width:900px){.row{grid-template-columns:1fr}}
+
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 28px;margin:0;border-top:1px solid var(--line)}
+.stats div{padding:22px 0;border-bottom:1px solid var(--line)}
+.stats dd{margin:0 0 8px;font-family:var(--display);font-size:calc(.645 * clamp(34px,3.4vw,50px));color:var(--text);line-height:1.1}
+.stats p{margin:0 0 10px;font-size:13px;line-height:1.55}
+.stats dt{order:3;font-size:11px;letter-spacing:.06em;color:var(--dim)}
+.stats div{display:flex;flex-direction:column}
+.stats dt a{text-decoration:underline;text-underline-offset:3px}
+.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.quote{margin:0;padding:24px;border:1px solid var(--line);background:rgba(10,18,64,.55);display:flex;flex-direction:column;justify-content:space-between;gap:20px;min-width:0}
+.quote blockquote{margin:0;font-size:15px;line-height:1.65;color:var(--text)}
+.quote figcaption{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;font-size:12px;color:var(--dim)}
+.quote figcaption a:first-child{color:var(--accent);font-size:13px}
+.quote .post{margin-left:auto;text-decoration:underline;text-underline-offset:3px}
+.movers li::before{content:counter(r,decimal-leading-zero)}
+@media (max-width:900px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:700px){.quotes{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+<header class="page-top">
+<nav class="nav" aria-label="Main navigation"><a class="logo" href="../" aria-label="Delta &amp; Bay home"><img src="../images/deltaandbay_lockup_ivory.svg" alt="Delta &amp; Bay" width="3456" height="2099"></a><div><a href="../#itinerary">Back to the trip</a><a class="apply-link" href="../apply/">Apply</a></div></nav>
+</header>
+
+<section class="intro hero-photo">
+<div class="bg"><div class="treat"><img src="../images/shenzhen/skyline-night.jpg" alt="Shenzhen Bay at night"></div></div>
+<p class="credit">Shenzhen Bay at night · <a href="https://commons.wikimedia.org/w/index.php?curid=80858302" target="_blank" rel="noopener">Sparktour, CC BY-SA 4.0</a></p>
+<div class="row">
+<div><p class="label"><span class="dot"></span>11–17 January 2027</p></div>
+<div>
+<h1>Why Shenzhen</h1>
+<p class="lede">Almost everything a robot is made of is designed, built or sold within an hour of Shenzhen. This page is the case for going now, and the week in detail.</p>
+</div>
+</div>
+</section>
+
+<section id="why">
+<div class="row">
+<div><h2>Three reasons</h2></div>
+<div>
+<ol class="reasons">
+<li><div><h3>The whole stack, one drive apart</h3><p>Reducers, motors, joints, hands, sensors, boards and finished robots are made in the same region. In one week you can follow a robot from its parts to the company selling it.</p></div></li>
+<li><div><h3>Hardware at software speed</h3><p>Parts off the shelf the same day in Huaqiangbei, circuit boards back in a day or two, moulding and machining down the road. Seeing how fast the loop runs changes how you plan your own.</p></div></li>
+<li><div><h3>Access goes to people who show up</h3><p>Good factories are rarely idle, so they serve the customers they know first. Founders who have met a supplier in person, over tea and a factory walk, get answered faster than an email from abroad.</p></div></li>
+</ol>
+</div>
+</div>
+</section>
+
+<section class="band gallery" aria-label="Photos of Shenzhen">
+<div class="gal-head"><p class="label"><span class="dot"></span>Shenzhen, up close</p><div class="gal-nav"><span class="gal-count" aria-live="polite">1 / 5</span><button type="button" class="gal-btn prev" aria-label="Previous photo">&#8592;</button><button type="button" class="gal-btn next" aria-label="Next photo">&#8594;</button></div></div>
+<ul class="track" tabindex="0"><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/agri-drones.jpg" alt="Agricultural drones in a DJI store, Shenzhen"></div><figcaption><span>Agricultural drones in a DJI store, Shenzhen</span><span><a href="https://commons.wikimedia.org/wiki/File:DJI_Agriculture_Drones_in_DJI_Store_20250501.jpg" target="_blank" rel="noopener">Steven Sun, CC BY-SA 4.0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/robot-shop.jpg" alt="A robot-run shop by Galbot, Bao'an"></div><figcaption><span>A robot-run shop by Galbot, Bao'an</span><span><a href="https://commons.wikimedia.org/wiki/File:SZ_%E6%B7%B1%E5%9C%B3_Shenzhen_%E5%AF%B6%E5%AE%89_BaoAn_%E6%99%AF%E5%BE%9E%E8%B7%AF_Jingcong_Road_n_%E5%92%8C%E5%8C%AF%E8%B7%AF_HeHui_Road_shop_%E9%8A%80%E6%B2%B3%E5%A4%AA%E7%A9%BA%E8%89%99_Galbot_Store_beverage_booth_HooLoo_Coffee_October_2025_R12S_07.jpg" target="_blank" rel="noopener">Wikimedia Commons, CC0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/drone-counter.jpg" loading="lazy" alt="A drone counter at Huaqiang Electronic World"></div><figcaption><span>A drone counter at Huaqiang Electronic World</span><span><a href="https://commons.wikimedia.org/wiki/File:Quadcopter_drone_vendor_at_Shenzhen_Huaqiang_Electronic_World.jpg" target="_blank" rel="noopener">Benlisquare, CC BY-SA 4.0, faces blurred</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/factory-floor.jpg" loading="lazy" alt="An electronics factory in Shenzhen"></div><figcaption><span>An electronics factory in Shenzhen</span><span><a href="https://commons.wikimedia.org/wiki/File:Electronics_factory_in_Shenzhen.jpg" target="_blank" rel="noopener">Steve Jurvetson, CC BY 2.0</a></span></figcaption></figure></li><li class="slide"><figure class="shot"><div class="treat"><img src="../images/shenzhen/pcb-line.jpg" loading="lazy" alt="A circuit-board production line, Shenzhen"></div><figcaption><span>A circuit-board production line, Shenzhen</span><span><a href="https://www.flickr.com/photos/67734410@N00/38194655811" target="_blank" rel="noopener">Mitch Altman (maltman23), CC BY-SA 2.0</a></span></figcaption></figure></li></ul>
+</section>
+<section id="numbers">
+<div class="wide"><p class="label"><span class="dot"></span>In numbers</p><dl class="stats"><div><dt><a href="https://ifr.org/ifr-press-releases/news/global-robot-demand-in-factories-doubles-over-10-years" target="_blank" rel="noopener">IFR World Robotics 2025</a></dt><dd>54%</dd><p>of the world's new industrial robots were installed in China in 2024</p></div><div><dt><a href="https://restofworld.org/2026/china-robot-ban-silicon-valley/" target="_blank" rel="noopener">Omdia, via Rest of World</a></dt><dd>~90%</dd><p>of humanoids sold worldwide in 2025 were Chinese</p></div><div><dt><a href="https://fgw.sz.gov.cn/ztzl/qtztzl/szscjmyjjfzzhfwpt/xwzl/cyfz/content/post_12750929.html" target="_blank" rel="noopener">Shenzhen Development and Reform Commission</a></dt><dd>RMB 243B</dd><p>Shenzhen robotics output in 2025, up 20.6% on 2024</p></div><div><dt><a href="https://www.szns.gov.cn/english/news/latestnews/content/post_12878323.html" target="_blank" rel="noopener">Nanshan District</a></dt><dd>200+</dd><p>robotics supply-chain companies in Nanshan's Robot Valley</p></div></dl></div>
+</section>
+
+<section id="voices">
+<div class="row">
+<div><h2>What builders say</h2><p class="small" style="margin-top:20px">Public posts on X, quoted as written. The people quoted aren't affiliated with Delta &amp; Bay.</p></div>
+<div class="quotes"><figure class="quote"><blockquote>“my first week in Huaqiangbei I burned through 4 prototype iterations of a motor controller board for less than a thousand bucks total… back home a friend… spent over 12 thousand for a single revision”</blockquote><figcaption><a href="https://x.com/BetterCallMedhi" target="_blank" rel="noopener">@BetterCallMedhi</a><span>Mehdi, hardware founder</span><a class="post" href="https://x.com/BetterCallMedhi/status/2027625247068065864" target="_blank" rel="noopener">View post</a></figcaption></figure><figure class="quote"><blockquote>“Shenzhen speed in one photo. This scooter man handing me ICs through my factory window, 30 mins after I realised I'd picked the wrong chip… Investor demo prototype saved.”</blockquote><figcaption><a href="https://x.com/Ryan__Dunwoody" target="_blank" rel="noopener">@Ryan__Dunwoody</a><span>Ryan Dunwoody, 11 years building in Shenzhen</span><a class="post" href="https://x.com/Ryan__Dunwoody/status/2110554484703445129" target="_blank" rel="noopener">View post</a></figcaption></figure><figure class="quote"><blockquote>“Robot hands in SF: $7K–$13K / Robot hands in Shenzhen: $800.”</blockquote><figcaption><a href="https://x.com/robotsmasher1" target="_blank" rel="noopener">@robotsmasher1</a><span>Hiroki, head of Rek Asia</span><a class="post" href="https://x.com/robotsmasher1/status/2095522721124016310" target="_blank" rel="noopener">View post</a></figcaption></figure><figure class="quote"><blockquote>“The supply chain here is incredibly strong and affordable — companies can source components locally, iterate quickly, and keep costs low.”</blockquote><figcaption><a href="https://x.com/dolylupec" target="_blank" rel="noopener">@dolylupec</a><span>Lena, AI and robotics investor</span><a class="post" href="https://x.com/dolylupec/status/2067890834226524452" target="_blank" rel="noopener">View post</a></figcaption></figure><figure class="quote"><blockquote>“Moved here as a software founder / Left as something more.”</blockquote><figcaption><a href="https://x.com/tryhardfifi" target="_blank" rel="noopener">@tryhardfifi</a><span>Filippo Facioni, YC S25 founder</span><a class="post" href="https://x.com/tryhardfifi/status/2110145113125171408" target="_blank" rel="noopener">View post</a></figcaption></figure><figure class="quote"><blockquote>“somewhere in Shenzhen there is probably a guy who knows a guy who can get you the weird motor, battery cell, flex PCB… software has GitHub. hardware has cities.”</blockquote><figcaption><a href="https://x.com/vigram_void" target="_blank" rel="noopener">@vigram_void</a><span>on X</span><a class="post" href="https://x.com/vigram_void/status/2095477914179662237" target="_blank" rel="noopener">View post</a></figcaption></figure></div>
+</div>
+</section>
+
+
+<section id="week">
+<div class="row">
+<div><h2>The week in depth</h2><p class="small" style="margin-top:20px">Provisional. Hosts are confirmed in writing in November. Each visit is a guided tour, a talk from the team and Q&amp;A, translated by our bilingual coordinator.</p></div>
+<div>
+<ol class="days">
+<li><time>mon 11 jan</time><div><h3>Arrival</h3><p>Pickup at Shenzhen Bao'an airport and check-in at the hotel in Nanshan.</p><ul><li>Opening session: who's in the group and what each person wants from the week</li><li>Welcome dinner</li></ul></div></li>
+<li><time>tue 12 jan</time><div><h3>Humanoids</h3><p>Three humanoid makers in Nanshan, each with a showroom, live demos and time with the team.</p><ul><li>Full-size humanoids and their deployments in factories and public services</li><li>Bipedal and wheel-legged platforms, demonstrated live</li><li>How these companies went from lab to thousands of orders</li></ul></div></li>
+<li><time>wed 13 jan</time><div><h3>Inside the robot</h3><p>The parts that make humanoids work.</p><ul><li>Tactile sensors and dexterous hands</li><li>A showroom of joints, reducers and hands from Shenzhen's robot-parts cluster</li><li>A non-invasive brain-computer interface lab</li><li>Evening meetup with local hardware founders</li></ul></div></li>
+<li><time>thu 14 jan</time><div><h3>Dongguan</h3><p>An hour north, where volume manufacturing happens.</p><ul><li>A robotics incubator at Songshan Lake, where several well-known hardware companies began</li><li>Working factory floors: electronics assembly and SMT lines</li><li>Makers of motors, moulded parts and cable harnesses</li></ul></div></li>
+<li><time>fri 15 jan</time><div><h3>The low-altitude economy</h3><p>Shenzhen's streets and skies as a test bed.</p><ul><li>A drone delivery base and its flight-control room</li><li>A ride in a driverless robotaxi</li><li>A carmaker that builds its own batteries, chips and motors, and its sky-train</li><li>Dinner with local founders and investors</li></ul></div></li>
+<li><time>sat 16 jan</time><div><h3>Market day</h3><p>The Huaqiangbei electronics market and Shenzhen's hardware stores.</p><ul><li>Floors of components, modules, tools and repair benches</li><li>Hardware flagship stores for drones, 3D printers and new devices</li><li>Bring your parts list: where there's a fit, we add a supplier meeting</li><li>Closing dinner</li></ul></div></li>
+<li><time>sun 17 jan</time><div><h3>Departure</h3><p>Airport transfers. Hong Kong directions on request.</p></div></li>
+</ol>
+<p class="small">Optional evenings: Huaqiangbei after dark, a Chinese bathhouse, karaoke.</p>
+</div>
+</div>
+</section>
+
+<section id="hosts">
+<div class="row">
+<div><p class="hosts-label">companies on the provisional itinerary</p><p class="small" style="margin-top:14px">Companies we can arrange to visit. The week covers a selection, matched to the group, and is confirmed in writing in November. Not partners or sponsors.</p></div>
+<div><p class="tier-label">Robot makers</p><ul class="host-logos tier t1"><li><img style="--m:0.500" src="../images/hosts/ubtech.svg" alt="UBTech" title="UBTech"></li><li><img style="--m:0.560" src="../images/hosts/limx.svg" alt="LimX Dynamics" title="LimX Dynamics"></li><li><img style="--m:0.520" src="../images/hosts/engineai.png" alt="EngineAI" title="EngineAI"></li><li><img style="--m:0.500" src="../images/hosts/dobot.svg" alt="Dobot" title="Dobot"></li><li><img style="--m:0.620" src="../images/hosts/dji.svg" alt="DJI" title="DJI"></li><li><img style="--m:0.500" src="../images/hosts/byd.svg" alt="BYD" title="BYD"></li><li><img style="--m:0.420" src="../images/hosts/kuka.svg" alt="KUKA" title="KUKA"></li><li><img style="--m:0.430" src="../images/hosts/brainco.png" alt="BrainCo" title="BrainCo"></li></ul><p class="tier-label">Mobility, drones and new hardware</p><ul class="host-logos tier t2"><li><img style="--m:0.620" src="../images/hosts/baidu.svg" alt="Baidu Apollo Go" title="Baidu Apollo Go"></li><li><img style="--m:0.600" src="../images/hosts/pony.png" alt="Pony.ai" title="Pony.ai"></li><li><img style="--m:0.340" src="../images/hosts/xpeng.svg" alt="XPeng" title="XPeng"></li><li><img style="--m:0.620" src="../images/hosts/sf-express.png" alt="SF Express" title="SF Express"></li><li><img style="--m:0.500" src="../images/hosts/meituan.png" alt="Meituan" title="Meituan"></li><li><img style="--m:0.400" src="../images/hosts/ehang.svg" alt="EHang" title="EHang"></li><li><img style="--m:0.600" src="../images/hosts/bambulab.svg" alt="Bambu Lab" title="Bambu Lab"></li><li><img style="--m:0.340" src="../images/hosts/seeed-studio.png" alt="Seeed Studio" title="Seeed Studio"></li></ul><p class="tier-label">Factories and industry</p><ul class="host-logos tier t3"><li><img style="--m:0.420" src="../images/hosts/lenovo.svg" alt="Lenovo" title="Lenovo"></li><li><img style="--m:0.360" src="../images/hosts/oppo.svg" alt="OPPO" title="OPPO"></li><li><img style="--m:0.550" src="../images/hosts/midea.svg" alt="Midea" title="Midea"></li><li><img style="--m:0.340" src="../images/hosts/fanuc.svg" alt="FANUC" title="FANUC"></li><li><img style="--m:0.300" src="../images/hosts/siemens.svg" alt="Siemens" title="Siemens"></li><li><img style="--m:0.300" src="../images/hosts/sunwoda.svg" alt="Sunwoda" title="Sunwoda"></li><li><img style="--m:0.300" src="../images/hosts/skyworth.svg" alt="Skyworth" title="Skyworth"></li><li><img style="--m:0.550" src="../images/hosts/iflytek.png" alt="iFlytek" title="iFlytek"></li><li><img style="--m:0.600" src="../images/hosts/sensetime.png" alt="SenseTime" title="SenseTime"></li><li><img style="--m:0.550" src="../images/hosts/mindray.png" alt="Mindray" title="Mindray"></li><li><img style="--m:0.500" src="../images/hosts/zte.svg" alt="ZTE" title="ZTE"></li></ul></div>
+</div>
+</section>
+
+<section id="join">
+<div class="row">
+<div><h2>Join us</h2></div>
+<div>
+<p>About 20 robotics founders and investors from San Francisco. Applications are reviewed on a rolling basis. The trip runs if 15 people have booked by 30 November; if not, everyone gets a full refund.</p>
+<div class="closing"><a class="cta solid" href="../apply/">Apply for a place</a><a class="cta" href="../#itinerary">Back to the trip</a></div>
+</div>
+</div>
+</section>
+
+<footer style="padding:40px var(--pad);border-top:1px solid var(--line)"><span class="mark">Delta &amp; Bay</span></footer>
+<script>
+(function(){
+  var g=document.querySelector('.gallery'); if(!g) return;
+  var t=g.querySelector('.track'), sl=[].slice.call(t.children), c=g.querySelector('.gal-count'), pv=g.querySelector('.prev'), nx=g.querySelector('.next');
+  var smooth=!window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function idx(){var x=t.getBoundingClientRect().left+parseFloat(getComputedStyle(t).paddingLeft), best=0, d=1e9; sl.forEach(function(s,i){var e=Math.abs(s.getBoundingClientRect().left-x); if(e<d){d=e;best=i}}); return best}
+  function upd(){var i=idx(); c.textContent=(i+1)+' / '+sl.length; pv.disabled=i===0; nx.disabled=t.scrollLeft+t.clientWidth>=t.scrollWidth-4}
+  function go(d){var step=sl[0].getBoundingClientRect().width+parseFloat(getComputedStyle(t).columnGap||16); t.scrollBy({left:d*step,behavior:smooth?'smooth':'auto'})}
+  pv.addEventListener('click',function(){go(-1)}); nx.addEventListener('click',function(){go(1)});
+  t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(1)}if(e.key==='ArrowLeft'){e.preventDefault();go(-1)}});
+  var r; t.addEventListener('scroll',function(){clearTimeout(r); r=setTimeout(upd,60)}); window.addEventListener('resize',upd); upd();
+})();
+</script>
+</body></html>
